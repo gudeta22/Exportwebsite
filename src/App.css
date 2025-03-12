@@ -126,7 +126,7 @@
 /* Pulsing marker animation */
 .pulse-marker {
   animation: pulse 2s infinite ease-in-out;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 10px rgba(2, 177, 148, 0.5);
 }
 
 @keyframes pulse {
@@ -186,7 +186,7 @@
 
 /* Optional: Add a subtle pulse for visibility */
 .process-highlight {
-  box-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 5px rgba(16, 157, 185, 0.7);
   animation: pulse 1s infinite ease-in-out;
 }
 

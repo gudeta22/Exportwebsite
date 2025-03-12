@@ -58,10 +58,9 @@ const StreamlinedProcess = () => {
               {/* Arrow between steps (hidden on mobile, not shown after the last step) */}
               {index < steps.length - 1 && isDesktop && (
                 <svg
-                  className="hidden md:block w-12 h-12 text-teal-500 flex-shrink-0"
+                  className="hidden md:block w-12 h-12 text-cyan-600 flex-shrink-0"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
