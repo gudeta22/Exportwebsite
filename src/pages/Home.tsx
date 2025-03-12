@@ -3,6 +3,8 @@ import Navbar from '../Components/Navbar.tsx';
 import AboutComponent from '../Components/AboutComponents.tsx';
 import DeviceCarousel from '../Components/DeviceCarousel.tsx';
 import WhyWorkWithUs from '../Components/WhyWorkWithUs.tsx';
+import JobApplicationFormComponent from '../Components/JobApplicationForm.tsx';
+import Processes from '../Components/Processes.tsx';
 
 function Home() {
   return (
@@ -12,6 +14,8 @@ function Home() {
         <AboutComponent />
         <DeviceCarousel />
         <WhyWorkWithUs />
+        <Processes />
+        <JobApplicationFormComponent />
     </div>
   );
 }

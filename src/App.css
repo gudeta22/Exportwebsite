@@ -57,3 +57,147 @@
   .swiper-pagination-bullet-active {
     background-color: #16a34a; /* Darker green */
   }
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .modal-open .max-w-4xl {
+    pointer-events: none;
+  }
+  
+  /* Ensure modal stays above other content */
+  .z-50 {
+    z-index: 50;
+  }
+
+  /* Custom animation for the process line */
+  .process-line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  
+  .process-line .animate-process {
+    animation: processFlow 4s infinite linear;
+    width: 0;
+    background: linear-gradient(to right, #10b981, #34d399);
+  }
+  
+  @keyframes processFlow {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* Process line animation */
+.process-line {
+  position: absolute;
+  top: 4rem; /* Adjusted to align with step numbers */
+  z-index: 0;
+}
+
+.process-line .animate-process {
+  animation: processFlow 5s infinite ease-in-out;
+  width: 0;
+  background: linear-gradient(to right, #10b981, #34d399);
+}
+
+@keyframes processFlow {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Pulsing marker animation */
+.pulse-marker {
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) translateY(-25%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-25%) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-25%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Base line connecting steps */
+.process-line {
+  position: absolute;
+  top: 4rem;
+  z-index: 0;
+}
+
+/* Animated highlight moving between numbers */
+.process-highlight {
+  transition: none; /* Disable default transition for custom animation */
+  z-index: 10;
+}
+
+.process-highlight.animate-numbers {
+  animation: moveBetweenNumbers 8s infinite steps(4, end);
+}
+
+@keyframes moveBetweenNumbers {
+  0% {
+    left: 0%;
+    transform: translateX(-50%);
+  }
+  25% {
+    left: 25%;
+    transform: translateX(-50%);
+  }
+  50% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  75% {
+    left: 75%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: Add a subtle pulse for visibility */
+.process-highlight {
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
+  }
+}

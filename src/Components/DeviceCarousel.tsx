@@ -117,9 +117,7 @@ const HematologySystem = () => {
 
         {/* Features Section */}
         <div className="flex-1 w-full">
-          <h2 className="font-bold text-2xl md:text-3xl text-gray-800 mb-4 text-center md:text-left">
-            Our Hematology Solutions
-          </h2>
+         
 
           {/* Feature Cards */}
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
