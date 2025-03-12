@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+/* Custom Swiper container */
+.custom-swiper {
+    width: 100%;
+    overflow: hidden; /* Ensure slides don't overflow */
+  }
+  
+  /* Custom Swiper slides */
+  .custom-swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure slides take full width */
+  }
+  
+  /* Ensure Swiper respects the breakpoints */
+  @media (min-width: 768px) {
+    .custom-swiper-slide {
+      width: 50%; /* 2 slides per view on medium screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .custom-swiper-slide {
+      width: 33.33%; /* 3 slides per view on large screens */
+    }
+  }
+  /* Custom Swiper Styles */
+.custom-swiper {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .custom-swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Swiper Navigation Arrows (Optional) */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #4ade80; /* Green color */
+  }
+  
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 24px;
+  }
+  
+  /* Swiper Pagination (Optional) */
+  .swiper-pagination-bullet {
+    background-color: #4ade80; /* Green color */
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #16a34a; /* Darker green */
+  }

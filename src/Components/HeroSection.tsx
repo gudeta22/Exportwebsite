@@ -3,7 +3,7 @@ import homebg from "../assets/images/home2.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-cyan-700 text-white min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-12 gap-8 md:gap-16 lg:gap-72">
+    <section className="relative bg-cyan-600 text-white min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-12 gap-8 md:gap-16 lg:gap-72">
       {/* Background Overlay */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-40"
@@ -16,7 +16,7 @@ const HeroSection = () => {
           Welcome to
         </h2>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-          <span className="text-white">LEAN</span> HEALTHCARE <br /> SOLUTIONS
+          <span className="text-white">Z</span> HEALTHCARE <br /> SOLUTIONS
           PVT. LTD. CO.
         </h1>
         <p className="text-gray-300 mt-4 text-base sm:text-lg">
@@ -32,7 +32,7 @@ const HeroSection = () => {
         className="relative z-10 flex-shrink-0"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
       >
         {/* Circular Overlay */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-white/10 rounded-full" />
