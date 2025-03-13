@@ -83,7 +83,7 @@ const OurExperties = () => {
         ))}
       </div>
 
-      {/* CSS for Particles */}
+      {/* CSS for Particles
       <style>{`
         @keyframes float {
           0%, 100% {
@@ -96,7 +96,7 @@ const OurExperties = () => {
         .particle {
           will-change: transform;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaTelegramPlane, FaLinkedin, FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
-import logo from '../assets/images/glogo.png'
+import logo from '../assets/images/glogo.png';
+
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600  shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="logo" className="h-12 w-12 object-contain rounded-full" />

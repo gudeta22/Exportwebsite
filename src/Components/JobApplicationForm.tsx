@@ -58,7 +58,7 @@ const JobApplicationForm: React.FC = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="mt-6">
-        // <div className="flex justify-center mb-4">
+         <div className="flex justify-center mb-4">
           {/* <select
             name="position"
             className="px-4 py-2 bg-green-200 text-gray-800 rounded-md cursor-pointer"

@@ -37,7 +37,7 @@ import {
     ];
   
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 px-4">
+      <div className="h-screen bg-gradient-to-br from-gray-50 to-white md:-my-[1rem] lg:-my-[1rem] my-[55rem]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-thin text-center text-gray mb-12 animate-fade-in">
             CORE VALUES
