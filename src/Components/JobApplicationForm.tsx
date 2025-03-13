@@ -1,137 +1,82 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
 const JobApplicationForm: React.FC = () => {
-  // const [selectedPosition, setSelectedPosition] = useState<string | null>(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    cv: null as File | null,
-    coverLetter: ''
-  });
+  const [selectedPosition, setSelectedPosition] = useState<string>('');
 
-  // const openPositions = [
-  //   'Software Engineer',
-  //   'Product Manager',
-  //   'Data Analyst',
-  //   'UI/UX Designer',
-  //   'Marketing Specialist',
-  // ];
+  // Define open positions and their corresponding Google Form URLs
+  const openPositions = [
+    { name: 'Select a Position', url: '' },
+    { name: 'Software Engineer', url: 'https://docs.google.com/forms/d/e/1FAIpQLSdLzTEADT-vWoQBvGAr53yxoCKn5vq6fd48YnIO1NN3GC7X5A/viewform?usp=dialog' },
+    { name: 'Product Manager', url: 'https://forms.gle/product-manager-form' },
+    { name: 'Data Analyst', url: 'https://forms.gle/data-analyst-form' },
+    { name: 'UI/UX Designer', url: 'https://forms.gle/ui-ux-designer-form' },
+    { name: 'Marketing Specialist', url: 'https://forms.gle/marketing-specialist-form' },
+  ];
 
-  // Handle position selection
-  // const handlePositionSelect = (position: string) => {
-  //   setSelectedPosition(position);
-  //   setIsModalOpen(false); // Close the modal after selection
-  // };
+  // Handle position selection and redirect
+  const handlePositionSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = e.target.value;
+    setSelectedPosition(selectedValue);
 
-  // Handle form input changes
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  // Handle file input for CV
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      cv: e.target.files ? e.target.files[0] : null
-    });
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    // Find the selected position's URL and redirect
+    const position = openPositions.find(pos => pos.name === selectedValue);
+    if (position && position.url) {
+      window.open(position.url, '_blank'); // Opens form in new tab
+    }
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-800">JOIN OUR TEAM</h2>
-        <p className="mt-2 text-gray-600">
-          At Leam Healthcare Solutions, we believe in fostering a culture of innovation and collaboration. If you are passionate about making a difference in healthcare, we invite you to join our team. Explore exciting career opportunities today!
-        </p>
-      </div>
-
-      <form onSubmit={handleSubmit} className="mt-6">
-         <div className="flex justify-center mb-4">
-          {/* <select
-            name="position"
-            className="px-4 py-2 bg-green-200 text-gray-800 rounded-md cursor-pointer"
-            onChange={(e) => handlePositionSelect(e.target.value)}
-          >
-            <option>APPLYING FOR →</option>
-            {openPositions.map((position, index) => (
-              <option key={index} value={position}>
-                {position}
-              </option>
-            ))}
-          </select> */}
+    <div className="bg-gray-100 py-12">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        {/* Left Section: Text */}
+        <div className="text-left md:w-2/3 mb-6 md:mb-0">
+          <h2 className="text-4xl font-bold text-gray-800 uppercase mb-4">
+            Join Our Team
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Are you passionate about healthcare innovation? Explore career
+            opportunities with us and be part of a team that’s making a
+            difference.
+          </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-6">
-          <div className="w-full md:w-1/2">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <div className="flex items-center">
-              <input
-                type="file"
-                name="cv"
-                onChange={handleFileChange}
-                className="w-full p-2 mb-4 border rounded-md"
-              />
-              <button
-                type="button"
-                className="ml-2 px-10 py-2 bg-cyan-500 text-white rounded-md"
+        {/* Right Section: Dropdown Button */}
+        <div className="relative md:w-1/3 flex justify-end">
+          <div className="relative inline-block">
+            <select
+              value={selectedPosition}
+              onChange={handlePositionSelect}
+              className="appearance-none bg-cyan-600 text-gray-800 font-semibold py-3 px-6  cursor-pointer  transition-colors focus:outline-none"
+            >
+              <option value="" className='text-white' disabled hidden>
+                Check Open Positions
+              </option>
+              {openPositions.map((position, index) => (
+                <option key={index} value={position.name}>
+                  {position.name}
+                </option>
+              ))}
+            </select>
+            {/* Dropdown arrow */}
+            <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+              <svg
+                className="w-5 h-5 text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                 CV
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
           </div>
-
-          <div className="w-full md:w-1/2">
-            <textarea
-              name="coverLetter"
-              placeholder="Cover Letter"
-              value={formData.coverLetter}
-              onChange={handleChange}
-              className="w-full h-40 p-2 border rounded-md"
-            />
-            <button
-              type="submit"
-              className="w-full mt-4 px-4 py-2 bg-cyan-500 text-white rounded-md"
-            >
-              SUBMIT
-            </button>
-          </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
