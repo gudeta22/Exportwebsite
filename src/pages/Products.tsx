@@ -1,7 +1,10 @@
+import Navproduct from "../Components/Products/Navproduct"
 
 function Products() {
   return (
-    <div>Products</div>
+    <div>
+      <Navproduct />
+    </div>
   )
 }
 
