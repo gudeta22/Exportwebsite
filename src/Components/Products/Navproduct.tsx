@@ -58,16 +58,15 @@ const Navproduct = () => {
         {/* Heading */}
         <div className="md:w-1/3 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-            About <br />
-            <span className="text-white">Z</span> Healthcare <br />
-            Solutions
+            Our <br />
+            <span className="text-white">Products</span>
           </h2>
         </div>
 
         {/* Paragraph */}
         <div className="md:w-2/3 text-center md:text-left">
           <p className="text-base md:text-lg opacity-90">
-            At Z Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.
+            Discover our wide range of innovative medical products designed to meet the highest standards of quality and performance. From advanced diagnostic tools to essential medical supplies, our products are crafted to support healthcare professionals in delivering exceptional patient care.
           </p>
         </div>
       </div>
