@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import homebg from "../assets/images/home2.png";
 
-// Moving Background Shapes Component
+// Enhanced Moving Background Shapes Component
 const MovingBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     {/* Floating Circles */}
@@ -19,6 +19,7 @@ const MovingBackground = () => (
           x: [0, Math.random() * 200 - 100],
           y: [0, Math.random() * 200 - 100],
           opacity: [0.1, 0.3, 0.1],
+          scale: [1, 1.2, 1],
         }}
         transition={{
           duration: Math.random() * 10 + 5,
@@ -27,6 +28,7 @@ const MovingBackground = () => (
         }}
       />
     ))}
+
     {/* Drifting Lines */}
     {[...Array(3)].map((_, i) => (
       <motion.div
@@ -40,6 +42,7 @@ const MovingBackground = () => (
         animate={{
           x: [0, Math.random() * 300 - 150],
           opacity: [0.2, 0.4, 0.2],
+          rotate: [0, Math.random() * 90 - 45],
         }}
         transition={{
           duration: Math.random() * 15 + 5,
@@ -48,6 +51,67 @@ const MovingBackground = () => (
         }}
       />
     ))}
+
+    {/* New: Subtle Gradient Orbs */}
+    {[...Array(4)].map((_, i) => (
+      <motion.div
+        key={`orb-${i}`}
+        className="absolute rounded-full bg-gradient-to-br from-white/20 to-transparent blur-lg"
+        style={{
+          width: `${Math.random() * 120 + 60}px`,
+          height: `${Math.random() * 120 + 60}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+        animate={{
+          x: [0, Math.random() * 100 - 50],
+          y: [0, Math.random() * 100 - 50],
+          opacity: [0.15, 0.25, 0.15],
+        }}
+        transition={{
+          duration: Math.random() * 12 + 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
+
+    {/* New: Faint Pulsing Stars */}
+    {[...Array(6)].map((_, i) => (
+      <motion.div
+        key={`star-${i}`}
+        className="absolute rounded-full bg-white"
+        style={{
+          width: `${Math.random() * 4 + 2}px`,
+          height: `${Math.random() * 4 + 2}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+        animate={{
+          opacity: [0, 0.5, 0],
+          scale: [1, 1.5, 1],
+        }}
+        transition={{
+          duration: Math.random() * 3 + 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
+
+    {/* New: Gentle Wave Effect */}
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent"
+      animate={{
+        opacity: [0.1, 0.2, 0.1],
+        y: [0, -20, 0],
+      }}
+      transition={{
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
   </div>
 );
 

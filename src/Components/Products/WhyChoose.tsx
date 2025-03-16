@@ -242,7 +242,7 @@ function WhyChoose() {
                 {service.description}
               </p>
               <button
-                className="more-details-btn"
+                className="bg-cyan-500 p-2 text-white"
                 onClick={() => toggleDescription(service.id)}
               >
                 More Details

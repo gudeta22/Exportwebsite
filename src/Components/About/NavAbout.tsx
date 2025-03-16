@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-
+import { useEffect } from "react";
 // Animated Background Component
 const AnimatedBackground = () => (
+
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     {/* Floating Particles */}
     {[...Array(10)].map((_, i) => (
@@ -46,6 +47,9 @@ const AnimatedBackground = () => (
 );
 
 const AboutSection = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="relative bg-cyan-600 text-white py-32">
       {/* Animated Background */}
