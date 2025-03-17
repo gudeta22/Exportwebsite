@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+
 // Animated Background Component
 const AnimatedBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -28,7 +29,7 @@ const AnimatedBackground = () => (
 
     {/* Animated Wave Shape */}
     <motion.div
-      className="absolute bottom-0 left-0 w-full h-1/3 bg-cyan-700/30"
+      className="absolute bottom-0 left-0 w-full h-[33vh] sm:h-[40vh] bg-cyan-700/30"
       animate={{
         clipPath: [
           "polygon(0 100%, 100% 100%, 100% 80%, 0% 60%)",
@@ -49,26 +50,27 @@ const Navproduct = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
-    <section className="relative bg-cyan-600 text-white py-32">
+    <section className="relative bg-cyan-600 text-white py-16 sm:py-24 lg:py-32 min-h-[60vh] w-full">
       {/* Animated Background */}
       <AnimatedBackground />
 
       {/* Overlay to Ensure Text Readability */}
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative z-10">
         {/* Heading */}
-        <div className="md:w-1/3 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+        <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Our <br />
             <span className="text-white">Products</span>
           </h2>
         </div>
 
         {/* Paragraph */}
-        <div className="md:w-2/3 text-center md:text-left">
-          <p className="text-base md:text-lg opacity-90">
+        <div className="w-full md:w-2/3 text-center md:text-left">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto md:mx-0">
             Discover our wide range of innovative medical products designed to meet the highest standards of quality and performance. From advanced diagnostic tools to essential medical supplies, our products are crafted to support healthcare professionals in delivering exceptional patient care.
           </p>
         </div>
