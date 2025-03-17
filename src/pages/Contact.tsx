@@ -1,7 +1,12 @@
+import NavContact from "../Components/Contact/NavContact"
+import ContactComponents from "../Components/ContactComponents"
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <NavContact />
+      <ContactComponents />
+    </div>
   )
 }
 
