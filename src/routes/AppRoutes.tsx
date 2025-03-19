@@ -5,6 +5,7 @@ import OurCompany from "../pages/OurCompany";
 import Products from "../pages/Products";
 import Contact from "../pages/Contact";
 import Footer from "../Components/FooterComponents";
+import Career from "../pages/Carrer";
 import NotFound from "../pages/Notfound";
 
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="/ourcompany" element={<OurCompany />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers"  element={<Career />} />
         
         {/* Fallback for undefined routes */}
         <Route path="*" element={<NotFound />} />

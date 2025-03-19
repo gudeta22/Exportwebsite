@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'OurCompany', path: '/ourcompany' },
     { name: 'Products', path: '/products' },
+    { name:'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -41,6 +42,8 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+       {/* new things happen soon!!! Believe me */}
 
         {/* Mobile Menu Button */}
         <div className="md:hidden text-2xl">
