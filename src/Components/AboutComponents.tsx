@@ -10,7 +10,7 @@ const MissionVision = () => {
         <div>
           <h2 className="text-gray-800 text-2xl sm:text-3xl font-semibold mb-4">Our Commitment to Excellence</h2>
           <p className="text-gray-600 text-sm sm:text-base">
-            At X Healthcare Solutions Pvt. Ltd., we are dedicated to delivering premium
+            At Koji Healthcare Solutions Pvt. Ltd., we are dedicated to delivering premium
             healthcare products and services that set the standard for excellence in the industry.
             Our unwavering commitment to quality ensures that every product and service is crafted
             with precision and passion to empower healthcare providers and improve patient outcomes.

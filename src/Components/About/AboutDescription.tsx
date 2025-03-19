@@ -52,7 +52,7 @@ const AboutDescription = () => {
         >
           <h3 className="text-xl font-semibold text-teal-700 mb-4">Who We Are</h3>
           <p className="text-gray-600">
-            Founded on the principles of trust, innovation, and excellence, Z Healthcare Solutions collaborates with globally recognized partners to bring state-of-the-art technology to the healthcare industry. Our commitment to quality and customer satisfaction drives everything we do, making us a preferred partner for laboratories, hospitals, and research institutions.
+            Founded on the principles of trust, innovation, and excellence, Koji Healthcare Solutions collaborates with globally recognized partners to bring state-of-the-art technology to the healthcare industry. Our commitment to quality and customer satisfaction drives everything we do, making us a preferred partner for laboratories, hospitals, and research institutions.
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ const AboutDescription = () => {
         >
           <h3 className="text-xl font-semibold text-teal-700 mb-4">Our Mission</h3>
           <p className="text-gray-600">
-            At Z Healthcare Solutions, we empower healthcare professionals by delivering quality, ensuring convenience, and striving for excellence. Our mission is to create a seamless, reliable healthcare journey, improving lives at every step through accessible, efficient, and exceptional care.
+            At Koji Healthcare Solutions, we empower healthcare professionals by delivering quality, ensuring convenience, and striving for excellence. Our mission is to create a seamless, reliable healthcare journey, improving lives at every step through accessible, efficient, and exceptional care.
           </p>
         </motion.div>
 

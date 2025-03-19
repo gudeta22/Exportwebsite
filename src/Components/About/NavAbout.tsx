@@ -64,7 +64,7 @@ const AboutSection = () => {
         <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             About <br />
-            <span className="text-white">Z</span> Healthcare <br />
+            <span className="text-white">Koji</span> Healthcare <br />
             Solutions
           </h2>
         </div>
@@ -72,7 +72,7 @@ const AboutSection = () => {
         {/* Paragraph */}
         <div className="w-full md:w-2/3 text-center md:text-left">
           <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto md:mx-0">
-            At Z Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.
+            At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.
           </p>
         </div>
       </div>

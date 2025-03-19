@@ -62,12 +62,12 @@ const SupportSection = () => {
       </div>
 
       {/* Floating Action Button */}
-      <button className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-cyan-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-cyan-700 transition-colors">
+      {/* <button className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-cyan-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-cyan-700 transition-colors">
         <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5v-2a2 2 0 012-2h10a2 2 0 012 2v2h-4m-6 0h6" />
         </svg>
-      </button>
+      </button> */}
     </div>
   );
 };

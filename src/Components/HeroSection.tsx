@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import homebg from "../assets/images/home2.png";
+import { Link } from "react-router-dom";
 
 // Enhanced Moving Background Shapes Component
 const MovingBackground = () => (
@@ -143,15 +144,17 @@ const HeroSection = () => {
           Welcome to
         </h2>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-          <span className="text-white">Z</span> HEALTHCARE <br /> SOLUTIONS
+          <span className="text-white">Koji</span> HEALTHCARE <br /> SOLUTIONS
           PVT. LTD. CO.
         </h1>
         <p className="text-gray-300 mt-4 text-base sm:text-lg">
           Redefining Healthcare with Trust and Innovation
         </p>
+        <Link to='/ourcompany'>
         <button className="mt-6 bg-white text-black font-bold px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition duration-300">
           LEARN MORE
         </button>
+        </Link>
       </motion.div>
 
       {/* Image with Circular Overlay, Orbiting Ring, and Text Labels */}
