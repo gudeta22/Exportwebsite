@@ -1,84 +1,54 @@
-Koji Healthcare Solutions WebsiteOverview
-Welcome to the official website for Koji Healthcare Solutions! This project is a modern, responsive web application designed to showcase the innovative healthcare services and solutions provided by Koji Healthcare Solutions. Built with React, TypeScript, and styled with Tailwind CSS, this website aims to deliver a seamless user experience while maintaining clean, maintainable code.
+# React + TypeScript + Vite
 
-Features
-Responsive Design: Optimized for all devices, from mobile to desktop, using Tailwind CSS.
-Dynamic Content: Built with React for fast, interactive user interfaces.
-Type Safety: Leverages TypeScript to ensure robust and error-free code.
-Healthcare Focus: Highlights Koji Healthcare Solutions' services, mission, and contact information.
-Performance Optimized: Lightweight and fast-loading for an excellent user experience.
-Tech Stack
-Frontend: React, TypeScript
-Styling: Tailwind CSS
-Build Tool: Vite (or specify if you used Create React App or another tool)
-Package Manager: npm (or yarn, if applicable)
-Installation
-To set up the project locally, follow these steps:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Clone the Repository:
-text
+Currently, two official plugins are available:
 
-Collapse
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Wrap
+## Expanding the ESLint configuration
 
-Copy
-git clone https://github.com/yourusername/koji-healthcare-website.git
-Navigate to the Project Directory:
-text
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-Collapse
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-Wrap
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Copy
-cd koji-healthcare-website
-Install Dependencies:
-text
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-Collapse
-
-Wrap
-
-Copy
-npm install
-Run the Development Server:
-text
-
-Collapse
-
-Wrap
-
-Copy
-npm run dev
-Open your browser and visit http://localhost:5173 (or the port specified in your setup) to see the website in action.
-Usage
-Explore the homepage to learn about Koji Healthcare Solutions.
-Navigate through sections like "Services," "About Us," and "Contact" (adjust based on your actual structure).
-Customize the content in the src folder to reflect updates or additional features.
-Project Structure
-text
-
-Collapse
-
-Wrap
-
-Copy
-koji-healthcare-website/
-├── public/             # Static assets (images, favicon, etc.)
-├── src/                # Source code
-│   ├── components/     # Reusable React components
-│   ├── pages/          # Page-level components
-│   ├── styles/         # Tailwind CSS or custom styles
-│   ├── App.tsx         # Main app component
-│   └── main.tsx        # Entry point
-├── package.json        # Dependencies and scripts
-└── README.md           # This file
-Contributing
-This is a personal project, but feedback is always welcome! If you’d like to suggest improvements or report issues, feel free to open an issue on this repository.
-
-License
-This project is proprietary and intended for Koji Healthcare Solutions. Unauthorized use or distribution is not permitted.
-
-Contact
-For inquiries about Koji Healthcare Solutions or this website,
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
