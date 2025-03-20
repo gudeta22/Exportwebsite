@@ -23,7 +23,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full  transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           {/* Enhanced Logo Text */}
