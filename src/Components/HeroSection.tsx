@@ -143,8 +143,8 @@ const HeroSection = () => {
         <h2 className="text-sm md:text-lg uppercase font-semibold text-gray-300">
           Welcome to
         </h2>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-          <span className="text-white">Koji</span> HEALTHCARE <br /> SOLUTIONS
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-light fontstyle">
+          <span className="text-white fontstyle ">KOJI</span> HEALTHCARE <br /> SOLUTIONS
           PVT. LTD. CO.
         </h1>
         <p className="text-gray-300 mt-4 text-base sm:text-lg">

@@ -59,7 +59,7 @@ const Navproduct = () => {
       {/* Overlay to Ensure Text Readability */}
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 lg:gap-32 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative z-10">
         {/* Heading */}
         <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">

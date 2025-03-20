@@ -36,13 +36,13 @@ const sectionsData = [
 
 // Main Component
 const WhyWorkWithUs: React.FC = () => {
-  const title = "Why Work With Us?"; // Hardcoded title
+  const title = "WHY WORK WITH US?"; // Hardcoded title
 
   return (
     <section className="bg-gray-50 py-16 flex justify-center">
       {/* Container */}
       <div className="max-w-7xl mx-auto px-4 w-full">
-        <h2 className="text-3xl md:text-4xl font-thin text-start text-gray-800 mb-12">
+        <h2 className="text-3xl md:text-3xl font-light fontstyle text-center text-gray-800 mb-12">
           {title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

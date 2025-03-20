@@ -6,40 +6,40 @@ function JobComponents() {
 
   const jobs = [
     {
-      title: 'Healthcare Consultant',
+      title: 'Store Manager',
       type: 'Full-Time',
       description:
-        'Join our Healthcare Solutions Company in Addis Ababa as a Healthcare Consultant to drive innovation and improve patient care.',
+        'Join our retail company in Addis Ababa as a Store Manager to lead operations, enhance customer experience, and drive sales growth.',
       applyLink: 'https://docs.google.com/forms/d/1sdsyI2t0SVeFN_TCkoUu4-B7sGvkAX9gEKsPY4ALWrU/edit',
     },
     {
-      title: 'Medical Sales',
+      title: 'Technical Manager and Sales',
       type: 'Full-Time',
       description:
-        'We are looking for a Medical Sales Representative to expand our reach and provide cutting-edge healthcare solutions to clients.',
+        'We are looking for a Technical Manager and Sales Lead to drive business growth, manage technical operations, and deliver innovative solutions to clients.',
       applyLink: 'https://forms.gle/example2',
     },
     {
-      title: 'Health IT',
+      title: 'Operational Manager',
       type: 'Full-Time',
       description:
-        'Join our team as a Health IT Specialist and contribute to digital transformation in healthcare by implementing efficient IT solutions.',
+        'We are looking for an Operational Manager to oversee daily business operations, improve efficiency, and ensure smooth workflow across all departments.',
       applyLink: 'https://forms.gle/example3',
     },
-    {
-      title: 'Clinical Research',
-      type: 'Full-Time',
-      description:
-        'Work as a Clinical Research Associate to drive research and innovation, ensuring high standards in healthcare solutions.',
-      applyLink: 'https://forms.gle/example4',
-    },
-    {
-      title: 'Regulatory Affairs',
-      type: 'Full-Time',
-      description:
-        'Join our company as a Regulatory Affairs Specialist to ensure compliance with healthcare regulations and improve service quality.',
-      applyLink: 'https://forms.gle/example5',
-    },
+    // {
+    //   title: 'Clinical Research',
+    //   type: 'Full-Time',
+    //   description:
+    //     'Work as a Clinical Research Associate to drive research and innovation, ensuring high standards in healthcare solutions.',
+    //   applyLink: 'https://forms.gle/example4',
+    // },
+    // {
+    //   title: 'Regulatory Affairs',
+    //   type: 'Full-Time',
+    //   description:
+    //     'Join our company as a Regulatory Affairs Specialist to ensure compliance with healthcare regulations and improve service quality.',
+    //   applyLink: 'https://forms.gle/example5',
+    // },
   ];
 
   // Dynamically adjust jobsPerPage based on screen size
@@ -130,9 +130,9 @@ function JobComponents() {
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <h4 className="text-base sm:text-lg lg:text-xl font-bold m-0">{job.title}</h4>
-                    <span className="bg-white/20 px-2 py-1 rounded-full text-xs sm:text-sm">
+                    {/* <span className="bg-white/20 px-2 py-1 rounded-full text-xs sm:text-sm">
                       {job.type}
-                    </span>
+                    </span> */}
                   </div>
                   <p className="text-xs sm:text-sm lg:text-base">{job.description}</p>
                 </div>

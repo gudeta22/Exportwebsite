@@ -128,8 +128,8 @@ const HematologySystem = () => {
               >
                 {feature.icon}
                 <div>
-                  <h3 className="font-bold text-gray-800 text-lg">{feature.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600">{feature.description}</p>
+                  <h3 className="text-gray-800 font-extralight text-lg fontstyle">{feature.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600 fontstyle">{feature.description}</p>
                 </div>
               </div>
             ))}

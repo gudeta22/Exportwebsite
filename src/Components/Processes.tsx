@@ -38,8 +38,8 @@ const StreamlinedProcess = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 bg-white rounded-xl">
-      <h2 className="text-4xl font-thin text-gray-900 text-center mb-16 tracking-tight">
-        Our Streamlined Process
+      <h2 className="text-3xl font-light fontstyle text-black text-center mb-16 tracking-tight">
+        OUR STREAMLINE PROCESSES
       </h2>
       <div className=" mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch">
@@ -51,14 +51,14 @@ const StreamlinedProcess = () => {
                   {step.number}
                   <span className="absolute -top-2 -right-2 w-4 h-4 bg-cyan-600 rounded-full"></span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed text-center flex-grow">{step.description}</p>
+                <h3 className="text-xl font-light fontstyle text-black mb-3 text-center">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed text-center fontstyle flex-grow">{step.description}</p>
               </div>
 
               {/* Arrow between steps (hidden on mobile, not shown after the last step) */}
               {index < steps.length - 1 && isDesktop && (
                 <svg
-                  className="hidden md:block w-12 h-12 text-cyan-600 flex-shrink-0"
+                  className="hidden md:block w-12 h-12 text-cyan-600 fontstyle flex-shrink-0"
                   viewBox="0 0 24 24"
                   fill="none"
                   strokeWidth="2"

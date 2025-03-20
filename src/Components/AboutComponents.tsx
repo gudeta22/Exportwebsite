@@ -8,8 +8,8 @@ const MissionVision = () => {
     <section className="bg-white py-12 px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-gray-800 text-2xl sm:text-3xl font-semibold mb-4">Our Commitment to Excellence</h2>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <h2 className="text-gray-800 text-2xl sm:text-3xl font-light mb-4 fontstyle">Our Commitment to Excellence</h2>
+          <p className="text-gray-600 text-sm sm:text-base fontstyle">
             At Koji Healthcare Solutions Pvt. Ltd., we are dedicated to delivering premium
             healthcare products and services that set the standard for excellence in the industry.
             Our unwavering commitment to quality ensures that every product and service is crafted
@@ -17,13 +17,13 @@ const MissionVision = () => {
           </p>
           <div className="mt-10 flex sm:flex-row">
             <button
-              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-t-lg font-medium transition cursor-pointer ${activeTab === 'mission' ? 'bg-cyan-500 text-white' : 'bg-white'}`}
+              className={`px-4 py-2 sm:px-6 sm:py-3 fontstyle rounded-t-lg font-medium transition cursor-pointer ${activeTab === 'mission' ? 'bg-cyan-500 text-white' : 'bg-white'}`}
               onClick={() => setActiveTab('mission')}
             >
               OUR MISSION
             </button>
             <button
-              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-t-lg font-medium transition cursor-pointer ${activeTab === 'vision' ? 'bg-cyan-500 text-white' : 'bg-white'}`}
+              className={`px-4 py-2 sm:px-6 sm:py-3 fontstyle rounded-t-lg font-medium transition cursor-pointer ${activeTab === 'vision' ? 'bg-cyan-500 text-white' : 'bg-white'}`}
               onClick={() => setActiveTab('vision')}
             >
               OUR VISION
@@ -31,7 +31,7 @@ const MissionVision = () => {
           </div>
           <div className="bg-cyan-500 rounded-sm p-4 sm:p-6 mt-0">
             {activeTab === 'mission' && (
-              <div className='text-white'>
+              <div className='text-white fontstyle'>
                 <p>
                   Empowering Healthcare Through Quality, Access, Convenience, and Fulfillment—Every Step of
                   The Way.
@@ -39,7 +39,7 @@ const MissionVision = () => {
               </div>
             )}
             {activeTab === 'vision' && (
-              <div className='text-white'>
+              <div className='text-white fontstyle'>
                 <p>
                   To revolutionize healthcare by providing innovative and reliable solutions that enhance
                   patient care and support healthcare professionals worldwide.

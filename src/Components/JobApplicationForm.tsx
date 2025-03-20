@@ -10,9 +10,9 @@ const JobApplication = () => {
           <div className="relative">
             <div className="absolute -top-10 -left-10 w-24 h-24 bg-teal-300 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-300 rounded-full opacity-20 animate-ping"></div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-500 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600  to-cyan-500 animate-fade-in">
               Shape the Future
-            </h1>
+             </h1>
           </div>
           <p className="mt-4 text-lg text-gray-700 leading-relaxed">
             Passionate about healthcare innovation? Join us and turn your ideas into impact!

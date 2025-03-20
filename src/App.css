@@ -201,3 +201,9 @@
     box-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
   }
 }
+.fontstyle{
+  font-family: 'Rajdhani', sans-serif;
+}
+.poppins{
+  font-family: 'Poppins', sans-serif;
+}

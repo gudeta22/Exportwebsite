@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-
+import logoUrl from '../../assets/images/Klogo.png'
 // Placeholder for the logo (you can replace this with your actual logo image)
-const logoUrl = "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" // Replace with your logo path
 
 const AboutDescription = () => {
   // Animation variants for Framer Motion
@@ -32,11 +31,11 @@ const AboutDescription = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative p-6 bg-white/80 rounded-full shadow-lg">
+          <div className="relative p-6 bg-cyan-600 rounded-full shadow-lg">
             <img
               src={logoUrl}
               alt="Z Healthcare Solutions Logo"
-              className="w-40 h-40 object-contain"
+              className="lg:w-64 lg:h-64  w-40 h-40 object-contain"
             />
             <div className="absolute inset-0 rounded-full border-4 border-teal-300/50 animate-pulse"></div>
           </div>
