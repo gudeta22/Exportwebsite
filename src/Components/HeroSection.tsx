@@ -1,73 +1,30 @@
 import { motion } from "framer-motion";
 import homebg from "../assets/images/home2.png";
 import { Link } from "react-router-dom";
+import { FaHeartbeat } from "react-icons/fa";
 
-// Enhanced Moving Background Shapes Component
+// Moving Background Component with Healthcare Theme
 const MovingBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    {/* Floating Circles */}
+    {/* Diagonal Gradient Background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-cyan-700" />
+
+    {/* Floating Circles with Pulse */}
     {[...Array(5)].map((_, i) => (
       <motion.div
         key={`circle-${i}`}
-        className="absolute rounded-full bg-white/10"
+        className="absolute rounded-full bg-blue-400/30"
         style={{
-          width: `${Math.random() * 80 + 40}px`,
-          height: `${Math.random() * 80 + 40}px`,
+          width: `${Math.random() * 60 + 30}px`,
+          height: `${Math.random() * 60 + 30}px`,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
         }}
         animate={{
-          x: [0, Math.random() * 200 - 100],
-          y: [0, Math.random() * 200 - 100],
-          opacity: [0.1, 0.3, 0.1],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: Math.random() * 10 + 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    ))}
-
-    {/* Drifting Lines */}
-    {[...Array(3)].map((_, i) => (
-      <motion.div
-        key={`line-${i}`}
-        className="absolute h-0.5 bg-white/20"
-        style={{
-          width: `${Math.random() * 150 + 50}px`,
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-        }}
-        animate={{
-          x: [0, Math.random() * 300 - 150],
+          x: [0, Math.random() * 150 - 75],
+          y: [0, Math.random() * 150 - 75],
+          scale: [1, 1.3, 1],
           opacity: [0.2, 0.4, 0.2],
-          rotate: [0, Math.random() * 90 - 45],
-        }}
-        transition={{
-          duration: Math.random() * 15 + 5,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-    ))}
-
-    {/* New: Subtle Gradient Orbs */}
-    {[...Array(4)].map((_, i) => (
-      <motion.div
-        key={`orb-${i}`}
-        className="absolute rounded-full bg-gradient-to-br from-white/20 to-transparent blur-lg"
-        style={{
-          width: `${Math.random() * 120 + 60}px`,
-          height: `${Math.random() * 120 + 60}px`,
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-        }}
-        animate={{
-          x: [0, Math.random() * 100 - 50],
-          y: [0, Math.random() * 100 - 50],
-          opacity: [0.15, 0.25, 0.15],
         }}
         transition={{
           duration: Math.random() * 12 + 8,
@@ -77,140 +34,173 @@ const MovingBackground = () => (
       />
     ))}
 
-    {/* New: Faint Pulsing Stars */}
-    {[...Array(6)].map((_, i) => (
+    {/* Heartbeat Lines */}
+    {[...Array(3)].map((_, i) => (
       <motion.div
-        key={`star-${i}`}
-        className="absolute rounded-full bg-white"
+        key={`line-${i}`}
+        className="absolute h-1 bg-green-300/40 rounded-full"
         style={{
-          width: `${Math.random() * 4 + 2}px`,
-          height: `${Math.random() * 4 + 2}px`,
+          width: `${Math.random() * 100 + 50}px`,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
         }}
         animate={{
-          opacity: [0, 0.5, 0],
-          scale: [1, 1.5, 1],
+          x: [0, Math.random() * 200 - 100],
+          opacity: [0.3, 0.6, 0.3],
+          scaleX: [1, 1.2, 1],
         }}
         transition={{
-          duration: Math.random() * 3 + 2,
+          duration: Math.random() * 10 + 5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
     ))}
 
-    {/* New: Gentle Wave Effect */}
-    <motion.div
-      className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent"
-      animate={{
-        opacity: [0.1, 0.2, 0.1],
-        y: [0, -20, 0],
-      }}
-      transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
+    {/* Subtle Glow Orbs */}
+    {[...Array(4)].map((_, i) => (
+      <motion.div
+        key={`orb-${i}`}
+        className="absolute rounded-full bg-gradient-to-br from-white/30 to-transparent blur-md"
+        style={{
+          width: `${Math.random() * 100 + 50}px`,
+          height: `${Math.random() * 100 + 50}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+        animate={{
+          x: [0, Math.random() * 80 - 40],
+          y: [0, Math.random() * 80 - 40],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: Math.random() * 15 + 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
   </div>
 );
 
 const HeroSection = () => {
-  // Animation variants for Framer Motion
+  // Animation Variants
   const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, staggerChildren: 0.05 },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 0.5 } },
+    hidden: { opacity: 0, rotate: -5, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      rotate: 0,
+      scale: 1,
+      transition: { duration: 1, delay: 0.3 },
+    },
   };
 
+  const buttonVariants = {
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
+  };
+
+  const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
+
   return (
-    <section className="relative bg-cyan-600 text-white h-[48rem] flex flex-col md:flex-row items-center justify-center px-6 md:px-12 gap-8 md:gap-16 lg:gap-72 overflow-hidden">
+    <section className="relative h-[50rem] flex items-center justify-center overflow-hidden">
       {/* Moving Background */}
       <MovingBackground />
 
-      {/* Text Content */}
-      <motion.div
-        className="relative z-10 max-w-2xl text-center md:text-left"
-        initial="hidden"
-        animate="visible"
-        variants={textVariants}
-      >
-        <h2 className="text-sm md:text-lg uppercase font-semibold text-gray-300">
-          Welcome to
-        </h2>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-light fontstyle">
-          <span className="text-white fontstyle ">KOJI</span> HEALTHCARE <br /> SOLUTIONS
-          PVT. LTD. CO.
-        </h1>
-        <p className="text-gray-300 mt-4 text-base sm:text-lg">
-          Redefining Healthcare with Trust and Innovation
-        </p>
-        <Link to='/ourcompany'>
-        <button className="mt-6 bg-white text-black font-bold px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition duration-300">
-          LEARN MORE
-        </button>
-        </Link>
-      </motion.div>
-
-      {/* Image with Circular Overlay, Orbiting Ring, and Text Labels */}
-      <motion.div
-        className="relative z-10 flex-shrink-0"
-        initial="hidden"
-        animate="visible"
-        variants={imageVariants}
-      >
-        {/* Circular Overlay */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-white/10 rounded-full" />
-
-        {/* Additional Circle */}
-        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[250px] md:h-[250px] bg-white/20 rounded-full" />
-
-        {/* Orbiting Ring (Stylish Moving Element) */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12">
+        {/* Text Content with Overlap */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[480px] md:h-[480px] border-2 border-dashed border-white/30 rounded-full"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          className="relative z-20 max-w-lg text-center md:text-left bg-white/10 backdrop-blur-md p-6 rounded-xl md:-mr-24"
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
         >
-          {/* Glowing Dot on the Ring */}
-          <motion.div
-            className="absolute w-4 h-4 bg-white rounded-full shadow-lg"
-            style={{ top: "0%", left: "50%", translateX: "-50%" }}
-            animate={{
-              boxShadow: [
-                "0 0 10px 5px rgba(255, 255, 255, 0.5)",
-                "0 0 20px 10px rgba(255, 255, 255, 0.8)",
-                "0 0 10px 5px rgba(255, 255, 255, 0.5)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+          <motion.h2
+            className="text-sm md:text-lg uppercase font-semibold text-cyan-200"
+            variants={letterVariants}
+          >
+            Welcome to
+          </motion.h2>
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-light text-white mt-2"
+            variants={textVariants}
+          >
+            {companyName.split("").map((char, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
+          <p className="text-cyan-100 mt-4 text-base sm:text-lg flex items-center justify-center md:justify-start">
+            <FaHeartbeat className="mr-2 text-green-400 animate-pulse" />
+            Redefining Healthcare with Trust and Innovation
+          </p>
+          <Link to="/ourcompany">
+            <motion.button
+              className="mt-6 bg-white text-black font-bold px-6 py-3  shadow-lg hover:shadow-xl transition duration-300"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              LEARN MORE
+            </motion.button>
+          </Link>
         </motion.div>
 
-        {/* Image */}
-        <img
-          src={homebg}
-          alt="New Image"
-          className="rounded-lg w-64 sm:w-80 md:w-[400px] relative"
-        />
+        {/* Image with Interactive Effects */}
+        <motion.div
+          className="relative z-10 mt-8 md:mt-0"
+          initial="hidden"
+          animate="visible"
+          variants={imageVariants}
+          whileHover={{ rotate: 2, scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Orbiting Rings with Pulsing Dots */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-cyan-400/40 rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          >
+            <motion.div
+              className="absolute w-3 h-3 bg-cyan-300 rounded-full"
+              style={{ top: "10%", left: "50%", translateX: "-50%" }}
+              animate={{ scale: [1, 1.4, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute w-3 h-3 bg-green-300 rounded-full"
+              style={{ bottom: "10%", left: "50%", translateX: "-50%" }}
+              animate={{ scale: [1, 1.4, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
 
-        {/* Main Product Label */}
-        <div className="absolute bottom-1/3 left-[-40px] md:left-[-70px] bg-white text-black font-bold text-sm md:text-base px-4 py-2 rounded-full shadow-md">
-          BIOFIRE® FILMARRAY® TORCH
-        </div>
-      </motion.div>
+          {/* Image */}
+          <img
+            src={homebg}
+            alt="BIOFIRE® FILMARRAY® TORCH"
+            className="rounded-lg w-72 sm:w-80 md:w-[450px]"
+          />
+
+          {/* Product Label */}
+          <div className="absolute -bottom-4 -left-6 bg-cyan-700 text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-md transform -rotate-6">
+            BIOFIRE® FILMARRAY® TORCH
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

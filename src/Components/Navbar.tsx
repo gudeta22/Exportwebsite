@@ -31,7 +31,7 @@ const Navbar = () => {
             Koji Healthcare Solutions
           </span> */}
           {/* Uncomment below to include the image if desired */}
-          <img src={logo} alt="Koji Healthcare Solutions" className="h-22 w-64 mr-2" />
+          <img src={logo} alt="Koji Healthcare Solutions" className="h-22 w-64" />
         </Link>
 
         {/* Desktop Menu */}
@@ -46,7 +46,7 @@ const Navbar = () => {
        {/* new things happen soon!!! Believe me */}
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden text-2xl">
+        <div className="md:hidden text-2xl mx-2">
           <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <FaTimes className="text-white text-3xl" /> : <FaBars className="text-white text-3xl" />}
           </button>
