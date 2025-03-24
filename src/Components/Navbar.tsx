@@ -52,7 +52,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
+               
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div className="fixed top-0 left-0 w-full h-screen bg-cyan-700 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -60,14 +60,13 @@ const Navbar = () => {
             <button onClick={() => setMobileMenuOpen(false)} className="absolute top-3 right-4 text-white text-3xl">
               <FaTimes />
             </button>
-          </div>
-
+          </div>       
+          
           {menuItems.map((item) => (
             <Link key={item.name} to={item.path} onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold">
               {item.name}
             </Link>
-          ))}
-
+          ))}   
           <div className="flex flex-col items-center mt-4 space-y-4 w-full">
             <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
               <button className="w-full bg-white py-2 rounded text-black font-bold">CONTACT</button>
