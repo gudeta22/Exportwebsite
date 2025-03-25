@@ -10,12 +10,14 @@ const AnimatedBackground = () => (
         key={`particle-${i}`}
         className="absolute rounded-full bg-white/20"
         style={{
-          width: `${Math.random() * 20 + 10}px`,
-          height: `${Math.random() * 20 + 10}px`,
-          top: `${Math.random() * 100}%`,
+          width: `${Math.random() * 20 + 10}px`,    
+          height: `${Math.random() * 20 + 10}px`,                     
+          top: `${Math.random() * 100}%`,            
           left: `${Math.random() * 100}%`,
-        }}
-        animate={{
+        }
+      }
+       
+      animate={{
           y: [0, -20, 0],
           opacity: [0.2, 0.5, 0.2],
         }}

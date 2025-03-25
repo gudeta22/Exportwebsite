@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
 
 // Moving Background Component with Healthcare Theme
+
 const MovingBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     {/* Diagonal Gradient Background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-cyan-700" />
-
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-cyan-600" />
+        
     {/* Floating Circles with Pulse */}
     {[...Array(5)].map((_, i) => (
       <motion.div
@@ -20,7 +21,8 @@ const MovingBackground = () => (
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
         }}
-        animate={{
+          
+          animate={{
           x: [0, Math.random() * 150 - 75],
           y: [0, Math.random() * 150 - 75],
           scale: [1, 1.3, 1],
@@ -33,7 +35,7 @@ const MovingBackground = () => (
         }}
       />
     ))}
-
+      
     {/* Heartbeat Lines */}
     {[...Array(3)].map((_, i) => (
       <motion.div
@@ -56,7 +58,7 @@ const MovingBackground = () => (
         }}
       />
     ))}
-
+         
     {/* Subtle Glow Orbs */}
     {[...Array(4)].map((_, i) => (
       <motion.div
@@ -109,8 +111,11 @@ const HeroSection = () => {
     },
   };
 
-  const buttonVariants = {
-    hover: { scale: 1.05, transition: { duration: 0.3 } },
+  const buttonVariants = {  
+    hover: { 
+      scale: 1.05, 
+      transition: { duration: 0.3 } 
+    },
   };
 
   const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
@@ -196,7 +201,7 @@ const HeroSection = () => {
           />
 
           {/* Product Label */}
-          <div className="absolute -bottom-4 -left-6 bg-cyan-700 text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-md transform -rotate-6">
+          <div className="absolute -bottom-4 -left-6 bg-white text-black font-semibold text-sm px-4 py-2 rounded-lg shadow-md transform -rotate-6">
             BIOFIRE® FILMARRAY® TORCH
           </div>
         </motion.div>
@@ -206,3 +211,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
