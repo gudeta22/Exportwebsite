@@ -56,7 +56,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div className="fixed top-0 left-0 w-full h-screen bg-cyan-700 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className="border border-amber-50 w-screen -mx-10 my-5 p-5">
+          <div className="border border-amber-50 w-screen -mx-10 my-5">
             <button onClick={() => setMobileMenuOpen(false)} className="absolute top-3 right-4 text-white text-3xl">
               <FaTimes />
             </button>
