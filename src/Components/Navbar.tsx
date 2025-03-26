@@ -25,12 +25,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full  transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/*logo image */}
         <Link to="/" className="flex items-center">
-          {/* Enhanced Logo Text */}
-          {/* <span className="text-white text-2xl font-extrabold tracking-tight uppercase bg-gradient-to-r from-cyan-200 to-cyan-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-cyan-600 transition-all duration-300">
-            Koji Healthcare Solutions
-          </span> */}
-          {/* Uncomment below to include the image if desired */}
           <img src={logo} alt="Koji Healthcare Solutions" className="h-22 w-64" />
         </Link>
 
@@ -55,7 +51,7 @@ const Navbar = () => {
                
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div className="fixed top-0 left-0 w-full h-screen bg-cyan-700 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="border border-amber-50 w-screen -mx-10 my-5">
             <button onClick={() => setMobileMenuOpen(false)} className="absolute top-3 right-4 text-white text-3xl">
               <FaTimes />
@@ -69,16 +65,16 @@ const Navbar = () => {
           ))}   
           <div className="flex flex-col items-center mt-4 space-y-4 w-full">
             <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
-              <button className="w-full bg-white py-2 rounded text-black font-bold">CONTACT</button>
+              <button className="w-full bg-white py-2 rounded text-black font-bold">LET'S CONNECT</button>
             </Link>
             <div className="flex space-x-4">
               {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, index) => (
                 <Icon key={index} size={28} className="text-white" />
               ))}
             </div>
-            <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+            {/* <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
               <button className="w-full bg-white py-2 rounded text-black font-bold">BOOK A MEETING</button>
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       )}
