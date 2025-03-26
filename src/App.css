@@ -207,3 +207,10 @@
 .poppins{
   font-family: 'Poppins', sans-serif;
 }
+
+
+@keyframes wave {
+  0% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(-10px); }
+}
