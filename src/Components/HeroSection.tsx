@@ -8,7 +8,7 @@ import { FaHeartbeat } from "react-icons/fa";
 const MovingBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     {/* Diagonal Gradient Background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-cyan-600" />
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 to-cyan-600" />
         
     {/* Floating Circles with Pulse */}
     {[...Array(5)].map((_, i) => (

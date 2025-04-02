@@ -8,38 +8,22 @@ function JobComponents() {
     {
       title: 'Store Manager',
       type: 'Full-Time',
-      description:
-        'Join our retail company in Addis Ababa as a Store Manager to lead operations, enhance customer experience, and drive sales growth.',
-      applyLink: 'https://docs.google.com/forms/d/1sdsyI2t0SVeFN_TCkoUu4-B7sGvkAX9gEKsPY4ALWrU/edit',
+      description:'Join our retail company in Addis Ababa as a Store Manager to lead operations, enhance customer experience, and drive sales growth.',
+      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLScp_xI_Ci79TszDyKPTrmE8d3KhB5n213aVvm5vBz8rZn2QdQ/viewform?usp=header',
     },
     {
       title: 'Technical Manager and Sales',
       type: 'Full-Time',
       description:
         'We are looking for a Technical Manager and Sales Lead to drive business growth, manage technical operations, and deliver innovative solutions to clients.',
-      applyLink: 'https://forms.gle/example2',
+      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdaMev9Ute8dZDkW2txPbH3jJVJyFoiYSUzfbHVElZh5XHKHA/viewform?usp=header',
     },
     {
       title: 'Operational Manager',
       type: 'Full-Time',
-      description:
-        'We are looking for an Operational Manager to oversee daily business operations, improve efficiency, and ensure smooth workflow across all departments.',
-      applyLink: 'https://forms.gle/example3',
+      description:'We are looking for an Operational Manager to oversee daily business operations, improve efficiency, and ensure smooth workflow across all departments.',
+      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfvFTAHpjtM2Agk18iC7EzN60ruOgDgwYgsp7eHa3PaReKS-Q/viewform?usp=header',
     },
-    // {
-    //   title: 'Clinical Research',
-    //   type: 'Full-Time',
-    //   description:
-    //     'Work as a Clinical Research Associate to drive research and innovation, ensuring high standards in healthcare solutions.',
-    //   applyLink: 'https://forms.gle/example4',
-    // },
-    // {
-    //   title: 'Regulatory Affairs',
-    //   type: 'Full-Time',
-    //   description:
-    //     'Join our company as a Regulatory Affairs Specialist to ensure compliance with healthcare regulations and improve service quality.',
-    //   applyLink: 'https://forms.gle/example5',
-    // },
   ];
 
   // Dynamically adjust jobsPerPage based on screen size
@@ -55,7 +39,7 @@ function JobComponents() {
     };
 
     updateJobsPerPage();
-    window.addEventListener('resize', updateJobsPerPage);
+    window.addEventListener('resize',updateJobsPerPage);
 
     // Cleanup listener on unmount
     return () => window.removeEventListener('resize', updateJobsPerPage);

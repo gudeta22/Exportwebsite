@@ -21,25 +21,44 @@ const LoadingSpinner = () => (
     left: 0,
     width: '100%',
     height: '100%',
-    background: 'rgba(255, 255, 255, 0.8)',
+    background: 'rgba(255, 255, 255, 0.9)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 9999
   }}>
     <div style={{
-      width: '50px',
-      height: '50px',
-      border: '5px solid #f3f3f3',
-      borderTop: '5px solid #3498db',
-      borderRadius: '50%',
-      animation: 'spin 1s linear infinite'
-    }} />
+      display: 'flex',
+      gap: '10px'
+    }}>
+      {[1, 2, 3].map((dot) => (
+        <div
+          key={dot}
+          style={{
+            width: '15px',
+            height: '15px',
+            background: '#0891b2', // Changed to cyan-600
+            borderRadius: '50%',
+            animation: `pulse 1.2s ease-in-out ${dot * 0.2}s infinite`
+          }}
+        />
+      ))}
+    </div>
     <style>
       {`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.3);
+            opacity: 0.7;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
         }
       `}
     </style>
@@ -56,7 +75,18 @@ const PageWithLoading = ({ Component }: PageWithLoadingProps) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return loading ? <LoadingSpinner /> : <Component />;
+  return (
+    <>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+          <Component />
+          <Footer />
+        </div>
+      )}
+    </>
+  );
 };
 
 const AppRoutes = () => {
@@ -69,42 +99,41 @@ const AppRoutes = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isInitialLoading) {
-    return <LoadingSpinner />;
-  }
-
   return (
     <Router>
       <Navbar />
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          <Route 
-            path="/" 
-            element={<PageWithLoading Component={Home} />} 
-          />
-          <Route 
-            path="/ourcompany" 
-            element={<PageWithLoading Component={OurCompany} />} 
-          />
-          <Route 
-            path="/Products" 
-            element={<PageWithLoading Component={Products} />} 
-          />
-          <Route 
-            path="/contact" 
-            element={<PageWithLoading Component={Contact} />} 
-          />
-          <Route 
-            path="/careers" 
-            element={<PageWithLoading Component={Career} />} 
-          />
-          <Route 
-            path="*" 
-            element={<PageWithLoading Component={NotFound} />} 
-          />
-        </Routes>
-      </Suspense>
-      <Footer />
+      {isInitialLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route 
+              path="/" 
+              element={<PageWithLoading Component={Home} />} 
+            />
+            <Route 
+              path="/ourcompany" 
+              element={<PageWithLoading Component={OurCompany} />} 
+            />
+            <Route 
+              path="/Products" 
+              element={<PageWithLoading Component={Products} />} 
+            />
+            <Route 
+              path="/contact" 
+              element={<PageWithLoading Component={Contact} />} 
+            />
+            <Route 
+              path="/careers" 
+              element={<PageWithLoading Component={Career} />} 
+            />
+            <Route 
+              path="*" 
+              element={<PageWithLoading Component={NotFound} />} 
+            />
+          </Routes>
+        </Suspense>
+      )}
     </Router>
   );
 };

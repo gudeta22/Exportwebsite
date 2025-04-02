@@ -17,7 +17,7 @@ const HematologySystem = () => {
       features: [
         { icon: <FlaskConical className="text-cyan-600" size={32} />, title: "Optimized Aspiration Quality", description: "Shear valve-guided aspiration ensures measurement quality." },
         { icon: <RefreshCcw className="text-cyan-600" size={32} />, title: "Automated Sample Mixing", description: "Optional space-saving automation solution provides constant mixing of queued samples." },
-        { icon: <ShieldCheck className="text-cyan-600" size={32} />, title: "Reliable Equipment Design", description: "Robust equipment design helps ensure instrument uptime." },
+        { icon: <ShieldCheck className="text-cyan-600 text" size={32} />, title: "Reliable Equipment Design", description: "Robust equipment design helps ensure instrument uptime." },
       ],
     },
     {
