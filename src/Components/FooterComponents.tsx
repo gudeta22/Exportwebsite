@@ -1,6 +1,7 @@
 // Social media icons (using FontAwesome placeholders; you'll need to install FontAwesome or use SVGs)
 import { FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaPaperPlane } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const LetsConnect = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -53,9 +54,9 @@ const LetsConnect = () => {
           </div>
 
           {/* Book a Meeting Button */}
-          <a href="/contact" className="inline-block px-8 py-3 bg-green-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300 shadow-lg transform hover:scale-105">
+          <Link to="/contact" className="inline-block px-8 py-3 bg-green-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300 shadow-lg transform hover:scale-105">
             Let's Talk
-          </a>
+          </Link>
         </div>
       </div>
 
