@@ -129,6 +129,46 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Decorative Bottom Border */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
+        <svg
+          className="w-full h-[100px] text-cyan-200"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 C280,80 720,100 1440,20 V100 H0 Z"
+            fill="currentColor"
+            opacity="0.3"
+          >
+            <animate
+              attributeName="d"
+              values="
+                M0,0 C280,80 720,100 1440,20 V100 H0 Z;
+                M0,0 C360,100 680,60 1440,80 V100 H0 Z;
+                M0,0 C280,80 720,100 1440,20 V100 H0 Z"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <path
+            d="M0,20 C320,90 760,70 1440,30 V100 H0 Z"
+            fill="currentColor"
+            opacity="0.2"
+          >
+            <animate
+              attributeName="d"
+              values="
+                M0,20 C320,90 760,70 1440,30 V100 H0 Z;
+                M0,20 C400,60 700,90 1440,40 V100 H0 Z;
+                M0,20 C320,90 760,70 1440,30 V100 H0 Z"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+      </div>
     </section>
   );
 };
