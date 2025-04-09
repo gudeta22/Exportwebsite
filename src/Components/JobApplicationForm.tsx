@@ -38,7 +38,7 @@ const JobApplication = () => {
               to="/careers" // Routes to the /careers page
               className="relative bg-cyan-600 lg:hover:bg-cyan-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 text-xl tracking-wide"
             >
-              Join Our Mission
+              Join Our Team
             </Link>
           </div>
           <p className="text-sm text-gray-600 italic animate-slide-up">
