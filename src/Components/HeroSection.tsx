@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import homebg from "../assets/images/home2.png";
 import { Link } from "react-router-dom";
-import { FaHeartbeat } from "react-icons/fa";
+import { FaHeartbeat } from "react-icons/fa"; // Corrected back to FaHeartbeat
 
-// Styled Background Component with Wave Shape
+// Styled Background Component with Wave Shape (unchanged)
 const StyledBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    {/* Base Gradient */}
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 to-cyan-900" />
-
-    {/* Animated Circular Wave Shape Behind Image */}
     <motion.div
       className="absolute top-1/2 left-3/4 transform -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
       style={{
@@ -70,7 +67,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-[50rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12">
-      {/* Styled Background */}
       <StyledBackground />
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-12 md:gap-20">
@@ -98,7 +94,7 @@ const HeroSection = () => {
             ))}
           </motion.h1>
           <p className="text-cyan-100 mt-4 text-base sm:text-lg flex items-center justify-center md:justify-start">
-            <FaHeartbeat className="mr-2 text-green-400" />
+            <FaHeartbeat className="mr-2 text-green-400" /> {/* Using FaHeartbeat */}
             Redefining Healthcare with Trust and Innovation
           </p>
           <Link to="/ourcompany">
@@ -122,7 +118,7 @@ const HeroSection = () => {
           <img
             src={homebg}
             alt="BIOFIRE® FILMARRAY® TORCH"
-            className="w-60 sm:w-72 md:w-[450px] relative z-20"
+            className="w-72 sm:w-96 md:w-[500px] max-w-full h-auto relative z-20"
           />
           <div className="text-white text-sm font-medium mt-2 relative z-20 text-center">
             BIOFIRE® FILMARRAY® TORCH
@@ -130,7 +126,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Bottom Border */}
+      {/* Decorative Bottom Border (unchanged) */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
         <svg
           className="w-full h-[100px] text-cyan-200"
