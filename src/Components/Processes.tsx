@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import '../App.css';
 
 const StreamlinedProcess = () => {
@@ -29,13 +29,13 @@ const StreamlinedProcess = () => {
     },
   ];
 
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+  // const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // useEffect(() => {
+  //   // const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   return (
     <section className="bg-white py-20 px-6 max-w-7xl mx-auto">
