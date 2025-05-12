@@ -10,7 +10,7 @@ const HematologySystem = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Carousel data
-  const carouselData = [
+  const carouselData = [  
     {
       image: machineImage1,
       description: "Medonic M32 3-diff hematology analyzer with advanced functions.",
