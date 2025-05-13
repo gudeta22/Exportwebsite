@@ -89,11 +89,7 @@ const HeroSection = () => {
     },
   };
 
-  const iconVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    hover: { scale: 1.2, color: "#ffffff", transition: { duration: 0.3 } },
-  };
+ 
 
   const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
   const productImages = [
