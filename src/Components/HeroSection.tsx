@@ -168,65 +168,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Social Media Icons on the Right */}
-      <motion.div
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-6 hidden md:flex"
-        initial="hidden"
-        animate="visible"
-        variants={textVariants}
-      >
-        <motion.div
-          className="w-12 h-px bg-blue-200"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1, transition: { duration: 0.5 } }}
-        />
-        <motion.a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={iconVariants}
-          whileHover="hover"
-        >
-          <FaFacebook className="text-blue-200 text-3xl" />
-        </motion.a>
-        <motion.a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={iconVariants}
-          whileHover="hover"
-        >
-          <FaInstagram className="text-blue-200 text-3xl" />
-        </motion.a>
-        <motion.a
-          href="https://youtube.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={iconVariants}
-          whileHover="hover"
-        >
-          <FaYoutube className="text-blue-200 text-3xl" />
-        </motion.a>
-        <motion.a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={iconVariants}
-          whileHover="hover"
-        >
-          <FaLinkedin className="text-blue-200 text-3xl" />
-        </motion.a>
-        <motion.a
-          href="https://telegram.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={iconVariants}
-          whileHover="hover"
-        >
-          <FaTelegramPlane className="text-blue-200 text-3xl" />
-        </motion.a>
-      </motion.div>
-
       {/* Decorative Bottom Border */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
         <svg className="w-full h-[60px] sm:h-[80px] md:h-[100px] text-cyan-200" viewBox="0 0 1440 100" preserveAspectRatio="none">

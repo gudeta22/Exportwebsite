@@ -52,26 +52,24 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-cyan-600  text-white py-16 sm:py-24 lg:py-32 min-h-[60vh] w-full">
+    <section className="relative bg-cyan-600 text-white py-16 sm:py-24 lg:py-32 min-h-[60vh] w-full">
       {/* Animated Background */}
       <AnimatedBackground />
 
       {/* Overlay to Ensure Text Readability */}
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="max-w-7xl mx-auto lg:gap-40 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-6 relative z-10">
         {/* Heading */}
-        <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+        <div className="w-full text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            {/* About <br /> */}
-            <span className="text-white">Koji</span> Healthcare <br />
-            Solutions
+            Koji Healthcare Solutions
           </h2>
         </div>
 
         {/* Paragraph */}
-        <div className="w-full md:w-2/3 text-center md:text-left">
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto md:mx-0">
+        <div className="w-full text-center">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto">
             At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.
           </p>
         </div>
