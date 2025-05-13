@@ -10,12 +10,14 @@ const AnimatedBackground = () => (
         key={`particle-${i}`}
         className="absolute rounded-full bg-white/20"
         style={{
-          width: `${Math.random() * 20 + 10}px`,
-          height: `${Math.random() * 20 + 10}px`,
-          top: `${Math.random() * 100}%`,
+          width: `${Math.random() * 20 + 10}px`,    
+          height: `${Math.random() * 20 + 10}px`,                     
+          top: `${Math.random() * 100}%`,            
           left: `${Math.random() * 100}%`,
-        }}
-        animate={{
+        }
+      }
+       
+      animate={{
           y: [0, -20, 0],
           opacity: [0.2, 0.5, 0.2],
         }}
@@ -29,7 +31,7 @@ const AnimatedBackground = () => (
 
     {/* Animated Wave Shape */}
     <motion.div
-      className="absolute bottom-0 left-0 w-full h-[33vh] sm:h-[40vh] bg-cyan-700/30"
+      className="absolute bottom-0 left-0 w-full h-1/3 bg-cyan-700/30"
       animate={{
         clipPath: [
           "polygon(0 100%, 100% 100%, 100% 80%, 0% 60%)",
@@ -46,36 +48,31 @@ const AnimatedBackground = () => (
   </div>
 );
 
-const AboutSection = () => {
+const NavProduct = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <section className="relative bg-cyan-600 text-white py-16 sm:py-24 lg:py-32 min-h-[60vh] w-full">
+    <section className="relative bg-cyan-600 text-white py-32">
       {/* Animated Background */}
       <AnimatedBackground />
 
       {/* Overlay to Ensure Text Readability */}
-      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Heading */}
-        <div className="w-full text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Koji Healthcare Solutions
+        <div className="text-center">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <span className="text-white drop-shadow-lg">Koji Healthcare Solutions</span>
           </h2>
-        </div>
-
-        {/* Paragraph */}
-        <div className="w-full text-center">
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto">
-            At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.
-          </p>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+          At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.          </p>
         </div>
       </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default NavProduct;
