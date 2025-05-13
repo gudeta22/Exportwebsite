@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaHeartbeat, FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
+import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/Endoscopy.jpeg';
 import device2 from '../assets/images/products/OR.jpeg';
 import device3 from '../assets/images/products/ultrasound.jpeg';
