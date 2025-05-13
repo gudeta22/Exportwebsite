@@ -68,7 +68,8 @@ const NavProduct = () => {
             <span className="text-white drop-shadow-lg">Koji Healthcare Solutions</span>
           </h2>
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-          At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.          </p>
+          At Koji Healthcare Solutions, we are redefining the standards of healthcare innovation. With a focus on providing cutting-edge medical and laboratory solutions, we empower healthcare providers to deliver precise and timely diagnostics, enhancing patient care and outcomes.          
+          </p>
         </div>
       </div>
     </section>
