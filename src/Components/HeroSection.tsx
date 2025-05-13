@@ -89,8 +89,7 @@ const HeroSection = () => {
     },
   };
 
- 
-
+  // Company name and product images
   const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
   const productImages = [
     { src: device1, alt: "Diagnostic Tool" },
