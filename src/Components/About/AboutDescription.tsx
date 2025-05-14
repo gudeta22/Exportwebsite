@@ -40,7 +40,7 @@ const AboutDescription = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="relative p-4 sm:p-6 bg-gradient-to-br mx-18 from-cyan-600 to-cyan-800 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl border-4 border-teal-400/50 overflow-hidden">
+          <div className="relative p-4 sm:p-6 bg-gradient-to-br mx-18 from-cyan-600 to-cyan-800 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl border-4 border-teal-400/50 overflow-hidden justify-center items-center">
             <img
               src={logoUrl}
               alt="Koji Healthcare Solutions Logo"
