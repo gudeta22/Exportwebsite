@@ -9,7 +9,7 @@ import device4 from '../assets/images/products/Laparascopy.jpeg';
 // Styled Background Component
 const StyledBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-800 to-cyan-800" />
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 to-cyan-600" />
     <motion.div
       className="absolute top-1/2 left-3/4 transform -translate-y-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] rounded-full"
       style={{
