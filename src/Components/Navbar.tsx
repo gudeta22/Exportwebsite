@@ -23,9 +23,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full  transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/*logo image */}
+        {/* Logo image */}
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Koji Healthcare Solutions" className="h-22 w-64" />
         </Link>
@@ -33,13 +33,11 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-white text-lg">
           {menuItems.map((item) => (
-            <li key={item.name} className="hover:text-gray-300 transition duration-300">
+            <li key={item.name} className="hover:text-gray-300 transition duration-300 hover:underline hover:underline-offset-4">
               <Link to={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>
-
-       {/* new things happen soon!!! Believe me */}
 
         {/* Mobile Menu Button */}
         <div className="md:hidden text-2xl mx-2">
@@ -48,21 +46,30 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-               
+
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div
+          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <div className="border border-amber-50 w-screen -mx-10 my-5">
             <button onClick={() => setMobileMenuOpen(false)} className="absolute top-3 right-4 text-white text-3xl">
               <FaTimes />
             </button>
-          </div>       
-          
+          </div>
+
           {menuItems.map((item) => (
-            <Link key={item.name} to={item.path} onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold">
+            <Link
+              key={item.name}
+              to={item.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-semibold hover:underline hover:underline-offset-4 transition duration-300"
+            >
               {item.name}
             </Link>
-          ))}   
+          ))}
           <div className="flex flex-col items-center mt-4 space-y-4 w-full">
             <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
               <button className="w-full bg-white py-2 rounded text-black font-bold">LET'S CONNECT</button>
@@ -72,9 +79,6 @@ const Navbar = () => {
                 <Icon key={index} size={28} className="text-white" />
               ))}
             </div>
-            {/* <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
-              <button className="w-full bg-white py-2 rounded text-black font-bold">BOOK A MEETING</button>
-            </Link> */}
           </div>
         </motion.div>
       )}
