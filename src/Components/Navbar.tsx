@@ -35,11 +35,13 @@ const Navbar = () => {
         isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 sm:px-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-2 py-3 sm:px-6">
         {/* Logo */}
-        <Link to="/" className="flex flex-col leading-tight text-white">
-          <span className="text-xl sm:text-2xl font-extrabold">ኮጂ</span>
-          <span className="text-sm sm:text-base font-bold tracking-wide">
+        <Link to="/" className="flex text-white gap-2 max-w-xs sm:max-w-none">
+          <span className="text-lg sm:text-2xl font-extrabold leading-snug">
+            ኮጂ
+          </span>
+          <span className="text-sm sm:text-base my-2  font-semibold tracking-wide leading-tight">
             HEALTHCARE SOLUTIONS
           </span>
         </Link>
@@ -71,7 +73,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white z-40 flex flex-col px-6 pt-8 pb-10 space-y-6"
+          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white z-40 flex flex-col px-6 pt-8 pb-10 space-y-6 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
