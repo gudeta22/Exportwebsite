@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaTelegramPlane, FaLinkedin, FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
-import logo from '../assets/images/Klogo.png'; // Still imported, but optional
+import {
+  FaBars,
+  FaTimes,
+  FaTelegramPlane,
+  FaLinkedin,
+  FaWhatsapp,
+  FaPhone,
+  FaEnvelope,
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,26 +30,40 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full transition-all duration-300 z-50 ${isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo image */}
-        <Link to="/" className="flex items-center">
-          <img src={logo} alt="Koji Healthcare Solutions" className="h-22 w-64" />
+    <nav
+      className={`fixed top-0 w-full transition-all duration-300 z-50 ${
+        isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 sm:px-6">
+        {/* Logo */}
+        <Link to="/" className="flex flex-col leading-tight text-white">
+          <span className="text-xl sm:text-2xl font-extrabold">ኮጂ</span>
+          <span className="text-sm sm:text-base font-bold tracking-wide">
+            HEALTHCARE SOLUTIONS
+          </span>
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-white text-lg">
+        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-base lg:text-lg">
           {menuItems.map((item) => (
-            <li key={item.name} className="hover:text-gray-300 transition duration-300 hover:underline hover:underline-offset-4">
+            <li
+              key={item.name}
+              className="hover:text-gray-300 transition duration-300 hover:underline hover:underline-offset-4"
+            >
               <Link to={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden text-2xl mx-2">
-          <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <FaTimes className="text-white text-3xl" /> : <FaBars className="text-white text-3xl" />}
+        <div className="md:hidden text-2xl">
+          <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle Menu">
+            {isMobileMenuOpen ? (
+              <FaTimes className="text-white text-3xl" />
+            ) : (
+              <FaBars className="text-white text-3xl" />
+            )}
           </button>
         </div>
       </div>
@@ -50,16 +71,26 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white flex flex-col items-start justify-start space-y-6 z-40 p-8"
+          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white z-40 flex flex-col px-6 pt-8 pb-10 space-y-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <div className="border border-amber-50 w-screen -mx-10 my-5">
-            <button onClick={() => setMobileMenuOpen(false)} className="absolute top-3 right-4 text-white text-3xl">
-              <FaTimes />
-            </button>
+          {/* Close Button */}
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute top-4 right-5 text-white text-3xl"
+            aria-label="Close Menu"
+          >
+            <FaTimes />
+          </button>
+
+          {/* Logo */}
+          <div className="flex flex-col leading-tight mt-2 mb-4">
+            <span className="text-2xl font-extrabold">ኮጂ</span>
+            <span className="text-sm tracking-wide">Healthcare Solutions</span>
           </div>
 
+          {/* Menu Links */}
           {menuItems.map((item) => (
             <Link
               key={item.name}
@@ -70,15 +101,19 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <div className="flex flex-col items-center mt-4 space-y-4 w-full">
-            <Link to="/contact" className="w-full" onClick={() => setMobileMenuOpen(false)}>
-              <button className="w-full bg-white py-2 rounded text-black font-bold">LET'S CONNECT</button>
-            </Link>
-            <div className="flex space-x-4">
-              {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, index) => (
-                <Icon key={index} size={28} className="text-white" />
-              ))}
-            </div>
+
+          {/* CTA Button */}
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full">
+            <button className="w-full bg-white text-black font-bold py-2 rounded-md mt-4">
+              LET'S CONNECT
+            </button>
+          </Link>
+
+          {/* Social Icons */}
+          <div className="flex justify-center items-center space-x-4 mt-6">
+            {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
+              <Icon key={i} size={24} className="text-white hover:text-gray-300 transition" />
+            ))}
           </div>
         </motion.div>
       )}

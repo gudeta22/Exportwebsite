@@ -36,7 +36,7 @@ const LetsConnect = () => {
         <div className="md:w-1/2 flex flex-col items-center md:items-end mt-8 md:mt-0">
           {/* Social Icons */}
           <div className="flex gap-4 mb-6">
-            <a href="mailto:support@healthcare.com" className="p-3 bg-white text-gray-900 rounded-full transition duration-300">
+            <a href="mailto:contact@kojihealthcare.com" target='_blank' className="p-3 bg-white text-gray-900 rounded-full transition duration-300 hover:bg-yellow-500">
               <FaEnvelope size={20} />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
