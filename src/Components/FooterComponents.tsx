@@ -24,10 +24,10 @@ const LetsConnect = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
             <a href="mailto:support@healthcare.com" className="text-sm md:text-base hover:underline">
-              support@healthcare.com
+              contact@kojihealthcare.com
             </a>
-            <a href="tel:+123-456-7890" className="text-sm md:text-base hover:underline">
-              +123-456-7890
+            <a href="tel:+251-923-657-040" className="text-sm md:text-base hover:underline">
+              +251-923-657-040
             </a>
           </div>
         </div>
@@ -45,7 +45,7 @@ const LetsConnect = () => {
             <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
               <FaWhatsapp size={20} />
             </a>
-            <a href="tel:+123-456-7890" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
+            <a href="tel:+251-923-657-040" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
               <FaPhone size={20} />
             </a>
             <a href="#" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">

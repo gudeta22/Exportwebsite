@@ -12,7 +12,7 @@ const MissionVision = () => {
         {/* Text Content */}
         <div className="lg:w-1/2 space-y-8">
           <h2 className="text-3xl lg:text-4xl fontstyle text-gray-700">
-            Our Commitment to Excellence
+            Our Commitment to Excellence 
           </h2>
           <p className="text-gray-600 leading-relaxed">
             At Koji Healthcare Solutions Pvt. Ltd., we deliver premium healthcare products 
@@ -49,7 +49,7 @@ const MissionVision = () => {
             {activeTab === 'mission' && (
               <p className="text-gray-700">
                 Empowering Healthcare Through Quality, Access, Convenience, and 
-                Fulfillment—Every Step of The Way.
+                Fulfillment Every Step of The Way.
               </p>
             )}
             {activeTab === 'vision' && (
