@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
-import device1 from '../assets/images/products/Endoscopy.jpeg';
-import device2 from '../assets/images/products/OR.jpeg';
-import device3 from '../assets/images/products/ultrasound.jpeg';
-import device4 from '../assets/images/products/Laparascopy.jpeg';
+import device1 from '../assets/images/products/home_page1.jpg';
+import device2 from '../assets/images/products/home_page2.jpg';
+// import device3 from '../assets/images/products/ultrasound.jpeg';
+// import device4 from '../assets/images/products/Laparascopy.jpeg';
 
 // Styled Background Component
 const StyledBackground = () => (
@@ -94,8 +94,8 @@ const HeroSection = () => {
   const productImages = [
     { src: device1, alt: "Diagnostic Tool" },
     { src: device2, alt: "Monitoring Device" },
-    { src: device3, alt: "Surgical Equipment" },
-    { src: device4, alt: "Therapy System" },
+    // { src: device3, alt: "Surgical Equipment" },
+    // { src: device4, alt: "Therapy System" },
   ];
 
   return (
@@ -156,7 +156,7 @@ const HeroSection = () => {
               key={item.alt}
               src={item.src}
               alt={item.alt}
-              className="w-full h-48 sm:h-56 md:h-60"
+              className="w-full h-48 sm:h-56 md:h-72"
               delay={0.2 * (index + 1)}
             />
           ))}

@@ -23,14 +23,14 @@ const ContactComponents = () => {
 
     emailjs
       .send(
-        'service_z9a2m48', // Replace with your service ID
-        'template_l26es9x', // Replace with your template ID
+        'service_z9a2m48', // Replace with your EmailJS service ID
+        'template_l26es9x', // Replace with your EmailJS template ID
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        '5P0RbWSw_5jBIb2nn' // Replace with your public key
+        '5P0RbWSw_5jBIb2nn' // Replace with your EmailJS public key
       )
       .then(
         () => {
@@ -42,75 +42,88 @@ const ContactComponents = () => {
         }
       );
   };
-   
+
   return (
-    <div className="container px-6 md:px-12 py-10">
-      <section className="mb-32">
-        <div className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen">
+      <section className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+          <p className="mt-4 text-lg text-gray-600">
+            We'd love to hear from you! Drop us a message or find us on the map.
+          </p>
+        </div>
+
+        {/* Map */}
+        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[50vh] rounded-xl overflow-hidden shadow-lg mb-12">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087"
-            width="100%"
-            height="480"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019716305142!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809b1a64e5b3%3A0xafeec4ad139d3e39!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1697678945623!5m2!1sen!2s"
+            className="w-full h-full"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            aria-label="Map showing our location in San Francisco, CA"
           ></iframe>
         </div>
 
-        <div className="bg-white px-6 py-12 shadow-md md:py-16 md:px-12 -mt-[100px] backdrop-blur-md border border-gray-200 rounded-lg">
-          <div className="flex flex-wrap">
+        {/* Contact Section */}
+        <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl shadow-xl -mt-24 relative z-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div className="w-full md:px-3 lg:w-5/12 lg:px-6 mb-12">
-              <form onSubmit={sendEmail}>
-                <div className="mb-6">
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+              <form onSubmit={sendEmail} className="space-y-6">
+                <div>
                   <input
                     type="text"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full border-2 p-3 rounded focus:outline-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400"
                   />
                 </div>
-                <div className="mb-6">
+                <div>
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full border-2 p-3 rounded focus:outline-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400"
                   />
                 </div>
-                <div className="mb-6">
+                <div>
                   <textarea
                     name="message"
-                    placeholder="Message"
+                    placeholder="Your Message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    className="w-full border-2 p-3 rounded focus:outline-none"
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-gray-700 placeholder-gray-400 resize-none"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-cyan-500 text-white py-2 px-4 rounded hover:bg-cyan-600 transition duration-300"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Send
+                  Send Message
                 </button>
               </form>
             </div>
 
             {/* Contact Info */}
-            <div className="w-full lg:w-7/12 flex flex-wrap">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
               {[
                 {
                   icon: '📍',
                   title: 'Address',
-                  value: 'San Francisco, CA\nUnited States',
+                  value: 'San Francisco, CA, United States',
                 },
                 {
                   icon: '✉️',
@@ -128,13 +141,14 @@ const ContactComponents = () => {
                   value: 'Mon - Fri: 9am - 5pm',
                 },
               ].map((item, index) => (
-                <div key={index} className="w-full md:w-6/12 p-4">
-                  <div className="flex items-start">
-                    <div className="text-2xl">{item.icon}</div>
-                    <div className="ml-4">
-                      <p className="font-bold">{item.title}</p>
-                      <p className="whitespace-pre-line text-gray-600">{item.value}</p>
-                    </div>
+                <div
+                  key={index}
+                  className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-all duration-200"
+                >
+                  <span className="text-3xl mr-4">{item.icon}</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">{item.title}</p>
+                    <p className="text-gray-600">{item.value}</p>
                   </div>
                 </div>
               ))}

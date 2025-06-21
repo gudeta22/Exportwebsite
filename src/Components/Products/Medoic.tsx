@@ -1,9 +1,8 @@
-import Xray from '../../assets/images/products/X-ray.jpeg';
+import Xray from '../../assets/images/products/X-ray_1.jpg';
 // Placeholder imports for thumbnails (replace with actual images if available)
-import Xray2 from '../../assets/images/products/Laparascopy.jpeg'; // Example
-import Xray3 from '../../assets/images/products/OR.jpeg'; // Example
-import Xray4 from '../../assets/images/products/X-ray.jpeg'; // Example
-import Xray5 from '../../assets/images/products/ultrasound.jpeg'; // Example
+import Xray2 from '../../assets/images/products/X-ray_2.jpg'; // Example
+import Xray3 from '../../assets/images/products/X-ray_3.jpg'; // Example
+import Xray4 from '../../assets/images/products/X-ray_4.jpg'; // Example
 import { useState } from 'react';
 
 const XrayComponent = () => {
@@ -16,7 +15,6 @@ const XrayComponent = () => {
     { src: Xray2, alt: 'X-ray Side View' },
     { src: Xray3, alt: 'X-ray Front View' },
     { src: Xray4, alt: 'X-ray Control Panel' },
-    { src: Xray5, alt: 'X-ray Accessories' },
   ];
 
   return (

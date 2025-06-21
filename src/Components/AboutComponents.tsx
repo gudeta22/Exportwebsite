@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import aboutimg from '../assets/images/about-imgnew.png';
+import aboutimg from '../assets/images/products/about-image.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const MissionVision = () => {
@@ -15,9 +15,10 @@ const MissionVision = () => {
             Our Commitment to Excellence 
           </h2>
           <p className="text-gray-600 leading-relaxed">
-            At Koji Healthcare Solutions Pvt. Ltd., we deliver premium healthcare products 
-            and services with unmatched quality. Our passion drives us to empower healthcare 
-            providers and enhance patient outcomes through precision and innovation.
+            At Koji Healthcare Solutions Pvt. Ltd., we are dedicated to transforming healthcare in Ethiopia 
+            by delivering exceptional medical devices and services of unparalleled excellence. 
+            Fueled by a relentless commitment to innovation and precision, we empower public and private 
+            healthcare providers to elevate patient care, fostering vibrant health and hope for every community we serve.
           </p>
           
           {/* Tabs */}
@@ -48,8 +49,9 @@ const MissionVision = () => {
           <div className="p-6 bg-white rounded-lg shadow-sm">
             {activeTab === 'mission' && (
               <p className="text-gray-700">
-                Empowering Healthcare Through Quality, Access, Convenience, and 
-                Fulfillment Every Step of The Way.
+                To be Ethiopia’s premier provider of advanced medical devices, 
+                ensuring public and private hospitals deliver world-class care with accessible, 
+                innovative technology for a healthier future.
               </p>
             )}
             {activeTab === 'vision' && (

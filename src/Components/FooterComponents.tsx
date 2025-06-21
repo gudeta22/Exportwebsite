@@ -39,7 +39,7 @@ const LetsConnect = () => {
             <a href="mailto:contact@kojihealthcare.com" target='_blank' className="p-3 bg-white text-gray-900 rounded-full transition duration-300 hover:bg-yellow-500">
               <FaEnvelope size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
+            <a href="https://www.linkedin.com/company/107711159/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
               <FaLinkedin size={20} />
             </a>
             <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">

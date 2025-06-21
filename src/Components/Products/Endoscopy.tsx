@@ -1,22 +1,20 @@
-import EndoscopyImg from '../../assets/images/products/Endoscopy.jpeg';
+// import EndoscopyImg from '../../assets/images/products/Endoscopy.jpeg';
 // Placeholder imports for thumbnails (replace with actual images if available)
-import Endo2 from '../../assets/images/products/Laparascopy.jpeg'; // Example
-import Endo3 from '../../assets/images/products/OR.jpeg'; // Example
-import Endo4 from '../../assets/images/products/Endoscopy.jpeg'; // Example
-import Endo5 from '../../assets/images/products/ultrasound.jpeg'; // Example
+import Endo2 from '../../assets/images/products/endoscopyview_1.jpg'; // Example
+import Endo3 from '../../assets/images/products/endoscopyview_2.jpg'; // Example
+import Endo4 from '../../assets/images/products/endoscopyview_3.jpg'; // Example
 import { useState } from 'react';
 
 const Endoscopy = () => {
   // State to manage the currently displayed main image
-  const [mainImage, setMainImage] = useState(EndoscopyImg);
+  const [mainImage, setMainImage] = useState(Endo2);
 
   // Array of thumbnail images (replace srcs with actual image paths)
   const thumbnails = [
-    { src: EndoscopyImg, alt: 'Endoscopy Main View' },
+    // { src: EndoscopyImg, alt: 'Endoscopy Main View' },
     { src: Endo2, alt: 'Endoscopy Side View' },
     { src: Endo3, alt: 'Endoscopy Front View' },
     { src: Endo4, alt: 'Endoscopy Control Panel' },
-    { src: Endo5, alt: 'Endoscopy Accessories' },
   ];
 
   return (

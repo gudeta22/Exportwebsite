@@ -68,8 +68,7 @@ const NavProduct = () => {
             <span className="text-white drop-shadow-lg">OurProducts</span>
           </h2>
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-          Discover our wide range of innovative medical products designed to meet the highest standards of quality and performance. From advanced diagnostic tools to essential medical supplies, our products are crafted to support healthcare professionals in delivering exceptional patient care.
-          </p>
+At Koji Healthcare Solutions Pvt. Ltd., we proudly offer a curated selection of high-quality medical devices designed to meet the diverse needs of Ethiopia’s public and private hospitals          </p>
         </div>
       </div>
     </section>

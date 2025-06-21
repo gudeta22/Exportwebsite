@@ -66,7 +66,7 @@ const AboutDescription = () => {
               >
                 <h3 className="text-xl sm:text-3xl fontstyle font-thin text-gray-600 mb-2 sm:mb-4">{title}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {title === 'Who We Are' && 'Koji Healthcare Solutions is founded on trust, innovation, and excellence. Partnering with global leaders, we deliver cutting-edge technology to laboratories, hospitals, and research institutions, driven by a passion for quality and customer satisfaction.'}
+                  {title === 'Who We Are' && 'Koji Healthcare Solutions Pvt. Ltd. is a dynamic team of healthcare innovators and professionals committed to transforming Ethiopia’s medical landscape.'}
                   {title === 'Our Mission' && 'We strive to empower healthcare professionals with quality, convenience, and excellence. Our mission is to provide seamless, reliable care, enhancing lives through accessible and exceptional healthcare solutions.'}
                   {title === 'Our Vision' && 'We envision a future where physicians have unparalleled resources to excel, delivering superior care to all. Our goal is to build healthier communities through accessible, high-quality healthcare.'}
                 </p>
