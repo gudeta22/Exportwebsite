@@ -42,7 +42,7 @@ const Navbar = () => {
             ኮጂ
           </span>
           <span className="text-sm sm:text-base my-2  font-semibold tracking-wide leading-tight">
-            HEALTHCARE SOLUTIONS
+           KOJI HEALTHCARE SOLUTIONS
           </span>
         </Link>
 

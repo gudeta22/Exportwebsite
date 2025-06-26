@@ -4,18 +4,18 @@ import React from 'react';
 const sectionsData = [
   {
     icon: <span>🌟</span>, // Example icon as JSX.Element
-    heading: 'Expert Team',
-    content: 'Our team consists of highly skilled professionals with years of experience in their respective fields.',
+    heading: 'Mission-Driven Collaboration',
+    content: 'Emphasize partnering with passionate professionals to revolutionize healthcare in Ethiopia by delivering premium endoscopy, X-ray, and urology medical devices to public and private hospitals.',
   },
   {
     icon: <span>💡</span>, // Example icon as JSX.Element
-    heading: 'Innovative Solutions',
-    content: 'We provide cutting-edge solutions tailored to meet your unique business needs.',
+    heading: 'Diverse Opportunities',
+    content: 'Highlight the inclusion of various roles (e.g., healthcare experts, logistics specialists, business innovators) to attract a wide range of talent and skills.',
   },
   {
     icon: <span>⏱️</span>, // Example icon as JSX.Element
-    heading: 'Timely Delivery',
-    content: 'We ensure that all projects are delivered on time without compromising on quality.',
+    heading: 'Impactful Engagement: ',
+    content: 'Promote the chance to drive innovation, access cutting-edge technology, and create a lasting impact on patient outcomes and medical communities.',
   },
   {
     icon: <span>🤝</span>, // Example icon as JSX.Element

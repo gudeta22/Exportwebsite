@@ -5,21 +5,21 @@ const StreamlinedProcess = () => {
   const steps = [
     {
       number: '01',
-      title: 'Sourcing',
+      title: 'Needs Evaluation',
       description:
-        'We meticulously select top-tier medical products from trusted global suppliers, ensuring compliance with regulatory standards from day one.',
+        'We Collaborate closely with healthcare institutions to assess and understand their specific requirements.',
     },
     {
       number: '02',
-      title: 'Quality Control',
+      title: 'Global Procurement',
       description:
-        'Each product undergoes strict testing and validation by our skilled team to ensure safety, quality, and effectiveness.',
+        'Source top-tier solutions from reputable international partners with meticulous attention to quality.  ',
     },
     {
       number: '03',
-      title: 'Logistics',
+      title: 'Seamless Distribution:',
       description:
-        'We plan, track, and manage transportation to ensure products arrive securely, efficiently, and on schedule.',
+        'Manage logistics, compliance, and delivery with precision to ensure timely and reliable access across Ethiopia.',
     },
     {
       number: '04',

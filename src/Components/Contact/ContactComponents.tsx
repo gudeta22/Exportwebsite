@@ -109,7 +109,7 @@ const ContactComponents = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1"
+                  className="w-full bg-gradient-to-r from-cyan-600 to-cyan-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Send Message
                 </button>
