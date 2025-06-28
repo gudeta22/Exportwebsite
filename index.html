@@ -1,42 +1,53 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Charset and Mobile Viewport -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <base href="/app/" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koji Healthcare Solutions</title>
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Koji Healthcare Solutions">
-    <meta name="description" content="Koji Healthcare Solutions offers innovative digital solutions to improve healthcare delivery and patient outcomes.">
+    <!-- Page Title -->
+    <title>Koji Healthcare Solutions | Smarter Healthcare Through Technology</title>
 
-    <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kojihealthcare.com/">
-    <meta property="og:title" content="Koji Healthcare Solutions">
-    <meta property="og:description" content="Innovative digital solutions to transform healthcare and improve patient outcomes.">
-    <meta property="og:image" content="https://www.kojihealthcare.com/images/preview.jpg">
+    <!-- Meta Description (Google Search) -->
+    <meta name="description" content="Koji Healthcare delivers digital tools to improve patient care, streamline operations, and boost healthcare outcomes across clinics and hospitals." />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.kojihealthcare.com/">
-    <meta name="twitter:title" content="Koji Healthcare Solutions">
-    <meta name="twitter:description" content="Innovative digital solutions to transform healthcare and improve patient outcomes.">
-    <meta name="twitter:image" content="https://www.kojihealthcare.com/images/preview.jpg">
-
-    <!-- Telegram -->
-    <meta name="telegram:channel" content="@kojihealthcare" />
-    <!-- Note: Telegram uses Open Graph tags. There's no special telegram-only meta tag other than your channel link. -->
-
-    <!-- Google SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
-    <meta name="author" content="Koji Healthcare Team">
+    <!-- Canonical Link -->
     <link rel="canonical" href="https://www.kojihealthcare.com/" />
 
-    <!-- Schema.org for Google -->
+    <!-- Robots Instructions -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Koji Healthcare Team" />
+
+    <!-- Google Search Console (Replace with your code) -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <base href="/app/" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph (Telegram, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.kojihealthcare.com/" />
+    <meta property="og:title" content="Koji Healthcare Solutions" />
+    <meta property="og:description" content="Koji Healthcare delivers digital tools to improve patient care, streamline operations, and boost healthcare outcomes across clinics and hospitals." />
+    <meta property="og:image" content="https://www.kojihealthcare.com/images/preview.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.kojihealthcare.com/" />
+    <meta name="twitter:title" content="Koji Healthcare Solutions" />
+    <meta name="twitter:description" content="Koji Healthcare delivers digital tools to improve patient care, streamline operations, and boost healthcare outcomes across clinics and hospitals." />
+    <meta name="twitter:image" content="https://www.kojihealthcare.com/images/preview.jpg" />
+
+    <!-- Telegram Channel Reference -->
+    <meta name="telegram:channel" content="@kojihealthcare" />
+
+    <!-- Schema.org (for Google Rich Results) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,7 +55,7 @@
       "name": "Koji Healthcare Solutions",
       "url": "https://www.kojihealthcare.com",
       "logo": "https://www.kojihealthcare.com/images/logo.png",
-      "description": "Koji Healthcare Solutions offers innovative digital solutions to improve healthcare delivery and patient outcomes.",
+      "description": "Koji Healthcare Solutions delivers digital tools and platforms for hospitals, clinics, and care providers to enhance patient outcomes and streamline healthcare operations.",
       "sameAs": [
         "https://www.facebook.com/kojihealthcare",
         "https://www.linkedin.com/company/kojihealthcare",
@@ -53,17 +64,13 @@
       ]
     }
     </script>
-
-    <!-- Performance / PWA Enhancements (Optional) -->
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Fallback favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-
   </head>
+
   <body>
+    <!-- React Root -->
     <div id="root"></div>
+
+    <!-- Main App Script -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
