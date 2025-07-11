@@ -1,81 +1,103 @@
-import { motion } from 'framer-motion';
-import logoUrl from '../../assets/images/Klogo.png';
-
-// Animation variants for Framer Motion
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.7, delay: i * 0.4, ease: 'easeInOut' },
-  }),
-};
-
-const logoVariants = {
-  hidden: { opacity: 0, y: -50, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 1.2, ease: 'easeOut', type: 'spring', stiffness: 100 },
-  },
-};
+import mission from '../../assets/images/close-up-team-health-workers.jpg';
 
 const AboutDescription = () => {
   return (
-    <section className="relative bg-gradient-to-b from-blue-100 to-gray-100 py-16 sm:py-24 overflow-hidden">
-      {/* Geometric Background Overlay */}
-      <div
-        className="absolute inset-0 opacity-10 bg-repeat"
-        style={{
-          backgroundImage: `url('https://www.transparenttextures.com/patterns/3px-tile.png')`,
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
-        {/* Logo Section */}
-        <motion.div
-          className="flex-shrink-0"
-          variants={logoVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="relative p-4 sm:p-6 bg-gradient-to-br mx-24 from-cyan-600 to-cyan-800 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl border-4 border-teal-400/50 overflow-hidden">
-            <img
-              src={logoUrl}
-              alt="Koji Healthcare Solutions Logo"
-              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-56 lg:h-56 object-contain justify-center mx-auto"
-            />
-            <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-teal-300/30 animate-pulse" />
-            <div className="absolute inset-0 bg-teal-200/10 rounded-xl sm:rounded-2xl" />
+    <div className="flex justify-center bg-gray-100 py-10 px-4">
+      <div className="max-w-7xl w-full">
+        <div className="relative"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          
+          {/* WHO WE ARE */}
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <div className="relative">
+              <img
+                src="https://media.istockphoto.com/id/1191656354/photo/business-people-are-analyzing-and-planning-business-business-strategy-consulting.jpg?s=612x612&w=0&k=20&c=s5NpCplr6_8Nbw3A4kon09W2Gqajnw96s5dI8Ss1hZ8="
+                alt="Future Plans"
+                className="w-full h-64 object-cover rounded-t-lg"
+              />
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-lg">
+                <div className="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                  {/* User Group Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-5-4h-1M9 20H4v-2a4 4 0 015-4h1m4-4a4 4 0 100-8 4 4 0 000 8zm6 4a4 4 0 00-3-3.87" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h2 className="text-center text-teal-600 mt-10">WHO WE ARE</h2>
+            <p className="text-center text-gray-600 mt-2">
+              Koji Healthcare Solutions Pvt. Ltd. is a dynamic team of healthcare innovators and professionals committed to transforming Ethiopia’s medical landscape.
+            </p>
           </div>
-        </motion.div>
 
-        {/* Content Section */}
-        <div className="flex-1 w-full">
-          <div className="flex flex-col md:flex-row md:flex-wrap gap-4 sm:gap-6">
-            {['Who We Are', 'Our Mission', 'Our Vision'].map((title, index) => (
-              <motion.div
-                key={index}
-                className="flex-1 min-w-[280px] p-6 sm:p-8 bg-white/95 rounded-md sm:rounded-lg shadow-md sm:shadow-xl transition-all duration-300 border-l-4 border-cyan-500"
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                custom={index}
-                whileHover={{ scale: 1.02 }}
-              >
-                <h3 className="text-xl sm:text-3xl fontstyle font-thin text-gray-600 mb-2 sm:mb-4">{title}</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {title === 'Who We Are' && 'Koji Healthcare Solutions Pvt. Ltd. is a dynamic team of healthcare innovators and professionals committed to transforming Ethiopia’s medical landscape.'}
-                  {title === 'Our Mission' && 'We strive to empower healthcare professionals with quality, convenience, and excellence. Our mission is to provide seamless, reliable care, enhancing lives through accessible and exceptional healthcare solutions.'}
-                  {title === 'Our Vision' && 'We envision a future where physicians have unparalleled resources to excel, delivering superior care to all. Our goal is to build healthier communities through accessible, high-quality healthcare.'}
-                </p>
-              </motion.div>
-            ))}
+          {/* OUR MISSION */}
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <div className="relative">
+              <img
+                src={mission}
+                alt="Our Mission"
+                className="w-full h-64 object-cover rounded-t-lg"
+              />
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-lg">
+                <div className="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                  {/* Target Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12m-9 0a9 9 0 1118 0 9 9 0 01-18 0zm9 3a3 3 0 100-6 3 3 0 000 6z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h2 className="text-center text-teal-600 mt-10">OUR MISSION</h2>
+            <p className="text-center text-gray-600 mt-2">
+              We strive to empower healthcare professionals with quality, convenience, and excellence. Our mission is to provide seamless, reliable care, enhancing lives through accessible and exceptional healthcare solutions.
+            </p>
           </div>
+
+          {/* OUR VISION */}
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <div className="relative">
+              <img
+                src="https://www.shutterstock.com/image-photo/business-achievement-objective-target-concept-600nw-2485552663.jpg"
+                alt="Our Vision"
+                className="w-full h-64 object-cover rounded-t-lg"
+              />
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-lg">
+                <div className="bg-cyan-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                  {/* Eye Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h2 className="text-center text-teal-600 mt-10">OUR VISION</h2>
+            <p className="text-center text-gray-600 mt-2">
+              We envision a future where physicians have unparalleled resources to excel, delivering superior care to all. Our goal is to build healthier communities through accessible, high-quality healthcare.
+            </p>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
