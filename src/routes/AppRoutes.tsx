@@ -131,7 +131,9 @@ const AppRoutes = () => {
               path="*" 
               element={<PageWithLoading Component={NotFound} />} 
             />
+           
           </Routes>
+
         </Suspense>
       )}
     </Router>
