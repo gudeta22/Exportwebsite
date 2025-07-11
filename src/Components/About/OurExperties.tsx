@@ -1,5 +1,3 @@
-// src/ExpertiseSection.js
-
 import { MdPublic, MdAssignment, MdLocalShipping, MdAttachMoney, MdMap } from 'react-icons/md';
 
 const OurExperties = () => {
@@ -38,9 +36,14 @@ const OurExperties = () => {
 
   return (
     <div className="py-20 bg-white">
-      <h2 className="text-2xl md:text-3xl font-thin text-center text-black mb-8">
-        OUR EXPERTISE LIES IN
-      </h2>
+      <div className="flex mb-8 justify- max-w-7xl mx-auto px-4">
+        <div className="text-center  relative">
+          <h2 className="text-2xl md:text-3xl font-semibold text-cyan-600 mb-2">
+            OUR EXPERTISE LIES IN
+          </h2>
+          <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
         {expertiseData.map((item, index) => (

@@ -1,4 +1,4 @@
-// import { useEffect, useState } from 'react';
+import React from 'react';
 import '../App.css';
 
 const StreamlinedProcess = () => {
@@ -7,13 +7,13 @@ const StreamlinedProcess = () => {
       number: '01',
       title: 'Needs Evaluation',
       description:
-        'We Collaborate closely with healthcare institutions to assess and understand their specific requirements.',
+        'We collaborate closely with healthcare institutions to assess and understand their specific requirements.',
     },
     {
       number: '02',
       title: 'Global Procurement',
       description:
-        'Source top-tier solutions from reputable international partners with meticulous attention to quality.  ',
+        'Source top-tier solutions from reputable international partners with meticulous attention to quality.',
     },
     {
       number: '03',
@@ -29,19 +29,16 @@ const StreamlinedProcess = () => {
     },
   ];
 
-  // const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
-
-  // useEffect(() => {
-  //   // const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
-
   return (
     <section className="bg-white py-20 px-6 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-thin text-start text-gray-800 mb-16">
-        Our Streamlined Process
-      </h2>
+      <div className="flex mb-16">
+        <div className="text-start relative">
+          <h2 className="text-3xl font-semibold text-cyan-600 capitalize mb-2">
+            OUR STREAMLINE PROCESS          
+            </h2>
+          <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {steps.map((step, index) => (

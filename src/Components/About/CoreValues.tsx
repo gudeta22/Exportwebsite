@@ -32,7 +32,14 @@ const CoreValues = () => {
   return (
     <div className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Our Core Values</h2>
+        <div className="flex mb-6 justify-start">
+          <div className="text-center relative">
+            <h2 className="text-2xl font-semibold text-cyan-600 mb-2">
+              OUR CORE VALUES
+            </h2>
+            <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
+          </div>
+        </div>
         <div className="w-16 h-0.5 bg-gray-300 mx-auto mb-10"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (

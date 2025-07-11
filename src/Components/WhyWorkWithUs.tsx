@@ -36,15 +36,21 @@ const sectionsData = [
 
 // Main Component
 const WhyWorkWithUs: React.FC = () => {
-  const title = "WHY WORK WITH US?"; // Hardcoded title
+  const title = "WHY WORK WITH US?"; // Keeping the original title
 
   return (
     <section className="bg-gray-50 py-16 flex justify-center">
       {/* Container */}
       <div className="max-w-7xl mx-auto px-4 w-full">
-        <h2 className="text-3xl md:text-3xl font-light fontstyle text-center text-gray-800 mb-12">
-          {title}
-        </h2>
+        <div className="flex mb-12">
+          {/* <div className="w-4 bg-cyan-600 mr-4"></div> */}
+          <div className="text-left relative">
+            <h2 className="text-3xl md:text-3xl font-semibold text-cyan-600 mb-2">
+              {title}
+            </h2>
+            <div className="absolute left-0 w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sectionsData.map((section, index) => (
             <div
