@@ -16,7 +16,7 @@ const StreamlinedProcess = () => {
     },
     {
       number: '03',
-      title: 'Seamless Distribution:',
+      title: 'Seamless Distribution',
       description:
         'Manage logistics, compliance, and delivery with precision to ensure timely and reliable access across Ethiopia.',
     },
