@@ -32,7 +32,7 @@ const StreamlinedProcess = () => {
     <section className="bg-white py-20 px-6 max-w-7xl mx-auto">
       <div className="flex mb-16">
         <div className="text-start relative">
-          <h2 className="text-3xl font-semibold text-cyan-600 capitalize mb-2">
+          <h2 className="text-2xl md:text-3xl sm:text-2xl font-semibold text-cyan-600 capitalize mb-2">
             OUR STREAMLINE PROCESS          
             </h2>
           <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
