@@ -46,6 +46,7 @@ const Endoscopy = () => {
               src={mainImage}
               className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg"
               alt="Endoscopy System"
+              loading='lazy'
             />
           </div>
 
@@ -62,6 +63,7 @@ const Endoscopy = () => {
                 <img
                   src={thumbnail.src}
                   alt={thumbnail.alt}
+                  loading='lazy'
                   className="w-full h-full object-cover"
                 />
               </button>

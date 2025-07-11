@@ -46,6 +46,7 @@ const XrayComponent = () => {
               src={mainImage}
               className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg"
               alt="X-ray Machine"
+              loading='lazy'
             />
           </div>
 
@@ -63,6 +64,7 @@ const XrayComponent = () => {
                   src={thumbnail.src}
                   alt={thumbnail.alt}
                   className="w-full h-full object-cover"
+                  loading='lazy'
                 />
               </button>
             ))}

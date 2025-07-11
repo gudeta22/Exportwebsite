@@ -81,6 +81,7 @@ const MissionVision = () => {
               src={aboutimg}
               alt="Healthcare Professional"
               className="relative w-full h-full object-cover rounded-xl"
+              loading='lazy'
             />
           </div>
         </div>

@@ -20,6 +20,7 @@ const AboutDescription = () => {
               <img
                 src="https://media.istockphoto.com/id/1191656354/photo/business-people-are-analyzing-and-planning-business-business-strategy-consulting.jpg?s=612x612&w=0&k=20&c=s5NpCplr6_8Nbw3A4kon09W2Gqajnw96s5dI8Ss1hZ8="
                 alt="Future Plans"
+                loading='lazy'
                 className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-lg"
               />
               <div className="absolute -bottom-4 sm:-bottom-5 md:-bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg">
@@ -49,6 +50,7 @@ const AboutDescription = () => {
               <img
                 src={mission}
                 alt="Our Mission"
+                loading='lazy'
                 className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-lg"
               />
               <div className="absolute -bottom-4 sm:-bottom-5 md:-bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg">
@@ -78,6 +80,7 @@ const AboutDescription = () => {
               <img
                 src="https://www.shutterstock.com/image-photo/business-achievement-objective-target-concept-600nw-2485552663.jpg"
                 alt="Our Vision"
+                loading='lazy'
                 className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-lg"
               />
               <div className="absolute -bottom-4 sm:-bottom-5 md:-bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-2 sm:p-3 rounded-full shadow-lg">
