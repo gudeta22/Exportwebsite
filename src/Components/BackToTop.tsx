@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { TERipple } from "tw-elements-react";
 import { FaChevronUp } from "react-icons/fa"; // New icon
 
 export default function BackToTop() {
+
+      useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   const [showButton, setShowButton] = useState(false);
 
   const handleScroll = () => {

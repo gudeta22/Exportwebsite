@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 // Animated Background Component
 const AnimatedBackground = () => (
+
+  
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
     {/* Floating Particles */}
     {[...Array(10)].map((_, i) => (
