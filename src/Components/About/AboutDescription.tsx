@@ -15,7 +15,7 @@ const AboutDescription = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-6">
           
           {/* WHO WE ARE */}
-          <div className="bg-white p-3 sm:p-4 md:p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-3 sm:p-4 md:p-3 rounded-lg shadow-lg">
             <div className="relative">
               <img
                 src="https://media.istockphoto.com/id/1191656354/photo/business-people-are-analyzing-and-planning-business-business-strategy-consulting.jpg?s=612x612&w=0&k=20&c=s5NpCplr6_8Nbw3A4kon09W2Gqajnw96s5dI8Ss1hZ8="
@@ -44,7 +44,7 @@ const AboutDescription = () => {
           </div>
 
           {/* OUR MISSION */}
-          <div className="bg-white p-3 sm:p-4 md:p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-3 sm:p-4 md:p-3 rounded-lg shadow-lg">
             <div className="relative">
               <img
                 src={mission}
@@ -73,7 +73,7 @@ const AboutDescription = () => {
           </div>
 
           {/* OUR VISION */}
-          <div className="bg-white p-3 sm:p-4 md:p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-3 sm:p-4 md:p-3 rounded-lg shadow-lg">
             <div className="relative">
               <img
                 src="https://www.shutterstock.com/image-photo/business-achievement-objective-target-concept-600nw-2485552663.jpg"
