@@ -2,6 +2,7 @@
 import { FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaPaperPlane } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BackToTop from './BackToTop';
 
 const LetsConnect = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -66,6 +67,7 @@ const LetsConnect = () => {
           © {year} Health Innovations Inc. All Rights Reserved.
         </p>
       </div>
+      <BackToTop />
     </section>
   );
 };

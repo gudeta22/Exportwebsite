@@ -16,6 +16,7 @@ function Home() {
         <WhyWorkWithUs />
         <Processes />
         <JobApplicationFormComponent />
+        
     </div>
   );
 }
