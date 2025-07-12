@@ -8,6 +8,7 @@ import Footer from "../Components/FooterComponents";
 import Career from "../pages/Carrer";
 import NotFound from "../pages/Notfound";
 import { Suspense, useState, useEffect, ComponentType } from "react";
+import Blog from "../pages/Blog";
 
 // Define the props type for PageWithLoading
 interface PageWithLoadingProps {
@@ -122,6 +123,10 @@ const AppRoutes = () => {
             <Route 
               path="/contact" 
               element={<PageWithLoading Component={Contact} />} 
+            />
+             <Route 
+              path="/blog" 
+              element={<PageWithLoading Component={Blog} />} 
             />
             <Route 
               path="/careers" 

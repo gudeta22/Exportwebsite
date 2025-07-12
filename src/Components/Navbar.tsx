@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'OurCompany', path: '/ourcompany' },
     { name: 'Products', path: '/products' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -41,7 +42,7 @@ const Navbar = () => {
           <span className="text-lg sm:text-2xl font-extrabold leading-snug">
             ኮጂ
           </span>
-          <span className="text-sm sm:text-base my-2  font-semibold tracking-wide leading-tight">
+          <span className="text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight">
            KOJI HEALTHCARE SOLUTIONS
           </span>
         </Link>
