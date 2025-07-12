@@ -47,7 +47,7 @@ const Blogs = () => {
               </span>
             </li>
           </ul>
-          <div className="mt-6 sm:mt-8 pl-4 sm:pl-6 border-l-4 border-teal-500 bg-teal-50 p-4 rounded-lg">
+          <div className="mt-6 sm:mt-8 pl-4 sm:pl-6 border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg">
             <p className="text-gray-800 font-medium italic text-base sm:text-lg">
               ★ Koji Healthcare Solutions empowers medical professionals with reliable, technology-driven tools to deliver exceptional patient care and accurate diagnostics.
             </p>
