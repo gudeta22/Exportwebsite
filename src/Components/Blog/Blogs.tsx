@@ -4,7 +4,7 @@ const Blogs = () => {
       {/* Hero Section */}
       <header className="text-cyan-600 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-fade-in">
-          Koji Healthcare Imports
+          Koji Healthcare Solutions
         </h1>
         <p className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
           Delivering quality medical products to Ethiopia for enhanced healthcare solutions.
