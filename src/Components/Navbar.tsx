@@ -10,6 +10,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from 'react-icons/fa';
+// import logo from '../../src/assets/images/koji_logo-01__2_-removebg-preview.png'; // Adjust the path as necessary
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,12 +40,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-2 py-3 sm:px-6">
         {/* Logo */}
         <Link to="/" className="flex text-white gap-2 max-w-xs sm:max-w-none">
-          <span className="text-lg sm:text-2xl font-extrabold leading-snug">
-            ኮጂ
-          </span>
-          <span className="text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight">
-           KOJI HEALTHCARE SOLUTIONS
-          </span>
+         
+          {/* <img src={logo} className="text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight" /> */}
+        <span className='text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight'>
+          KOJI HEALTHCARE SOLUTIONS
+        </span>  
+          
         </Link>
 
         {/* Desktop Menu */}
