@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Home from "../pages/Home";
 import OurCompany from "../pages/OurCompany";
@@ -7,14 +12,10 @@ import Contact from "../pages/Contact";
 import Footer from "../Components/FooterComponents";
 import Career from "../pages/Carrer";
 import NotFound from "../pages/Notfound";
-import { Suspense, useState, useEffect, ComponentType } from "react";
 import Blog from "../pages/Blog";
+import { useEffect, useState } from "react";
 
-// Define the props type for PageWithLoading
-interface PageWithLoadingProps {
-  Component: ComponentType;
-}
-
+// Spinner component
 const LoadingSpinner = () => (
   <div style={{
     position: 'fixed',
@@ -28,17 +29,14 @@ const LoadingSpinner = () => (
     alignItems: 'center',
     zIndex: 9999
   }}>
-    <div style={{
-      display: 'flex',
-      gap: '10px'
-    }}>
+    <div style={{ display: 'flex', gap: '10px' }}>
       {[1, 2, 3].map((dot) => (
         <div
           key={dot}
           style={{
             width: '15px',
             height: '15px',
-            background: '#0891b2', // Changed to cyan-600
+            background: '#0891b2',
             borderRadius: '50%',
             animation: `pulse 1.2s ease-in-out ${dot * 0.2}s infinite`
           }}
@@ -48,39 +46,31 @@ const LoadingSpinner = () => (
     <style>
       {`
         @keyframes pulse {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: scale(1.3);
-            opacity: 0.7;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.3); opacity: 0.7; }
+          100% { transform: scale(1); opacity: 1; }
         }
       `}
     </style>
   </div>
 );
 
-const PageWithLoading = ({ Component }: PageWithLoadingProps) => {
+// Wrap pages with loading effect on navigation
+const PageWrapper = ({ Component }: { Component: React.ComponentType }) => {
+  const location = useLocation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
       setLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+    }, 500); // Delay for UX
+    return () => clearTimeout(timeout);
+  }, [location.pathname]); // Triggers when the route changes
 
   return (
     <>
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
+      {loading ? <LoadingSpinner /> : (
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <Component />
           <Footer />
@@ -91,56 +81,18 @@ const PageWithLoading = ({ Component }: PageWithLoadingProps) => {
 };
 
 const AppRoutes = () => {
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsInitialLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Router>
       <Navbar />
-      {isInitialLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route 
-              path="/" 
-              element={<PageWithLoading Component={Home} />} 
-            />
-            <Route 
-              path="/ourcompany" 
-              element={<PageWithLoading Component={OurCompany} />} 
-            />
-            <Route 
-              path="/Products" 
-              element={<PageWithLoading Component={Products} />} 
-            />
-            <Route 
-              path="/contact" 
-              element={<PageWithLoading Component={Contact} />} 
-            />
-             <Route 
-              path="/blog" 
-              element={<PageWithLoading Component={Blog} />} 
-            />
-            <Route 
-              path="/careers" 
-              element={<PageWithLoading Component={Career} />} 
-            />
-            <Route 
-              path="*" 
-              element={<PageWithLoading Component={NotFound} />} 
-            />
-           
-          </Routes>
-
-        </Suspense>
-      )}
+      <Routes>
+        <Route path="/" element={<PageWrapper Component={Home} />} />
+        <Route path="/ourcompany" element={<PageWrapper Component={OurCompany} />} />
+        <Route path="/products" element={<PageWrapper Component={Products} />} />
+        <Route path="/contact" element={<PageWrapper Component={Contact} />} />
+        <Route path="/blog" element={<PageWrapper Component={Blog} />} />
+        <Route path="/careers" element={<PageWrapper Component={Career} />} />
+        <Route path="*" element={<PageWrapper Component={NotFound} />} />
+      </Routes>
     </Router>
   );
 };
