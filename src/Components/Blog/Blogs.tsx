@@ -13,13 +13,13 @@ const Blogs = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-16 space-y-12 sm:space-y-16">
-        {/* Section 1: What is Koji Healthcare Imports */}
+        {/* Section 1: What is Koji Healthcare Solutions */}
         <section className="animate-slide-up">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            What is Koji Healthcare Imports?
+            What is Koji Healthcare Solutions?
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Koji Healthcare Imports is a one of  medical product import company in Ethiopia, dedicated to supplying high-quality medical equipment and supplies to healthcare facilities. Our mission is to enhance healthcare delivery by providing reliable and innovative products. Key offerings include:
+            Koji Healthcare Solutions is a medical product import company in Ethiopia, dedicated to supplying high-quality medical equipment and supplies to healthcare facilities. Our mission is to enhance healthcare delivery by providing reliable and innovative products. Key offerings include:
           </p>
           <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
             <li className="flex items-start transition-colors">
@@ -49,18 +49,18 @@ const Blogs = () => {
           </ul>
           <div className="mt-6 sm:mt-8 pl-4 sm:pl-6 border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg">
             <p className="text-gray-800 font-medium italic text-base sm:text-lg">
-              ★ Koji Healthcare Imports is committed to bridging the gap in Ethiopia’s healthcare system by supplying reliable, high-quality medical products.
+              ★ Koji Healthcare Solutions is committed to bridging the gap in Ethiopia’s healthcare system by supplying reliable, high-quality medical products.
             </p>
           </div>
         </section>
 
-        {/* Section 2: Importance of Koji Healthcare Imports */}
+        {/* Section 2: Importance of Koji Healthcare Solutions */}
         <section className="animate-slide-up">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Why Koji Healthcare Imports Matters
+            Why Koji Healthcare Solutions Matters
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Access to quality medical products is vital for effective healthcare delivery in Ethiopia. Koji Healthcare Imports plays a critical role in ensuring healthcare facilities are equipped with reliable tools and supplies. Here’s why our work is essential:
+            Access to quality medical products is vital for effective healthcare delivery in Ethiopia. Koji Healthcare Solutions plays a critical role in ensuring healthcare facilities are equipped with reliable tools and supplies. Here’s why our work is essential:
           </p>
           <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
             <article className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-start">
@@ -100,7 +100,7 @@ const Blogs = () => {
             Challenges in Medical Product Imports
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Importing medical products to Ethiopia presents unique challenges that Koji Healthcare Imports strives to overcome. These include:
+            Importing medical products to Ethiopia presents unique challenges that Koji Healthcare Solutions strives to overcome. These include:
           </p>
           <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
             <li className="flex items-start transition-colors">
@@ -130,13 +130,13 @@ const Blogs = () => {
           </ul>
         </section>
 
-        {/* Section 4: Innovations in Koji Healthcare Imports */}
+        {/* Section 4: Innovations */}
         <section className="animate-slide-up">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Innovations Powering Koji Healthcare Imports
+            Innovations Powering Koji Healthcare Solutions
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Koji Healthcare Imports stays ahead by sourcing innovative medical products that meet Ethiopia’s healthcare needs. Key innovations include:
+            Koji Healthcare Solutions stays ahead by sourcing innovative medical products that meet Ethiopia’s healthcare needs. Key innovations include:
           </p>
           <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
             <li className="flex items-start hover:text-teal-600 transition-colors">
@@ -166,13 +166,13 @@ const Blogs = () => {
           </ul>
         </section>
 
-        {/* Section 5: The Future of Koji Healthcare Imports */}
+        {/* Section 5: The Future */}
         <section className="animate-slide-up">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            The Future of Koji Healthcare Imports
+            The Future of Koji Healthcare Solutions
           </h2>
           <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-            Koji Healthcare Imports is committed to advancing Ethiopia’s healthcare system by expanding access to innovative medical products. Future trends, such as telemedicine integration and locally adapted medical technologies, will further enhance our ability to meet the evolving needs of healthcare providers and patients.
+            Koji Healthcare Solutions is committed to advancing Ethiopia’s healthcare system by expanding access to innovative medical products. Future trends, such as telemedicine integration and locally adapted medical technologies, will further enhance our ability to meet the evolving needs of healthcare providers and patients.
           </p>
         </section>
 
@@ -182,7 +182,7 @@ const Blogs = () => {
             Conclusion
           </h2>
           <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-            Koji Healthcare Imports is transforming Ethiopia’s healthcare landscape by providing high-quality medical products that enhance diagnostics, patient care, and public health. By addressing challenges like regulatory compliance and logistics, Koji ensures reliable access to essential tools. With a focus on innovation and quality, Koji is shaping a healthier future for Ethiopia. Explore Koji Healthcare Imports today to discover our commitment to better healthcare delivery.
+            Koji Healthcare Solutions is transforming Ethiopia’s healthcare landscape by providing high-quality medical products that enhance diagnostics, patient care, and public health. By addressing challenges like regulatory compliance and logistics, Koji ensures reliable access to essential tools. With a focus on innovation and quality, Koji is shaping a healthier future for Ethiopia. Explore Koji Healthcare Solutions today to discover our commitment to better healthcare delivery.
           </p>
         </section>
       </main>

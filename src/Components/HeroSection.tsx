@@ -40,9 +40,7 @@ const FloatingCard = ({ src, alt, className, delay }: FloatingCardProps) => {
       variants={cardVariants}
     >
       <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
-      <div className="absolute bottom-2 left-2 text-white text-sm font-medium bg-black/60 px-3 py-1.5 rounded-lg">
-        {alt}
-      </div>
+      {/* Removed the label div */}
     </motion.div>
   );
 };
@@ -134,7 +132,6 @@ const HeroSection = () => {
             <FloatingCard
               key={item.alt}
               src={item.src}
-              
               alt={item.alt}
               className="w-full h-48 sm:h-56 md:h-72"
               delay={0.2 * (index + 1)}
