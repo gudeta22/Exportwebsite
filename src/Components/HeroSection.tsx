@@ -4,53 +4,126 @@ import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
 
-// Styled Background Component with Pulsating Gradient, Particles, and Ripple
+// Styled Background Component with Slightly More Visible Cyan Animation
 const StyledBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 opacity-80 animate-pulse-gradient" />
-    <div className="absolute inset-0 ripple" />
+    {/* Brighter Gradient Background with Cyan-700 Base */}
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-800 via-cyan-800 to-cyan-800 opacity-95 animate-gradient-flow" />
+    
+    {/* More Pronounced Ripple Effects */}
+    <div className="absolute inset-0 ripple ripple-1" />
+    <div className="absolute inset-0 ripple ripple-2" />
+    <div className="absolute inset-0 ripple ripple-3" />
+    <div className="absolute inset-0 ripple ripple-4" />
+    
+    {/* More Particles with Brighter Glow and Varied Cyan Tones */}
     <div className="absolute inset-0">
-      <div className="particle" style={{ left: '15%', top: '20%', animationDelay: '0s' }} />
-      <div className="particle" style={{ left: '35%', top: '60%', animationDelay: '1.5s' }} />
-      <div className="particle" style={{ left: '55%', top: '35%', animationDelay: '3s' }} />
-      <div className="particle" style={{ left: '75%', top: '70%', animationDelay: '4.5s' }} />
-      <div className="particle" style={{ left: '25%', top: '85%', animationDelay: '6s' }} />
+      <div className="particle particle-large" style={{ left: '10%', top: '15%', animationDelay: '0s' }} />
+      <div className="particle particle-medium particle-cyan" style={{ left: '30%', top: '50%', animationDelay: '0.8s' }} />
+      <div className="particle particle-small" style={{ left: '50%', top: '25%', animationDelay: '1.6s' }} />
+      <div className="particle particle-medium particle-cyan-dark" style={{ left: '70%', top: '60%', animationDelay: '2.4s' }} />
+      <div className="particle particle-large" style={{ left: '20%', top: '80%', animationDelay: '3.2s' }} />
+      <div className="particle particle-small particle-cyan" style={{ left: '80%', top: '20%', animationDelay: '4s' }} />
+      <div className="particle particle-medium" style={{ left: '40%', top: '35%', animationDelay: '4.8s' }} />
+      <div className="particle particle-small particle-cyan-dark" style={{ left: '60%', top: '85%', animationDelay: '5.6s' }} />
+      <div className="particle particle-large particle-cyan" style={{ left: '45%', top: '15%', animationDelay: '6.4s' }} />
     </div>
+    
+    {/* Brighter Glowing Orbs with Enhanced Animation */}
+    <div className="absolute inset-0">
+      <div className="orb" style={{ left: '15%', top: '25%', animationDelay: '0s' }} />
+      <div className="orb orb-small" style={{ left: '55%', top: '65%', animationDelay: '2s' }} />
+      <div className="orb orb-medium" style={{ left: '75%', top: '40%', animationDelay: '4s' }} />
+    </div>
+
     <style>{`
-      .animate-pulse-gradient {
-        background-size: 200% 200%;
-        animation: pulseGradient 12s ease-in-out infinite;
+      .animate-gradient-flow {
+        background-size: 400% 400%;
+        animation: gradientFlow 16s ease-in-out infinite;
       }
-      @keyframes pulseGradient {
+      @keyframes gradientFlow {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
+
       .ripple {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 70%);
-        animation: ripple 20s linear infinite;
-        opacity: 0.3;
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.45) 5%, transparent 65%);
+        opacity: 0.55;
+      }
+      .ripple-1 {
+        animation: ripple 18s ease-in-out infinite;
+      }
+      .ripple-2 {
+        animation: ripple 22s ease-in-out infinite 2s;
+      }
+      .ripple-3 {
+        animation: ripple 20s ease-in-out infinite 4s;
+      }
+      .ripple-4 {
+        animation: ripple 24s ease-in-out infinite 6s;
       }
       @keyframes ripple {
-        0% { transform: scale(1); opacity: 0.3; }
-        50% { transform: scale(1.5); opacity: 0.1; }
-        100% { transform: scale(1); opacity: 0.3; }
+        0% { transform: scale(0.7); opacity: 0.55; }
+        50% { transform: scale(2.3); opacity: 0.25; }
+        100% { transform: scale(0.7); opacity: 0.55; }
       }
+
       .particle {
         position: absolute;
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.95), transparent);
+        border-radius: 50%;
+        animation: floatGlow 9s ease-in-out infinite;
+        box-shadow: 0 0 30px rgba(6, 182, 212, 1);
+      }
+      .particle-large {
+        width: 20px;
+        height: 20px;
+      }
+      .particle-medium {
+        width: 14px;
+        height: 14px;
+      }
+      .particle-small {
         width: 10px;
         height: 10px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-        border-radius: 50%;
-        animation: floatGlow 8s ease-in-out infinite;
-        box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+      }
+      .particle-cyan {
+        background: radial-gradient(circle, rgba(8, 145, 178, 0.95), transparent);
+        box-shadow: 0 0 25px rgba(8, 145, 178, 1);
+      }
+      .particle-cyan-dark {
+        background: radial-gradient(circle, rgba(4, 120, 150, 0.95), transparent);
+        box-shadow: 0 0 25px rgba(4, 120, 150, 1);
       }
       @keyframes floatGlow {
-        0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
-        50% { transform: translateY(-15px) scale(1.2); opacity: 0.7; }
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.75; }
+        50% { transform: translate(25px, -35px) scale(1.6) rotate(60deg); opacity: 1; }
+      }
+
+      .orb {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        background: radial-gradient(circle, rgba(6, 182, 212, 0.65), transparent);
+        border-radius: 50%;
+        animation: orbGlow 10s ease-in-out infinite;
+        box-shadow: 0 0 60px rgba(6, 182, 212, 0.9), inset 0 0 20px rgba(6, 182, 212, 0.6);
+      }
+      .orb-small {
+        width: 45px;
+        height: 45px;
+      }
+      .orb-medium {
+        width: 60px;
+        height: 60px;
+      }
+      @keyframes orbGlow {
+        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.65; }
+        50% { transform: scale(1.5) rotate(45deg); opacity: 0.85; }
       }
     `}</style>
   </div>
