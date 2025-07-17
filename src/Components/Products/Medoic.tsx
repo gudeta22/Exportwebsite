@@ -144,7 +144,7 @@ const XrayComponent = () => {
               </h3>
               <button
                 onClick={closeModal}
-                className="text-gray-600 hover:text-gray-800 text-lg sm:text-xl md:text-2xl p-2 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 text-xl sm:text-2xl md:text-3xl p-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 aria-label="Close modal"
               >
                 ×
@@ -157,7 +157,7 @@ const XrayComponent = () => {
               <div className="w-full md:w-2/3">
                 <img
                   src={mainImage}
-                  className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[450px] object-contain rounded-lg transition-opacity duration-500 ease-in-out"
+                  className="w-full h-auto max-h-[40vh] sm:max-h-[50vh] md:max-h-[400px] object-contain rounded-lg transition-opacity duration-500 ease-in-out"
                   alt="X-ray Machine Main View"
                   loading="lazy"
                   onError={(e) => (e.currentTarget.src = Xray)}
