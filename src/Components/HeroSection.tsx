@@ -4,10 +4,55 @@ import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
 
-// Styled Background Component
+// Styled Background Component with Pulsating Gradient, Particles, and Ripple
 const StyledBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 to-cyan-800" />
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 opacity-80 animate-pulse-gradient" />
+    <div className="absolute inset-0 ripple" />
+    <div className="absolute inset-0">
+      <div className="particle" style={{ left: '15%', top: '20%', animationDelay: '0s' }} />
+      <div className="particle" style={{ left: '35%', top: '60%', animationDelay: '1.5s' }} />
+      <div className="particle" style={{ left: '55%', top: '35%', animationDelay: '3s' }} />
+      <div className="particle" style={{ left: '75%', top: '70%', animationDelay: '4.5s' }} />
+      <div className="particle" style={{ left: '25%', top: '85%', animationDelay: '6s' }} />
+    </div>
+    <style>{`
+      .animate-pulse-gradient {
+        background-size: 200% 200%;
+        animation: pulseGradient 12s ease-in-out infinite;
+      }
+      @keyframes pulseGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .ripple {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 70%);
+        animation: ripple 20s linear infinite;
+        opacity: 0.3;
+      }
+      @keyframes ripple {
+        0% { transform: scale(1); opacity: 0.3; }
+        50% { transform: scale(1.5); opacity: 0.1; }
+        100% { transform: scale(1); opacity: 0.3; }
+      }
+      .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+        border-radius: 50%;
+        animation: floatGlow 8s ease-in-out infinite;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+      }
+      @keyframes floatGlow {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+        50% { transform: translateY(-15px) scale(1.2); opacity: 0.7; }
+      }
+    `}</style>
   </div>
 );
 
@@ -40,7 +85,6 @@ const FloatingCard = ({ src, alt, className, delay }: FloatingCardProps) => {
       variants={cardVariants}
     >
       <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
-      {/* Removed the label div */}
     </motion.div>
   );
 };
@@ -133,7 +177,7 @@ const HeroSection = () => {
               key={item.alt}
               src={item.src}
               alt={item.alt}
-              className="w-full h-48 sm:h-56 md:h-72"
+              className="w-full h-48 sm:h-56 md:h-80"
               delay={0.2 * (index + 1)}
             />
           ))}
