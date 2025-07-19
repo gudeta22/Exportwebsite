@@ -1,4 +1,4 @@
-import mission from '../../assets/images/close-up-team-health-workers.jpg';
+// import mission from '../../assets/images/close-up-team-health-workers.jpg';
 
 const AboutDescription = () => {
   return (
@@ -48,7 +48,7 @@ const AboutDescription = () => {
           <div className="bg-white p-3 sm:p-4 md:p-3 rounded-lg shadow-lg">
             <div className="relative">
               <img
-                src={mission}
+                src="https://media.licdn.com/dms/image/v2/D4D12AQEgPWb-CtA2Bg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692902984021?e=2147483647&v=beta&t=kkLyBYn2ami0MGlPZUnu0wLSiNmvzPjWTns7gQRndAo"
                 alt="Our Mission"
                 loading='lazy'
                 className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-lg"

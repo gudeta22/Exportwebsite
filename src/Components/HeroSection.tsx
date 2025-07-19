@@ -4,38 +4,13 @@ import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
 
-// Styled Background Component with Slightly More Visible Cyan Animation
 const StyledBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    {/* Brighter Gradient Background with Cyan-700 Base */}
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-800 via-cyan-800 to-cyan-800 opacity-95 animate-gradient-flow" />
-    
-    {/* More Pronounced Ripple Effects */}
     <div className="absolute inset-0 ripple ripple-1" />
     <div className="absolute inset-0 ripple ripple-2" />
     <div className="absolute inset-0 ripple ripple-3" />
     <div className="absolute inset-0 ripple ripple-4" />
-    
-    {/* More Particles with Brighter Glow and Varied Cyan Tones */}
-    <div className="absolute inset-0">
-      <div className="particle particle-large" style={{ left: '10%', top: '15%', animationDelay: '0s' }} />
-      <div className="particle particle-medium particle-cyan" style={{ left: '30%', top: '50%', animationDelay: '0.8s' }} />
-      <div className="particle particle-small" style={{ left: '50%', top: '25%', animationDelay: '1.6s' }} />
-      <div className="particle particle-medium particle-cyan-dark" style={{ left: '70%', top: '60%', animationDelay: '2.4s' }} />
-      <div className="particle particle-large" style={{ left: '20%', top: '80%', animationDelay: '3.2s' }} />
-      <div className="particle particle-small particle-cyan" style={{ left: '80%', top: '20%', animationDelay: '4s' }} />
-      <div className="particle particle-medium" style={{ left: '40%', top: '35%', animationDelay: '4.8s' }} />
-      <div className="particle particle-small particle-cyan-dark" style={{ left: '60%', top: '85%', animationDelay: '5.6s' }} />
-      <div className="particle particle-large particle-cyan" style={{ left: '45%', top: '15%', animationDelay: '6.4s' }} />
-    </div>
-    
-    {/* Brighter Glowing Orbs with Enhanced Animation */}
-    <div className="absolute inset-0">
-      <div className="orb" style={{ left: '15%', top: '25%', animationDelay: '0s' }} />
-      <div className="orb orb-small" style={{ left: '55%', top: '65%', animationDelay: '2s' }} />
-      <div className="orb orb-medium" style={{ left: '75%', top: '40%', animationDelay: '4s' }} />
-    </div>
-
     <style>{`
       .animate-gradient-flow {
         background-size: 400% 400%;
@@ -46,7 +21,6 @@ const StyledBackground = () => (
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
-
       .ripple {
         position: absolute;
         width: 100%;
@@ -54,82 +28,19 @@ const StyledBackground = () => (
         background: radial-gradient(circle, rgba(6, 182, 212, 0.45) 5%, transparent 65%);
         opacity: 0.55;
       }
-      .ripple-1 {
-        animation: ripple 18s ease-in-out infinite;
-      }
-      .ripple-2 {
-        animation: ripple 22s ease-in-out infinite 2s;
-      }
-      .ripple-3 {
-        animation: ripple 20s ease-in-out infinite 4s;
-      }
-      .ripple-4 {
-        animation: ripple 24s ease-in-out infinite 6s;
-      }
+      .ripple-1 { animation: ripple 18s ease-in-out infinite; }
+      .ripple-2 { animation: ripple 22s ease-in-out infinite 2s; }
+      .ripple-3 { animation: ripple 20s ease-in-out infinite 4s; }
+      .ripple-4 { animation: ripple 24s ease-in-out infinite 6s; }
       @keyframes ripple {
         0% { transform: scale(0.7); opacity: 0.55; }
         50% { transform: scale(2.3); opacity: 0.25; }
         100% { transform: scale(0.7); opacity: 0.55; }
       }
-
-      .particle {
-        position: absolute;
-        background: radial-gradient(circle, rgba(6, 182, 212, 0.95), transparent);
-        border-radius: 50%;
-        animation: floatGlow 9s ease-in-out infinite;
-        box-shadow: 0 0 30px rgba(6, 182, 212, 1);
-      }
-      .particle-large {
-        width: 20px;
-        height: 20px;
-      }
-      .particle-medium {
-        width: 14px;
-        height: 14px;
-      }
-      .particle-small {
-        width: 10px;
-        height: 10px;
-      }
-      .particle-cyan {
-        background: radial-gradient(circle, rgba(8, 145, 178, 0.95), transparent);
-        box-shadow: 0 0 25px rgba(8, 145, 178, 1);
-      }
-      .particle-cyan-dark {
-        background: radial-gradient(circle, rgba(4, 120, 150, 0.95), transparent);
-        box-shadow: 0 0 25px rgba(4, 120, 150, 1);
-      }
-      @keyframes floatGlow {
-        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.75; }
-        50% { transform: translate(25px, -35px) scale(1.6) rotate(60deg); opacity: 1; }
-      }
-
-      .orb {
-        position: absolute;
-        width: 75px;
-        height: 75px;
-        background: radial-gradient(circle, rgba(6, 182, 212, 0.65), transparent);
-        border-radius: 50%;
-        animation: orbGlow 10s ease-in-out infinite;
-        box-shadow: 0 0 60px rgba(6, 182, 212, 0.9), inset 0 0 20px rgba(6, 182, 212, 0.6);
-      }
-      .orb-small {
-        width: 45px;
-        height: 45px;
-      }
-      .orb-medium {
-        width: 60px;
-        height: 60px;
-      }
-      @keyframes orbGlow {
-        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.65; }
-        50% { transform: scale(1.5) rotate(45deg); opacity: 0.85; }
-      }
     `}</style>
   </div>
 );
 
-// Floating Card Component
 interface FloatingCardProps {
   src: string;
   alt: string;
@@ -171,12 +82,10 @@ const HeroSection = () => {
       transition: { duration: 0.6, staggerChildren: 0.1 },
     },
   };
-
   const letterVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0 },
   };
-
   const buttonVariants = {
     hover: {
       scale: 1.05,
@@ -185,7 +94,6 @@ const HeroSection = () => {
     },
   };
 
-  // Company name and product images
   const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
   const productImages = [
     { src: device1, alt: "Diagnostic Tool" },
@@ -193,9 +101,8 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[40rem] sm:min-h-[50rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32 bg-gradient-to-b from-cyan-700 to-cyan-900">
+    <section className="relative min-h-[45rem] sm:min-h-[55rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32 bg-gradient-to-b from-cyan-700 to-cyan-900">
       <StyledBackground />
-
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-8 sm:gap-12">
         {/* Text Content */}
         <motion.div
@@ -205,52 +112,51 @@ const HeroSection = () => {
           variants={textVariants}
         >
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight"
             variants={textVariants}
           >
             Innovative <span className="text-teal-300">solutions</span> for healthcare
           </motion.h1>
           <motion.p
-            className="text-blue-100 mt-4 sm:mt-6 text-sm sm:text-base md:text-lg"
+            className="text-blue-100 mt-6 sm:mt-8 text-base sm:text-lg md:text-xl"
             variants={letterVariants}
           >
             Explore our advanced medical products designed to improve patient care.
           </motion.p>
           <Link to="/ourcompany">
             <motion.button
-              className="mt-6 sm:mt-8 bg-white text-black font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
+              className="mt-8 sm:mt-10 bg-white text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
             >
               Learn More
               <svg
-                className="w-4 h-4"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </motion.button>
           </Link>
           <motion.p
-            className="text-blue-100 mt-6 sm:mt-8 text-xs sm:text-sm flex items-center justify-center md:justify-start"
+            className="text-blue-100 mt-8 sm:mt-10 text-sm sm:text-base flex items-center justify-center md:justify-start"
             variants={letterVariants}
           >
-            <FaHeartbeat className="mr-2 text-teal-300" />
+            <FaHeartbeat className="mr-2 text-teal-300 text-xl" />
             Powered by {companyName}
           </motion.p>
         </motion.div>
 
-        {/* Floating Cards with Medical Products */}
-        <div className="relative w-full max-w-xl grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 md:mt-0">
+        {/* Floating Cards */}
+        <div className="relative w-full max-w-xl grid grid-cols-2 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 md:mt-0">
           {productImages.map((item, index) => (
             <FloatingCard
               key={item.alt}
               src={item.src}
               alt={item.alt}
-              className="w-full h-48 sm:h-56 md:h-80"
+              className="w-full h-56 sm:h-72 md:h-[22rem] lg:h-[26rem]"
               delay={0.2 * (index + 1)}
             />
           ))}
