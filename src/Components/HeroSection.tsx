@@ -4,43 +4,6 @@ import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
 
-const StyledBackground = () => (
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-800 via-cyan-800 to-cyan-800 opacity-95 animate-gradient-flow" />
-    <div className="absolute inset-0 ripple ripple-1" />
-    <div className="absolute inset-0 ripple ripple-2" />
-    <div className="absolute inset-0 ripple ripple-3" />
-    <div className="absolute inset-0 ripple ripple-4" />
-    <style>{`
-      .animate-gradient-flow {
-        background-size: 400% 400%;
-        animation: gradientFlow 16s ease-in-out infinite;
-      }
-      @keyframes gradientFlow {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      .ripple {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(6, 182, 212, 0.45) 5%, transparent 65%);
-        opacity: 0.55;
-      }
-      .ripple-1 { animation: ripple 18s ease-in-out infinite; }
-      .ripple-2 { animation: ripple 22s ease-in-out infinite 2s; }
-      .ripple-3 { animation: ripple 20s ease-in-out infinite 4s; }
-      .ripple-4 { animation: ripple 24s ease-in-out infinite 6s; }
-      @keyframes ripple {
-        0% { transform: scale(0.7); opacity: 0.55; }
-        50% { transform: scale(2.3); opacity: 0.25; }
-        100% { transform: scale(0.7); opacity: 0.55; }
-      }
-    `}</style>
-  </div>
-);
-
 interface FloatingCardProps {
   src: string;
   alt: string;
@@ -101,8 +64,19 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[45rem] sm:min-h-[55rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32 bg-gradient-to-b from-cyan-700 to-cyan-900">
-      <StyledBackground />
+    <section
+      className="relative min-h-[45rem] sm:min-h-[55rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32"
+      style={{
+        backgroundImage:
+          'url("https://wallpapers.com/images/hd/doctor-with-globe-in-hand-hd-medical-dff7ahiwc5xsfjm0.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Colored overlay */}
+      <div className="absolute inset-0 bg-black opacity-70"></div>
+
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-8 sm:gap-12">
         {/* Text Content */}
         <motion.div
@@ -125,7 +99,7 @@ const HeroSection = () => {
           </motion.p>
           <Link to="/ourcompany">
             <motion.button
-              className="mt-8 sm:mt-10 bg-white text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
+              className="mt-8 sm:mt-10 bg-cyan-600  font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
             >

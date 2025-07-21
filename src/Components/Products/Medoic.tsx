@@ -108,7 +108,7 @@ const XrayComponent = () => {
         <div className="w-full lg:w-1/2 lg:pl-4 xl:pl-6 mt-4 lg:mt-0">
           <div className="text-gray-800">
             <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-              Our state-of-the-art X-ray machine offers unparalleled imaging quality and precision. Designed with advanced technology, it ensures accurate diagnostics and enhanced patient care. With user-friendly features and robust performance, our X-ray machine is an essential tool for modern medical facilities.
+              Our state-of-the-art X-ray machine offers unparalleled imaging quality and precision.
             </p>
             <button
               onClick={openModal}
