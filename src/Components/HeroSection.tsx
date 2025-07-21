@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
+import Bg from '../assets/images/doctor_bg.jpg'; // ✅ your local background image
 
 interface FloatingCardProps {
   src: string;
@@ -53,6 +54,7 @@ const HeroSection = () => {
     hover: {
       scale: 1.05,
       backgroundColor: "#f5f5f5",
+      color: "#000",
       transition: { duration: 0.3 },
     },
   };
@@ -67,15 +69,14 @@ const HeroSection = () => {
     <section
       className="relative min-h-[45rem] sm:min-h-[55rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32"
       style={{
-        backgroundImage:
-          'url("https://wallpapers.com/images/hd/doctor-with-globe-in-hand-hd-medical-dff7ahiwc5xsfjm0.jpg")',
+        backgroundImage: `url(${Bg})`, // ✅ use imported image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Colored overlay */}
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      {/* ✅ Subtle overlay with opacity */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-8 sm:gap-12">
         {/* Text Content */}
@@ -99,7 +100,7 @@ const HeroSection = () => {
           </motion.p>
           <Link to="/ourcompany">
             <motion.button
-              className="mt-8 sm:mt-10 bg-cyan-600 text-white hover:text-black  font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
+              className="mt-8 sm:mt-10 bg-cyan-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
             >
