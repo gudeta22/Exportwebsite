@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const MissionVision = () => {
-  const [activeTab, setActiveTab] = useState<'mission' | 'vision' | null>(null); // no active tab initially
+  // ✅ Set default tab to "mission"
+  const [activeTab, setActiveTab] = useState<'mission' | 'vision'>('mission');
   const navigate = useNavigate();
 
   return (
@@ -84,21 +85,6 @@ const MissionVision = () => {
 
             {/* Content */}
             <AnimatePresence mode="wait">
-              {!activeTab && (
-                <motion.div
-                  key="default"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative z-10 p-6"
-                >
-                  <p className="text-black font-medium">
-                    Please select "Our Mission" or "Our Vision" to learn more.
-                  </p>
-                </motion.div>
-              )}
-
               {activeTab === 'mission' && (
                 <motion.div
                   key="mission"
@@ -134,7 +120,7 @@ const MissionVision = () => {
             </AnimatePresence>
           </div>
 
-          {/* More About Us Button with smooth, beautiful hover effect */}
+          {/* More About Us Button */}
           <button
             onClick={() => navigate('/ourcompany')}
             className="
