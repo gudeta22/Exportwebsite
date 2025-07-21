@@ -72,6 +72,7 @@ const HeroSection = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
       }}
     >
       {/* Colored overlay */}
@@ -99,7 +100,7 @@ const HeroSection = () => {
           </motion.p>
           <Link to="/ourcompany">
             <motion.button
-              className="mt-8 sm:mt-10 bg-cyan-600  font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
+              className="mt-8 sm:mt-10 bg-cyan-600 text-white hover:text-black  font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
             >
