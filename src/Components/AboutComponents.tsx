@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const MissionVision = () => {
-  // ✅ Set default tab to "mission"
   const [activeTab, setActiveTab] = useState<'mission' | 'vision'>('mission');
   const navigate = useNavigate();
 
@@ -24,52 +23,47 @@ const MissionVision = () => {
           </p>
 
           {/* Tabs */}
-          <div className="flex gap-6 border-b border-gray-200 relative">
-            <button
-              onClick={() => setActiveTab('mission')}
-              className={`relative pb-2 px-4 text-sm font-medium transition-colors ${
-                activeTab === 'mission'
-                  ? 'text-cyan-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Our Mission
-              {activeTab === 'mission' && (
-                <motion.div
-                  layoutId="underline"
-                  className="absolute left-0 bottom-0 h-[2px] bg-cyan-600 rounded-full"
-                  style={{ width: '100%' }}
-                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                />
-              )}
-            </button>
+          <div className="flex gap-2 border-b border-gray-200 relative">
+            {['mission', 'vision'].map((tab) => {
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab as 'mission' | 'vision')}
+                  className={`relative px-5 py-2 text-sm font-medium  overflow-hidden group transition-all duration-300 ${
+                    isActive
+                      ? 'bg-cyan-600 text-white'
+                      : 'bg-transparent text-gray-700 hover:text-white'
+                  }`}
+                >
+                  {/* Hover animated fill */}
+                  {!isActive && (
+                    <span className="absolute inset-0 bg-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0" />
+                  )}
 
-            <button
-              onClick={() => setActiveTab('vision')}
-              className={`relative pb-2 px-4 text-sm font-medium transition-colors ${
-                activeTab === 'vision'
-                  ? 'text-cyan-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Our Vision
-              {activeTab === 'vision' && (
-                <motion.div
-                  layoutId="underline"
-                  className="absolute left-0 bottom-0 h-[2px] bg-cyan-600 rounded-full"
-                  style={{ width: '100%' }}
-                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                />
-              )}
-            </button>
+                  {/* Text above background */}
+                  <span className="relative z-10">
+                    {tab === 'mission' ? 'Our Mission' : 'Our Vision'}
+                  </span>
+
+                  {/* Animated underline for active */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="underline"
+                      className="absolute left-0 bottom-0 h-[2px] bg-white rounded-full z-10"
+                      style={{ width: '100%' }}
+                      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
           {/* Description Box */}
-          <div className="relative mt-6 rounded-lg shadow-sm min-h-[100px] overflow-hidden">
-            {/* Base white background */}
-            <div className="absolute inset-0 bg-white"></div>
+          <div className="relative -mt-8 rounded-lg shadow-sm min-h-[100px] overflow-hidden">
+            <div className="absolute inset-0 bg-white" />
 
-            {/* Cyan overlay only when a tab is active */}
             <AnimatePresence mode="wait">
               {activeTab && (
                 <motion.div
@@ -83,7 +77,6 @@ const MissionVision = () => {
               )}
             </AnimatePresence>
 
-            {/* Content */}
             <AnimatePresence mode="wait">
               {activeTab === 'mission' && (
                 <motion.div
