@@ -1,179 +1,75 @@
-import { useEffect, useRef } from "react";
+import officeimage from '../../assets/images/koji_4.jpg';
+import { useState } from 'react';
 
-function WhyChoose() {
-  const elementsRef = useRef<HTMLDivElement[]>([]);
+const WhyChoose = () => {
+  const [open, setOpen] = useState<number | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("slideUp");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const currentElements = elementsRef.current;
-
-    currentElements.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      currentElements.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);
-
-  const services = [
-    {
-      id: 1,
-      number: "01",
-      title: "Proven Industry Expertise",
-      description:
-        "Benefit from our extensive knowledge of Ethiopia’s healthcare ecosystem and a demonstrated track record of delivering innovative solutions to public and private hospitals.",
-    },
-    {
-      id: 2,
-      number: "02",
-      title: "Customized Healthcare Solutions",
-      description:
-        "Receive tailored support and resources meticulously designed to address the specific requirements of your institution, ensuring optimal operational efficiency and patient care.",
-    },
-    {
-      id: 3,
-      number: "03",
-      title: "Adherence to Global Standards",
-      description:
-        "Access premium medical devices sourced from internationally renowned manufacturers, upheld to the highest standards of reliability and quality.",
-    },
-    {
-      id: 4,
-      number: "04",
-      title: "Efficient Partnership Framework",
-      description:
-        "Access premium medical devices sourced from internationally renowned manufacturers, upheld to the highest standards of reliability and quality.",
-    },
-    {
-      id: 5,
-      number: "05",
-      title: "Commitment to Sustainable Impact",
-      description:
-        "Collaborate with us to advance healthcare excellence across Ethiopia, contributing to enhanced patient outcomes and a robust community health infrastructure.",
-    },
+  const values = [
+    { icon: '🤝', title: 'Proven Industry Expertise', description: 'Benefit from our extensive knowledge of Ethiopia’s healthcare ecosystem and a demonstrated track record of delivering innovative solutions to public and private hospitals.' },
+    { icon: '💡', title: 'Customized Healthcare Solutions', description: 'Receive tailored support and resources meticulously designed to address the specific requirements of your institution, ensuring optimal operational efficiency and patient care.' },
+    { icon: '💻', title: 'Adherence to Global Standards', description: 'Access premium medical devices sourced from internationally renowned manufacturers, upheld to the highest standards of reliability and quality.' },
+    { icon: '👍', title: 'Efficient Partnership Framework', description: 'Access premium medical devices sourced from internationally renowned manufacturers, upheld to the highest standards of reliability and quality.' },
+    { icon: '⭐', title: 'Commitment to Sustainable Impact', description: 'Collaborate with us to advance healthcare excellence across Ethiopia, contributing to enhanced patient outcomes and a robust community health infrastructure.' },
   ];
 
   return (
-    <div className="relative my-10">
-      <style>{`
-        .number-circle {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-size: 24px;
-          font-weight: bold;
-          position: relative;
-          transition: all 0.7s ease-in-out;
-          z-index: 2;
-        }
-        .service-card {
-          position: relative;
-          background: #f3f4f6; /* gray-100 */
-          color: #1f2937; /* gray-800 */
-          border-radius: 0.5rem;
-          overflow: hidden;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-          transition: transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
-        }
-        .service-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 0%;
-          height: 100%;
-          background: #06b6d4;
-          z-index: 1;
-          transition: width 0.7s ease-in-out;
-        }
-        .service-card:hover::before {
-          width: 100%;
-        }
-        .service-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        .service-card-content {
-          position: relative;
-          z-index: 2;
-          transition: all 0.7s ease-in-out;
-        }
-        .service-card:hover .service-card-content h3,
-        .service-card:hover .service-card-content p {
-          color: #ffffff;
-          transition: all 0.7s ease-in-out;
-        }
-        .service-card:hover .number-circle {
-          background: #ffffff;
-          color: #06b6d4;
-          box-shadow: 0 0 10px rgba(255,255,255,0.4);
-        }
+    <section className="py-6 sm:py-8 lg:py-12 xl:py-16 min-h-[400px] bg-[#f1f4ff]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="relative inline-block">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-left text-cyan-600 mb-3">Why Choose Us</h2>
+          <div className="absolute bottom-0 left-0 w-1/2 h-1 bg-cyan-600"></div>
+        </div>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black mt-4 sm:mt-6 lg:mt-8 leading-relaxed max-w-3xl">
+          Discover why we are the trusted partner for healthcare institutions across Ethiopia, delivering innovative solutions and unparalleled support.
+        </p>
+      </div>
 
-        .slideUp {
-          animation: slideUp 0.5s ease forwards;
-        }
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12">
+        {/* Image with hoverable background blocks */}
+        <div className="w-full md:w-1/2 mb-6 md:mb-0 relative group cursor-pointer transition-all duration-300">
+          {/* Top-left block */}
+          <div className="absolute top-[-20px] left-[-20px] w-full h-full bg-cyan-600 rounded-lg z-0 transform transition-transform duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
+          {/* Bottom-right block */}
+          <div className="absolute bottom-[-20px] right-[-20px] w-full h-full bg-yellow-500 rounded-lg z-0 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+          {/* Main Image */}
+          <img
+            src={officeimage}
+            alt="Office environment showcasing healthcare solutions"
+            className="relative z-10 w-full h-auto lg:h-[25rem] rounded-lg object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
 
-      {/* Header */}
-      <div className="p-4 bg-cyan-600 pt-28 h-[500px] md:h-[25rem] text-white relative z-10 text-left">
-        <div className="m-auto flex flex-col justify-center md:w-[620px]">
-          <h1 className="text-xl md:text-4xl uppercase font-bold poppins inline-block">
-            WHY CHOOSE OUR PRODUCTS?
-          </h1>
-          <div className="h-1 bg-white w-32 mt-2 rounded"></div>
+        {/* Accordion */}
+        <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 lg:space-y-5">
+          {values.map((value, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                className="w-full p-3 sm:p-4 lg:p-5 flex items-center space-x-4 sm:space-x-6 focus:outline-none hover:bg-cyan-600 hover:text-white active:bg-cyan-600 active:text-white transition-colors duration-300 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                onClick={() => setOpen(index === open ? null : index)}
+                aria-expanded={open === index}
+                aria-controls={`accordion-content-${index}`}
+              >
+                <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">{value.icon}</span>
+                <h3 className="font-bold text-sm sm:text-base md:text-lg flex-1 text-left">{value.title}</h3>
+                <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">{open === index ? '−' : '+'}</span>
+              </button>
+              <div
+                id={`accordion-content-${index}`}
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  open === index ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
+                }`}
+              >
+                <div className="p-3 sm:p-4 lg:p-5">
+                  <p className="text-sm sm:text-base md:text-base text-gray-600 leading-relaxed">{value.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Cards */}
-      <div className="container mx-auto px-5 lg:px-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 -mt-72 md:-mt-44 relative z-10">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            ref={(el) => {
-              if (el) elementsRef.current[index] = el;
-            }}
-            className="service-card lg:h-[27rem] lg:w-[22.7rem] sm:w-[16rem] md:w-[18rem] mx-auto"
-          >
-            <div className="service-card-content p-[20px] flex flex-col justify-center items-center gap-6 my-7">
-              <div className="number-circle">{service.number}</div>
-              <h3 className="font-semibold my-5 fontstyle text-center">{service.title}</h3>
-              <p className="text-center poppins font-light text-gray-600">
-                {service.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default WhyChoose;
