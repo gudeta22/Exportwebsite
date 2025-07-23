@@ -30,11 +30,10 @@ const MissionVision = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab as 'mission' | 'vision')}
-                  className={`relative px-5 py-2 text-sm font-medium  overflow-hidden group transition-all duration-300 ${
-                    isActive
-                      ? 'bg-cyan-600 text-white'
-                      : 'bg-transparent text-gray-700 hover:text-white'
-                  }`}
+                  className={`relative px-5 py-2 text-sm font-medium  overflow-hidden group transition-all duration-300 ${isActive
+                    ? 'bg-cyan-600 text-white'
+                    : 'bg-transparent text-gray-700 hover:text-white'
+                    }`}
                 >
                   {/* Hover animated fill */}
                   {!isActive && (
@@ -59,7 +58,7 @@ const MissionVision = () => {
               );
             })}
           </div>pia
-￼
+          ￼
 
           {/* Description Box */}
           <div className="relative -mt-8 rounded-lg shadow-sm min-h-[100px] overflow-hidden">
@@ -126,18 +125,18 @@ const MissionVision = () => {
             More About Us
           </button>
         </div>
-
         {/* Image Section */}
-        <div className="lg:w-1/2 relative">
-          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden group">
-            <div
-              className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 
-                         transition-transform duration-500 group-hover:scale-105 rounded-xl"
-            ></div>
+        <div className="lg:w-1/2 relative group">
+          {/* Background Layers with hover movement */}
+          <div className="absolute -top-6 -left-6 w-full h-full bg-cyan-600 rounded-xl z-0 transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
+          <div className="absolute -bottom-6 -right-6 w-full h-full bg-yellow-500 rounded-xl z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+
+          {/* Foreground Image stays static */}
+          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden z-10">
             <img
               src={aboutimg}
               alt="Healthcare Professional"
-              className="relative w-full h-full object-cover rounded-xl"
+              className="w-full h-full object-cover rounded-xl"
               loading="lazy"
             />
           </div>

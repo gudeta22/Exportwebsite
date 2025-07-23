@@ -1,212 +1,94 @@
+// Import images directly from assets
+import BlogKoji1 from "../../assets/images/koji_2.jpg";
+import BlogKoji2 from "../../assets/images/koji_3.jpg";
+import BlogKoji3 from "../../assets/images/koji_4.jpg";
+
+const blogs = [
+  {
+    id: 1,
+    title: "Ensuring Excellence: The Importance of Quality Medical Supplies",
+    description:
+      "Koji Healthcare Solutions is a trusted medical supplies provider in Ethiopia, delivering certified, reliable, and safe products that meet global standards. We help hospitals and clinics improve patient care through high‑quality medical equipment and consumables.",
+    image: BlogKoji1,
+    extended:
+      "High‑quality medical supplies are essential for protecting patients and improving the efficiency of healthcare facilities. At Koji Healthcare Solutions, we partner with internationally recognized manufacturers to deliver equipment and consumables that comply with strict regulatory guidelines. Our advanced quality‑control process ensures that every product—whether it’s surgical tools, diagnostic devices, or hospital consumables—is thoroughly inspected and tested before reaching our clients. This dedication helps hospitals, clinics, and healthcare professionals in Ethiopia build confidence in their operations, reduce risks, and provide exceptional care to patients.",
+  },
+  {
+    id: 2,
+    title: "Revolutionizing Pharmaceutical Care with Koji’s Expertise",
+    description:
+      "Discover how Koji Healthcare Solutions is transforming pharmaceutical services in Ethiopia by combining advanced inventory management with personalized support, ensuring patients receive the right medicine at the right time.",
+    image: BlogKoji2,
+    extended:
+      "Pharmaceutical care is more than just supplying medicines—it’s about creating a system that improves treatment outcomes. At Koji Healthcare Solutions, we implement intelligent inventory management systems that track stock levels in real time, reduce waste, and guarantee that essential medicines are always available when patients need them. Our pharmaceutical team works closely with healthcare providers across Ethiopia, offering training, consultation, and customized solutions that help clinics reduce errors and improve patient adherence to treatment plans. By modernizing pharmaceutical services, Koji is playing a key role in raising the standard of healthcare nationwide.",
+  },
+  {
+    id: 3,
+    title: "Innovations Driving Ethiopian Healthcare Forward",
+    description:
+      "Koji Healthcare Solutions introduces cutting‑edge healthcare innovations in Ethiopia—from smart logistics to data‑driven supply management—helping hospitals and clinics expand access and improve service delivery.",
+    image: BlogKoji3,
+    extended:
+      "Innovation is at the heart of our mission at Koji Healthcare Solutions. We are reshaping healthcare in Ethiopia with digital inventory tools, real‑time tracking of medical supplies, and data analytics that forecast demand accurately. Our solutions empower hospitals and health centers to manage resources more efficiently, minimize shortages, and improve patient care. By leveraging technology and smart logistics, Koji ensures that even facilities in remote areas can access the medical equipment and pharmaceuticals they need. These advancements reflect our commitment to building a healthier, more resilient healthcare system for all Ethiopians.",
+  },
+];
+
 const Blogs = () => {
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen">
-      {/* Hero Section */}
-      <header className="text-cyan-600 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 text-center">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 animate-fade-in">
-          Koji Healthcare Solutions
-        </h1>
-        <p className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-          Delivering quality medical products to Ethiopia for enhanced healthcare solutions.
-        </p>
-      </header>
+    <div className="min-h-screen bg-gray-50 font-sans my-10 text-gray-800">
+     
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-16 space-y-12 sm:space-y-16">
-        {/* Section 1: What is Koji Healthcare Solutions */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            What is Koji Healthcare Solutions?
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Koji Healthcare Solutions is a medical product import company in Ethiopia, dedicated to supplying high-quality medical equipment and supplies to healthcare facilities. Our mission is to enhance healthcare delivery by providing reliable and innovative products. Key offerings include:
-          </p>
-          <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Diagnostic Equipment:</strong> Importing advanced diagnostic tools such as blood analyzers and imaging systems to support accurate medical assessments.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Patient Monitoring Systems:</strong> Supplying state-of-the-art monitoring devices to track patient health metrics in real-time.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Medical Consumables:</strong> Providing essential supplies like syringes, bandages, and sterilization equipment to ensure safe and effective care.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Surgical Instruments:</strong> Importing precision tools to support surgical procedures and improve patient outcomes.
-              </span>
-            </li>
-          </ul>
-          <div className="mt-6 sm:mt-8 pl-4 sm:pl-6 border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg">
-            <p className="text-gray-800 font-medium italic text-base sm:text-lg">
-              ★ Koji Healthcare Solutions is committed to bridging the gap in Ethiopia’s healthcare system by supplying reliable, high-quality medical products.
-            </p>
-          </div>
-        </section>
+      <section className="container mx-auto px-6 md:px-20 pb-28 space-y-28">
+        {blogs.map((blog, idx) => (
+          <article
+            key={blog.id}
+            className={`flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 ${
+              idx % 2 === 1 ? "md:flex-row-reverse" : ""
+            } opacity-0 animate-fadeInOnce`}
+            style={{ animationDelay: `${idx * 0.3}s` }}
+          >
+            {/* Image container with top-left and bottom-right frame */}
+            <div className="relative inline-block group flex-shrink-0 w-full md:w-1/2">
+              <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl border-[12px] border-cyan-600 z-0 transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
+              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-3xl border-[12px] border-yellow-400 z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
 
-        {/* Section 2: Importance of Koji Healthcare Solutions */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Why Koji Healthcare Solutions Matters
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Access to quality medical products is vital for effective healthcare delivery in Ethiopia. Koji Healthcare Solutions plays a critical role in ensuring healthcare facilities are equipped with reliable tools and supplies. Here’s why our work is essential:
-          </p>
-          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
-            <article className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-start">
-              <i className="fas fa-stethoscope text-teal-500 mr-3 mt-1"></i>
-              <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                <strong>Enhanced Diagnostics</strong><br />
-                Our imported diagnostic equipment ensures accurate detection of conditions, enabling timely and effective treatment.
-              </p>
-            </article>
-            <article className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-start">
-              <i className="fas fa-stethoscope text-teal-500 mr-3 mt-1"></i>
-              <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                <strong>Improved Patient Care</strong><br />
-                High-quality monitoring systems and consumables support better patient outcomes in hospitals and clinics.
-              </p>
-            </article>
-            <article className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-start">
-              <i className="fas fa-stethoscope text-teal-500 mr-3 mt-1"></i>
-              <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                <strong>Reliable Supply Chain</strong><br />
-                Koji ensures a steady supply of medical products, reducing shortages and supporting consistent care delivery.
-              </p>
-            </article>
-            <article className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-start">
-              <i className="fas fa-stethoscope text-teal-500 mr-3 mt-1"></i>
-              <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                <strong>Public Health Support</strong><br />
-                Our products aid in managing public health challenges, such as disease outbreaks, by equipping facilities with essential tools.
-              </p>
-            </article>
-          </div>
-        </section>
+              <img
+                src={blog.image}
+                alt={blog.title}
+                loading="lazy"
+                className="relative z-10 w-full h-80 md:h-[360px] object-cover rounded-3xl shadow-xl"
+              />
+            </div>
 
-        {/* Section 3: Challenges in Medical Product Imports */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Challenges in Medical Product Imports
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Importing medical products to Ethiopia presents unique challenges that Koji Healthcare Solutions strives to overcome. These include:
-          </p>
-          <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Regulatory Compliance:</strong> Navigating Ethiopia’s import regulations and ensuring compliance with international quality standards.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Logistics and Distribution:</strong> Managing complex supply chains to ensure timely delivery to healthcare facilities across Ethiopia.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Cost Management:</strong> Balancing affordability with the high costs of importing advanced medical equipment.
-              </span>
-            </li>
-            <li className="flex items-start transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Training and Support:</strong> Providing adequate training for healthcare professionals to effectively use imported equipment.
-              </span>
-            </li>
-          </ul>
-        </section>
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 max-w-xl">
+              <h2 className="text-3xl font-extrabold mb-6 text-gray-900 leading-tight">
+                {blog.title}
+              </h2>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">{blog.description}</p>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{blog.extended}</p>
+            </div>
+          </article>
+        ))}
+      </section>
 
-        {/* Section 4: Innovations */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Innovations Powering Koji Healthcare Solutions
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg">
-            Koji Healthcare Solutions stays ahead by sourcing innovative medical products that meet Ethiopia’s healthcare needs. Key innovations include:
-          </p>
-          <ul className="space-y-4 text-gray-700 text-base sm:text-lg">
-            <li className="flex items-start hover:text-teal-600 transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Advanced Diagnostic Tools:</strong> Importing cutting-edge blood analyzers and imaging systems for precise diagnostics.
-              </span>
-            </li>
-            <li className="flex items-start hover:text-teal-600 transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Portable Medical Devices:</strong> Sourcing compact, portable equipment to support healthcare delivery in remote areas.
-              </span>
-            </li>
-            <li className="flex items-start hover:text-teal-600 transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Efficient Supply Chain Systems:</strong> Leveraging technology to streamline importation and distribution processes.
-              </span>
-            </li>
-            <li className="flex items-start hover:text-teal-600 transition-colors">
-              <i className="fas fa-plus text-teal-500 mr-3 mt-1"></i>
-              <span>
-                <strong>Quality Assurance:</strong> Partnering with trusted global manufacturers to ensure all products meet rigorous quality standards.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Section 5: The Future */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            The Future of Koji Healthcare Solutions
-          </h2>
-          <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-            Koji Healthcare Solutions is committed to advancing Ethiopia’s healthcare system by expanding access to innovative medical products. Future trends, such as telemedicine integration and locally adapted medical technologies, will further enhance our ability to meet the evolving needs of healthcare providers and patients.
-          </p>
-        </section>
-
-        {/* Section 6: Conclusion */}
-        <section className="animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 border-b-2 border-teal-500 pb-2">
-            Conclusion
-          </h2>
-          <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-            Koji Healthcare Solutions is transforming Ethiopia’s healthcare landscape by providing high-quality medical products that enhance diagnostics, patient care, and public health. By addressing challenges like regulatory compliance and logistics, Koji ensures reliable access to essential tools. With a focus on innovation and quality, Koji is shaping a healthier future for Ethiopia. Explore Koji Healthcare Solutions today to discover our commitment to better healthcare delivery.
-          </p>
-        </section>
-      </main>
-
-      {/* Inline Styles for Animations */}
-      <style>{`
-        .animate-fade-in {
-          animation: fadeIn 1s ease-in-out;
-        }
-        .animate-slide-up {
-          animation: slideUp 0.8s ease-out;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes slideUp {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        ul {
-          list-style: none;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes fadeInOnce {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fadeInOnce {
+            animation: fadeInOnce 0.8s ease forwards;
+          }
+        `}
+      </style>
     </div>
   );
 };
