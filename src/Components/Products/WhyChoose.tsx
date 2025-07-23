@@ -45,7 +45,10 @@ const WhyChoose = () => {
           {values.map((value, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
               <button
-                className="w-full p-3 sm:p-4 lg:p-5 flex items-center space-x-4 sm:space-x-6 focus:outline-none hover:bg-cyan-600 hover:text-white active:bg-cyan-600 active:text-white transition-colors duration-300 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                className={`w-full p-3 sm:p-4 lg:p-5 flex items-center space-x-4 sm:space-x-6 focus:outline-none transition-colors duration-300 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 ${open === index
+                    ? 'bg-cyan-600 text-white'
+                    : 'hover:bg-cyan-600 hover:text-white'
+                  }`}
                 onClick={() => setOpen(index === open ? null : index)}
                 aria-expanded={open === index}
                 aria-controls={`accordion-content-${index}`}
@@ -56,9 +59,8 @@ const WhyChoose = () => {
               </button>
               <div
                 id={`accordion-content-${index}`}
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  open === index ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
-                }`}
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${open === index ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
+                  }`}
               >
                 <div className="p-3 sm:p-4 lg:p-5">
                   <p className="text-sm sm:text-base md:text-base text-gray-600 leading-relaxed">{value.description}</p>
