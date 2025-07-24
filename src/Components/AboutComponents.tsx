@@ -128,8 +128,8 @@ const MissionVision = () => {
         {/* Image Section */}
         <div className="lg:w-1/2 relative group">
           {/* Background Layers with hover movement */}
-          <div className="absolute -top-6 -left-6 w-full h-full bg-cyan-600 rounded-xl z-0 transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
-          <div className="absolute -bottom-6 -right-6 w-full h-full bg-yellow-500 rounded-xl z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+          {/* <div className="absolute -top-6 -left-6 w-full h-full bg-cyan-600 rounded-xl z-0 transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
+          <div className="absolute -bottom-6 -right-6 w-full h-full bg-yellow-500 rounded-xl z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div> */}
 
           {/* Foreground Image stays static */}
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden z-10">
