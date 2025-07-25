@@ -8,7 +8,7 @@ const MissionVision = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gray-50 py-16 px-4 sm:px-8 lg:px-16">
+    <section className="bg-gray-50 py-16 px-4 sm:px-4 lg:px-16">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
         {/* Text Content */}
         <div className="lg:w-1/2 space-y-8">
@@ -126,12 +126,8 @@ const MissionVision = () => {
           </button>
         </div>
         {/* Image Section */}
-        <div className="lg:w-1/2 relative group">
-          {/* Background Layers with hover movement */}
-          {/* <div className="absolute -top-6 -left-6 w-full h-full bg-cyan-600 rounded-xl z-0 transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
-          <div className="absolute -bottom-6 -right-6 w-full h-full bg-yellow-500 rounded-xl z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div> */}
-
-          {/* Foreground Image stays static */}
+        <div className="lg:w-auto relative group">
+          
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden z-10">
             <img
               src={aboutimg}
