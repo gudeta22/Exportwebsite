@@ -16,13 +16,13 @@ const MissionVision = () => {
             Our Commitment to Excellence
           </h2>
 
-          <p className="text-gray-600 text-xl leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed">
             At Koji Healthcare Solutions Pvt. Ltd., we are dedicated to transforming healthcare in Ethiopia
             by delivering exceptional medical devices and services of unparalleled excellence.
             Fueled by a relentless commitment to innovation and precision, we empower public and private
             healthcare providers to elevate patient care, fostering vibrant health and hope for every community we serve.
           </p>
-
+             
           {/* Tabs */}
           <div className="flex flex-wrap gap-1">
             {['mission', 'vision'].map((tab) => {
@@ -39,7 +39,7 @@ const MissionVision = () => {
               );
             })}
           </div>
-
+        
           {/* Tab Content */}
           <div className="relative border border-gray-100 bg-gray-50 py-6  shadow-inner p-5 min-h-[100px]">
             <AnimatePresence mode="wait">
@@ -51,7 +51,7 @@ const MissionVision = () => {
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <p className="text-gray-700 text-xl">
+                  <p className="text-gray-700 text-lg">
                     To be Ethiopia’s premier provider of advanced medical devices,
                     ensuring public and private hospitals deliver world-class care with accessible,
                     innovative technology for a healthier future.
