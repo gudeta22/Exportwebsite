@@ -57,7 +57,7 @@ const ContactComponents = () => {
         {/* Map */}
         <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[50vh] rounded-xl overflow-hidden shadow-lg mb-12">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019716305142!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809b1a64e5b3%3A0xafeec4ad139d3e39!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1697678945623!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6542.627039693256!2d38.74724754250691!3d9.020365286033865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85795d7e2d5d%3A0x2d2c9e382cdabda9!2sKoji%20Healthcare%20Solutions!5e0!3m2!1sen!2set!4v1753887778190!5m2!1sen!2set"
             className="w-full h-full"
             style={{ border: 0 }}
             allowFullScreen
@@ -133,12 +133,12 @@ const ContactComponents = () => {
                 {
                   icon: '📞',
                   title: 'Phone',
-                  value: '+1 (555) 123-4567',
+                  value: '+251 923 657 040',
                 },
                 {
                   icon: '🕒',
                   title: 'Hours',
-                  value: 'Mon - Fri: 9am - 5pm',
+                  value: 'Mon - sat: 9am - 7pm',
                 },
               ].map((item, index) => (
                 <div
