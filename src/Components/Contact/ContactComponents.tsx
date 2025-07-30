@@ -123,7 +123,7 @@ const ContactComponents = () => {
                 {
                   icon: '📍',
                   title: 'Address',
-                  value: 'San Francisco, CA, United States',
+                  value: 'Gerji Alfoz plaza,Addis Ababa,Ethiopia',
                 },
                 {
                   icon: '✉️',
