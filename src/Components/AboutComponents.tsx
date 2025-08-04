@@ -12,7 +12,7 @@ const MissionVision = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-start">
         {/* Text Content */}
         <div className="space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 leading-snug">
+          <h2 className="text-2xl sm:text-3xl  text-gray-800 leading-snug">
             Our Commitment to Excellence
           </h2>
 
