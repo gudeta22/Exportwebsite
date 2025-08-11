@@ -128,7 +128,7 @@ const ContactComponents = () => {
                 {
                   icon: '✉️',
                   title: 'Email',
-                  value: 'contact@example.com',
+                  value: 'contact@kojihealthcare.com',
                 },
                 {
                   icon: '📞',
