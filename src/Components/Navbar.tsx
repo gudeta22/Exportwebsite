@@ -24,7 +24,7 @@ const Navbar = () => {
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
-
+// Effect to handle scroll event and change navbar style
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);

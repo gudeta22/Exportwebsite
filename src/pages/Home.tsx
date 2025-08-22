@@ -5,6 +5,7 @@ import DeviceCarousel from '../Components/DeviceCarousel.tsx';
 import WhyWorkWithUs from '../Components/WhyWorkWithUs.tsx';
 import JobApplicationFormComponent from '../Components/JobApplicationForm.tsx';
 import Processes from '../Components/Processes.tsx';
+import Partnerwith from '../Components/Partnerwith.tsx';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <HeroSection />
         <AboutComponent />
         <DeviceCarousel />
+        <Partnerwith />
         <WhyWorkWithUs />
         <Processes />
         <JobApplicationFormComponent />
