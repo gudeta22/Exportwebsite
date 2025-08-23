@@ -1,21 +1,26 @@
-import Endo2 from '../../assets/images/products/endoscopyview_1.jpg';
-import Endo3 from '../../assets/images/products/endoscopyview_2.jpg';
-import Endo4 from '../../assets/images/products/endoscopyview_3.jpg';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Endoscopy = () => {
+  // External image URLs
+  const Endo2 = "https://www.edan.com/Uploads/20201117111341_638881.jpg"; // LX3
+  const Endo3 = "https://www.edan.com/Uploads/20200729032528_697571.jpg"; // LX9
+  const Endo4 = "https://www.edan.com/Uploads/20191105044533_600793.jpg"; // LX8
+  const Endo5 = "https://www.edan.com/Uploads/20191105044557_007018.jpg"; // U2 (example placeholder, replace with real if needed)
+
   const [mainImage, setMainImage] = useState(Endo2);
+  const [mainLabel, setMainLabel] = useState("Acclarix LX3");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Array of thumbnail images
+  // Array of images with labels
   const images = [
-    { src: Endo2, alt: 'Endoscopy Side View' },
-    { src: Endo3, alt: 'Endoscopy Front View' },
-    { src: Endo4, alt: 'Endoscopy Control Panel' },
+    { src: Endo2, alt: "Endoscopy Side View", label: "Acclarix LX3" },
+    { src: Endo3, alt: "Endoscopy Front View", label: "Acclarix LX9" },
+    { src: Endo4, alt: "Endoscopy Control Panel", label: "Acclarix LX8" },
+    { src: Endo5, alt: "Endoscopy Portable", label: "U2" },
   ] as const;
 
-  // Open modal with loading state
+  // Open modal
   const openModal = () => {
     setIsLoading(true);
     setIsModalOpen(true);
@@ -23,26 +28,26 @@ const Endoscopy = () => {
   };
 
   // Close modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const closeModal = () => setIsModalOpen(false);
 
   // Handle image change with preloading
-  const handleImageChange = (src: typeof Endo2): void => {
+  const handleImageChange = (src: string, label: string): void => {
     setIsLoading(true);
     const img = new Image();
     img.src = src;
     img.onload = () => {
       setMainImage(src);
+      setMainLabel(label);
       setIsLoading(false);
     };
     img.onerror = () => {
       setIsLoading(false);
-      setMainImage(Endo2); // Fallback to default image
+      setMainImage(Endo2);
+      setMainLabel("Acclarix LX3");
     };
   };
 
-  // Reset loading state when modal opens
+  // Reset loading when modal opens
   useEffect(() => {
     if (isModalOpen) {
       setIsLoading(true);
@@ -51,151 +56,125 @@ const Endoscopy = () => {
     }
   }, [isModalOpen]);
 
-  // Handle keyboard navigation for accessibility
+  // Close with ESC
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isModalOpen) {
+      if (e.key === "Escape" && isModalOpen) {
         closeModal();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isModalOpen]);
 
-  // Loading Spinner Component
+  // Spinner
   const LoadingSpinner = () => (
-    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10 transition-opacity duration-300">
+    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
       <div className="w-10 h-10 border-4 border-cyan-600 border-t-transparent rounded-full animate-spin"></div>
     </div>
   );
 
   return (
-    <div className=" container  mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-      {/* Navigation Tabs with Endoscopy Text Section */}
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+      {/* Section Title */}
       <div className="bg-white p-4 sm:p-6 rounded-t-lg shadow-sm">
         <div className="flex items-start gap-3 sm:gap-4">
           <div className="w-3 sm:w-5 bg-cyan-500 h-24 sm:h-40 mr-2 sm:mr-4"></div>
           <div className="flex-1">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">
-              Endoscopy<sup className="text-xs sm:text-sm">™</sup>
+              Ultrasound Systems<sup className="text-xs sm:text-sm">™</sup>
             </h2>
             <p className="text-xs sm:text-sm lg:text-base text-gray-700 mt-2 leading-relaxed">
-              Our Endoscopy system is designed for high-quality medical imaging with exceptional accuracy and reliability.<br />
-              It supports efficient diagnostics and ensures patient safety, making it an essential tool for medical facilities.<br />
+              Our Acclarix ultrasound series is designed to deliver high-quality imaging with precision and reliability.
+              Each model supports efficient diagnostics and ensures patient safety.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main content */}
       <div className="flex flex-col lg:flex-row bg-white p-4 sm:p-6 rounded-b-lg shadow-md gap-4 sm:gap-6">
-        {/* Image Section */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
-          <div className="w-full bg-white rounded-lg flex items-center justify-center">
-            <img
-              src={mainImage}
-              className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg transition-opacity duration-300"
-              alt="Endoscopy System"
-              loading="lazy"
-              onError={(e) => (e.currentTarget.src = Endo2)}
-            />
-          </div>
+        {/* Image */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+          <img
+            src={mainImage}
+            className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg transition-opacity duration-300"
+            alt={mainLabel}
+            onError={(e) => (e.currentTarget.src = Endo2)}
+          />
+          <p className="mt-2 text-sm sm:text-base font-semibold text-gray-700">{mainLabel}</p>
         </div>
 
-        {/* Text Section */}
+        {/* Text */}
         <div className="w-full lg:w-1/2 lg:pl-4 xl:pl-6 mt-4 lg:mt-0">
-          <div className="text-gray-800">
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-              Our state-of-the-art Endoscopy system offers unparalleled imaging quality and precision.  
-            </p>
-            <button
-              onClick={openModal}
-              className="mt-3 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 w-full sm:w-auto text-sm sm:text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            >
-              Learn More
-            </button>
-          </div>
+          <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800">
+            Explore the Acclarix ultrasound family: portable, powerful, and designed to meet the needs of modern healthcare.
+          </p>
+          <button
+            onClick={openModal}
+            className="mt-3 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 w-full sm:w-auto text-sm sm:text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          >
+            Learn More
+          </button>
         </div>
       </div>
 
-      {/* Modal for Product Details and Images */}
+      {/* Modal */}
       {isModalOpen && (
         <div
-          className={`fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 transition-all duration-500 ease-out ${
-            isModalOpen ? 'opacity-92' : 'opacity-0 pointer-events-none'
-          }`}
-          style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 transition-all duration-500 ease-out"
+          style={{ backdropFilter: "blur(10px)" }}
           onClick={closeModal}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
         >
           <div
-            className={`bg-white rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-[95vw] sm:max-w-[85vw] md:max-w-5xl max-h-[90vh] overflow-y-auto transform transition-all duration-500 ease-out ${
-              isModalOpen ? 'scale-100 opacity-95' : 'scale-90 opacity-0'
-            } shadow-2xl`}
+            className="bg-white rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-[95vw] sm:max-w-[85vw] md:max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4 sm:mb-6">
-              <h3 id="modal-title" className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
-                Endoscopy System Details
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
+                Ultrasound System Details
               </h3>
               <button
                 onClick={closeModal}
-                className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 text-xl sm:text-2xl md:text-3xl p-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 text-xl sm:text-2xl md:text-3xl p-3 rounded-full"
                 aria-label="Close modal"
               >
                 ×
               </button>
             </div>
+
             <div className="flex flex-col md:flex-row gap-4 sm:gap-6 relative">
-              {/* Loading Spinner */}
               {isLoading && <LoadingSpinner />}
-              {/* Main Image Section in Modal */}
-              <div className="w-full md:w-2/3">
+              {/* Main image */}
+              <div className="w-full md:w-2/3 flex flex-col items-center">
                 <img
                   src={mainImage}
-                  className="w-full h-auto max-h-[40vh] sm:max-h-[50vh] md:max-h-[400px] object-contain rounded-lg transition-opacity duration-500 ease-in-out"
-                  alt="Endoscopy System Main View"
-                  loading="lazy"
-                  onError={(e) => (e.currentTarget.src = Endo2)}
+                  className="w-full h-auto max-h-[400px] object-contain rounded-lg"
+                  alt={mainLabel}
                 />
+                <p className="mt-2 text-base sm:text-lg font-semibold text-gray-800">{mainLabel}</p>
               </div>
-              {/* Thumbnails Section in Modal */}
-              <div className="w-full md:w-1/3 flex flex-row md:flex-col flex-wrap justify-center gap-2 sm:gap-3">
+              {/* Thumbnails */}
+              <div className="w-full md:w-1/3 flex flex-row md:flex-col flex-wrap justify-center gap-3">
                 {images.map((image, index) => (
                   <button
                     key={index}
-                    onClick={() => handleImageChange(image.src)}
-                    className={`w-[80px] sm:w-[90px] md:w-[100px] rounded-lg overflow-hidden border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-                      mainImage === image.src ? 'border-cyan-500 shadow-md' : 'border-gray-300 hover:border-cyan-400 hover:shadow-sm'
+                    onClick={() => handleImageChange(image.src, image.label)}
+                    className={`w-[90px] md:w-[100px] rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      mainImage === image.src
+                        ? "border-cyan-500 shadow-md"
+                        : "border-gray-300 hover:border-cyan-400"
                     }`}
-                    aria-label={`Select ${image.alt}`}
                   >
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-[60px] sm:h-[70px] md:h-[90px] object-cover transition-transform duration-200 hover:scale-105"
-                      loading="lazy"
+                      className="w-full h-[70px] object-cover"
                     />
+                    <p className="text-[10px] sm:text-xs mt-1 text-center text-gray-700">{image.label}</p>
                   </button>
                 ))}
               </div>
-            </div>
-            {/* Features Section in Modal */}
-            <div className="mt-4 sm:mt-6">
-              <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
-                Features
-              </h4>
-              <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
-                <li>High-resolution imaging: Delivers clear and detailed images for accurate diagnosis.</li>
-                <li>Advanced safety features: Ensures patient and operator safety with minimal risk.</li>
-                <li>Ergonomic design: Facilitates ease of use and patient comfort.</li>
-                <li>Fast processing time: Provides quick results to enhance workflow efficiency.</li>
-                <li>Durable construction: Built to withstand rigorous use in busy medical environments.</li>
-                <li>Versatile applications: Suitable for a wide range of diagnostic procedures.</li>
-                <li>Reliable performance: Consistently delivers high-quality images and dependable operation.</li>
-              </ul>
             </div>
           </div>
         </div>
