@@ -4,7 +4,7 @@ import plogo2 from '../assets/images/logo3.png'
 function Partnerwith() {
   return (
     <section className="py-20 bg-cyan-700">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         
         {/* Left Text Section */}
         <div>
