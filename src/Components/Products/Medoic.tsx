@@ -6,10 +6,6 @@ const ECG2 = "https://www.edan.com/Uploads/20201114094024_612502.jpg"; // iSE Se
 const ECG3 = "https://www.edan.com/Uploads/20201114092047_577358.jpg"; // SE-1202
 const ECG4 = "https://www.edan.com/Uploads/20191104013229_303918.jpg"; // SE-18
 const ECG5 = "https://www.edan.com/Uploads/20191104013938_538255.jpg"; // SE-12 Series
-const ECG6 = "https://www.edan.com/Uploads/20191105093459_069522.jpg"; // SE-601 Series
-const ECG7 = "https://www.edan.com/Uploads/20191105093459_069522.jpg"; // SE-301 Series
-const ECG8 = "https://www.edan.com/Uploads/20191105093459_069522.jpg"; // SE-3/300
-const ECG9 = "https://www.edan.com/Uploads/20191105093459_069522.jpg"; // SE-1515
 
 const ECGComponent = () => {
   const [mainImage, setMainImage] = useState(ECG1);
@@ -23,10 +19,6 @@ const ECGComponent = () => {
     { src: ECG3, alt: "SE-1202 – 12-Lead ECG Workstation" },
     { src: ECG4, alt: "SE-18 – 18-Lead ECG Workstation" },
     { src: ECG5, alt: "SE-12 Series – 12-Channel ECG" },
-    { src: ECG6, alt: "SE-601 Series – Multi-Channel ECG" },
-    { src: ECG7, alt: "SE-301 Series – Portable Multi-Channel ECG" },
-    { src: ECG8, alt: "SE-3/300 – 3-Channel ECG" },
-    { src: ECG9, alt: "SE-1515 – ECG Workstation" },
   ] as const;
 
   const openModal = () => {
@@ -115,7 +107,7 @@ const ECGComponent = () => {
           </p>
           <button
             onClick={openModal}
-            className="mt-6 px-5 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 text-sm sm:text-base lg:text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="mt-3 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 w-30 text-sm sm:text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
           >
             Learn More
           </button>
