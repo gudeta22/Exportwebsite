@@ -3,26 +3,29 @@ import { useState, useEffect } from 'react';
 function JobComponents() {
   const [startIndex, setStartIndex] = useState(0);
   const [jobsPerPage, setJobsPerPage] = useState(3);
+  const [selectedPdf, setSelectedPdf] = useState<string | null>(null); // PDF popup state
 
   const jobs = [
     {
-      title: 'Store Manager',
+      title: 'Sales',
       type: 'Full-Time',
-      description:'Join our retail company in Addis Ababa as a Store Manager to lead operations, enhance customer experience, and drive sales growth.',
-      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLScp_xI_Ci79TszDyKPTrmE8d3KhB5n213aVvm5vBz8rZn2QdQ/viewform?usp=header',
+      description:
+        'Join our retail company in Addis Ababa as a Store Manager to lead operations, enhance customer experience, and drive sales growth.',
+      pdf: '/pdfs/sales_job.pdf',
     },
     {
       title: 'Technical Manager and Sales',
       type: 'Full-Time',
       description:
         'We are looking for a Technical Manager and Sales Lead to drive business growth, manage technical operations, and deliver innovative solutions to clients.',
-      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdaMev9Ute8dZDkW2txPbH3jJVJyFoiYSUzfbHVElZh5XHKHA/viewform?usp=header',
+      pdf: '/pdfs/technical-manager.pdf',
     },
     {
       title: 'Operational Manager',
       type: 'Full-Time',
-      description:'We are looking for an Operational Manager to oversee daily business operations, improve efficiency, and ensure smooth workflow across all departments.',
-      applyLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfvFTAHpjtM2Agk18iC7EzN60ruOgDgwYgsp7eHa3PaReKS-Q/viewform?usp=header',
+      description:
+        'We are looking for an Operational Manager to oversee daily business operations, improve efficiency, and ensure smooth workflow across all departments.',
+      pdf: '/pdfs/operational-manager.pdf',
     },
   ];
 
@@ -39,9 +42,8 @@ function JobComponents() {
     };
 
     updateJobsPerPage();
-    window.addEventListener('resize',updateJobsPerPage);
+    window.addEventListener('resize', updateJobsPerPage);
 
-    // Cleanup listener on unmount
     return () => window.removeEventListener('resize', updateJobsPerPage);
   }, []);
 
@@ -96,7 +98,7 @@ function JobComponents() {
           {/* Previous Button */}
           <button
             onClick={handlePrev}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 text-xl sm:text-2xl lg:text-3xl z-10 p-2 rounded-full text-cyan-500   ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 text-xl sm:text-2xl lg:text-3xl z-10 p-2 rounded-full text-cyan-500 ${
               startIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
             }`}
             disabled={startIndex === 0}
@@ -114,20 +116,15 @@ function JobComponents() {
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <h4 className="text-base sm:text-lg lg:text-xl font-bold m-0">{job.title}</h4>
-                    {/* <span className="bg-white/20 px-2 py-1 rounded-full text-xs sm:text-sm">
-                      {job.type}
-                    </span> */}
                   </div>
                   <p className="text-xs sm:text-sm lg:text-base">{job.description}</p>
                 </div>
-                <a
-                  href={job.applyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-cyan-600 border-none py-2 px-4 sm:px-5 font-semibold rounded-md cursor-pointer hover:bg-gray-100 text-center no-underline text-sm sm:text-base"
+                <button
+                  onClick={() => setSelectedPdf(job.pdf)}
+                  className="bg-white text-cyan-600 border-none py-2 px-4 sm:px-5 font-semibold rounded-md cursor-pointer hover:bg-gray-100 text-center text-sm sm:text-base"
                 >
                   Apply Now
-                </a>
+                </button>
               </div>
             ))}
           </div>
@@ -144,6 +141,27 @@ function JobComponents() {
           </button>
         </div>
       </section>
+
+      {/* PDF Popup Modal */}
+      {selectedPdf && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg w-[90%] h-[90%] relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedPdf(null)}
+              className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-md"
+            >
+              ✕ Close
+            </button>
+            {/* PDF Preview */}
+            <embed
+              src={selectedPdf}
+              type="application/pdf"
+              className="w-full h-full rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
