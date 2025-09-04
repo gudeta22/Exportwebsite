@@ -12,70 +12,50 @@ const HematologySystem = () => {
     {
       image: carousel1,
       description:
-        "Medonic M32 3-diff hematology analyzer with advanced functions.",
+        "ECG (Electrocardiogram) machine with 12 leads for comprehensive cardiac monitoring.",
       features: [
         {
           icon: <FlaskConical className="text-cyan-600" size={32} />,
-          title: "Optimized Aspiration Quality",
+          title: "Optimized Signal Quality",
           description:
-            "Shear valve-guided aspiration ensures measurement quality.",
+            "High-precision electrodes ensure accurate and reliable ECG waveforms."
         },
         {
           icon: <RefreshCcw className="text-cyan-600" size={32} />,
-          title: "Automated Sample Mixing",
+          title: "Reliable Equipment Design",
           description:
-            "Optional space-saving automation solution provides constant mixing of queued samples.",
+            "Durable and robust design for consistent clinical performance.",
         },
         {
           icon: <ShieldCheck className="text-cyan-600" size={32} />,
-          title: "Reliable Equipment Design",
-          description: "Robust equipment design helps ensure instrument uptime.",
+          title: "Automated Data Recording",
+          description: "Integrated digital system for continuous and automatic ECG recording.",
         },
       ],
     },
     {
       image: carousel2,
       description:
-        "Delivers CBC and 3-part WBC differential with exceptional accuracy.",
+        "Delivers high-resolution imaging for accurate diagnosis with advanced ultrasound technology.",
       features: [
         {
           icon: <ShieldCheck className="text-cyan-600" size={32} />,
-          title: "Advanced Safety Features",
-          description: "Ensures safe operation and minimizes risks.",
+          title: "Optimized Signal Quality",
+          description: "High-precision electrodes ensure accurate and reliable ECG waveforms.",
         },
         {
           icon: <FlaskConical className="text-cyan-600" size={32} />,
-          title: "Precision Testing",
+          title: "Reliable Equipment Design",
           description: "Accurate results for critical diagnostics.",
         },
         {
           icon: <RefreshCcw className="text-cyan-600" size={32} />,
-          title: "Efficient Workflow",
-          description: "Streamlined processes for faster turnaround.",
+          title: "Automated Data Recording",
+          description: "Integrated digital system for continuous and automatic ECG recording.",
         },
       ],
     },
-    {
-      image: carousel1,
-      description: "Robust design ensures instrument uptime and reliability.",
-      features: [
-        {
-          icon: <RefreshCcw className="text-cyan-600" size={32} />,
-          title: "Continuous Operation",
-          description: "Designed for high-volume laboratories.",
-        },
-        {
-          icon: <ShieldCheck className="text-cyan-600" size={32} />,
-          title: "Durable Construction",
-          description: "Built to withstand demanding environments.",
-        },
-        {
-          icon: <FlaskConical className="text-cyan-600" size={32} />,
-          title: "Advanced Diagnostics",
-          description: "Comprehensive testing capabilities.",
-        },
-      ],
-    },
+   
   ];
 
   // Carousel auto-slide effect
