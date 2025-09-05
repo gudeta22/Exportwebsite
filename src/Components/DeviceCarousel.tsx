@@ -1,151 +1,129 @@
-import { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { ShieldCheck, RefreshCcw, FlaskConical } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import carousel1 from "../assets/images/carouse-2.png";
 import carousel2 from "../assets/images/carousel-1.png";
 
 const HematologySystem = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const carouselData = [
     {
       image: carousel1,
+      title: "Advanced ECG Monitoring",
       description:
-        "ECG (Electrocardiogram) machine with 12 leads for comprehensive cardiac monitoring.",
+        "A powerful 12-lead ECG system designed to support hospitals with accurate and reliable cardiac diagnostics.",
       features: [
         {
-          icon: <FlaskConical className="text-cyan-600" size={32} />,
-          title: "Optimized Signal Quality",
-          description:
-            "High-precision electrodes ensure accurate and reliable ECG waveforms."
+          icon: <FlaskConical size={20} />,
+          title: "Optimized Signal",
+          description: "High-precision electrodes ensure consistent accuracy.",
         },
         {
-          icon: <RefreshCcw className="text-cyan-600" size={32} />,
-          title: "Reliable Equipment Design",
-          description:
-            "Durable and robust design for consistent clinical performance.",
+          icon: <RefreshCcw size={20} />,
+          title: "Durable Design",
+          description: "Engineered for long-term performance in clinical use.",
         },
         {
-          icon: <ShieldCheck className="text-cyan-600" size={32} />,
-          title: "Automated Data Recording",
-          description: "Integrated digital system for continuous and automatic ECG recording.",
+          icon: <ShieldCheck size={20} />,
+          title: "Smart Recording",
+          description: "Automated logging system simplifies patient tracking.",
         },
       ],
     },
     {
       image: carousel2,
+      title: "High-Resolution Ultrasound",
       description:
-        "Delivers high-resolution imaging for accurate diagnosis with advanced ultrasound technology.",
+        "Experience advanced imaging with our next-generation ultrasound system, built for precision and clarity.",
       features: [
         {
-          icon: <ShieldCheck className="text-cyan-600" size={32} />,
-          title: "Optimized Signal Quality",
-          description: "High-precision electrodes ensure accurate and reliable ECG waveforms.",
+          icon: <ShieldCheck size={20} />,
+          title: "Precision Imaging",
+          description: "Crystal-clear results for better diagnostics.",
         },
         {
-          icon: <FlaskConical className="text-cyan-600" size={32} />,
-          title: "Reliable Equipment Design",
-          description: "Accurate results for critical diagnostics.",
+          icon: <FlaskConical size={20} />,
+          title: "User-Friendly",
+          description: "Intuitive interface for daily hospital workflows.",
         },
         {
-          icon: <RefreshCcw className="text-cyan-600" size={32} />,
-          title: "Automated Data Recording",
-          description: "Integrated digital system for continuous and automatic ECG recording.",
+          icon: <RefreshCcw size={20} />,
+          title: "Seamless Data Flow",
+          description: "Smooth integration with hospital record systems.",
         },
       ],
     },
-   
   ];
 
-  // Carousel auto-slide effect
+  // Auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setNextSlide((prev) => (prev + 1) % carouselData.length);
-
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % carouselData.length);
-        setIsTransitioning(false);
-      }, 500);
-    }, 5000);
-
+      setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+    }, 7000);
     return () => clearInterval(interval);
   }, [carouselData.length]);
 
-  const handleDotClick = (index: SetStateAction<number>) => {
-    setIsTransitioning(true);
-    setNextSlide(index);
-
-    setTimeout(() => {
-      setCurrentSlide(index);
-      setIsTransitioning(false);
-    }, 500);
-  };
-
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-      <div className="flex max-w-7xl flex-col md:flex-row items-center justify-center gap-8">
-
-        {/* Image Section */}
-        <div className="relative flex flex-col items-center w-full md:w-[400px]">
-          <div className="bg-cyan-600 p-6 md:p-8 rounded-lg relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-white/10 rounded-full" />
-
-            <img
-              src={carouselData[currentSlide].image}
-              alt="Hematology Machine"
-              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
-                isTransitioning ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <img
-              src={carouselData[nextSlide].image}
-              alt="Next Hematology Machine"
-              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
-                isTransitioning ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          </div>
-
-          <p className="mt-4 text-center text-gray-600 max-w-xs">
+    <section className="w-full bg-gradient-to-br from-cyan-50 to-gray-100 py-20 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Content */}
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            {carouselData[currentSlide].title}
+          </h2>
+          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
             {carouselData[currentSlide].description}
           </p>
 
-          <div className="flex justify-center space-x-2 mt-4">
-            {carouselData.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "bg-cyan-600 scale-110" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <div className="flex-1 w-full">
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+          <div className="mt-8 space-y-6">
             {carouselData[currentSlide].features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 p-4 border border-cyan-600 shadow-sm transition-transform duration-300 hover:scale-105 rounded-lg"
-              >
-                {feature.icon}
+              <div key={index} className="flex items-start gap-4">
+                <div className="w-10 h-10 flex items-center justify-center bg-cyan-600 text-white rounded-full shadow-md">
+                  {feature.icon}
+                </div>
                 <div>
-                  <h3 className="text-gray-800 font-extralight text-lg">{feature.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600">{feature.description}</p>
+                  <h3 className="font-semibold text-gray-800">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm mt-1">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Right Carousel */}
+        <div className="relative flex flex-col items-center">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentSlide}
+                src={carouselData[currentSlide].image}
+                alt="Medical Device"
+                className="w-full h-full object-contain p-6"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.6 }}
+              />
+            </AnimatePresence>
+          </div>
+
+          {/* Progress Bar Indicator */}
+          <div className="w-full mt-6 h-2 bg-gray-200 rounded-full overflow-hidden">
+            <motion.div
+              key={currentSlide}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 7, ease: "linear" }}
+              className="h-full bg-cyan-600"
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

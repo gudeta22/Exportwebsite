@@ -1,10 +1,10 @@
-// Social media icons (using FontAwesome placeholders; you'll need to install FontAwesome or use SVGs)
-import { FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BackToTop from './BackToTop';
+import logo from '../assets/images/Logo-01-white.png';
 
-const LetsConnect = () => {
+const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
@@ -12,64 +12,90 @@ const LetsConnect = () => {
   }, []);
 
   return (
-    <section className="relative bg-cyan-700 text-white py-16">
-      {/* Main Content */}
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-        {/* Left Side: Text and Contact Info */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-wide">
-            Let's Collaborate!
-          </h2>
-          <p className="text-lg md:text-xl mb-6 opacity-90">
-            Ready to elevate your health solutions? We're just a click away!
+    <footer className="bg-cyan-600 text-white border-t">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        {/* Logo + Description */}
+        <div>
+          {/* Responsive logo */}
+          <img 
+            src={logo} 
+            alt="Koji Healthcare Logo"      
+            className="h-12 md:h-16 lg:h-20 w-auto mb-4 object-contain" 
+          />
+
+          <p className="text-base mb-6 opacity-90 leading-relaxed">
+            Koji Healthcare provides high-quality medical equipment and 
+            healthcare solutions to hospitals, clinics, and laboratories. 
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            <a href="mailto:support@healthcare.com" className="text-sm md:text-base hover:underline">
-              contact@kojihealthcare.com
-            </a>
-            <a href="tel:+251-923-657-040" className="text-sm md:text-base hover:underline">
-              +251-923-657-040
-            </a>
-          </div>
-        </div>
 
-        {/* Right Side: Social Icons and Button */}
-        <div className="md:w-1/2 flex flex-col items-center md:items-end mt-8 md:mt-0">
           {/* Social Icons */}
-          <div className="flex gap-4 mb-6">
-            <a href="mailto:contact@kojihealthcare.com" target='_blank' className="p-3 bg-white text-gray-900 rounded-full transition duration-300 hover:bg-yellow-500">
-              <FaEnvelope size={20} />
+          <div className="flex gap-5 text-xl flex-wrap">
+            <a href="mailto:contact@kojihealthcare.com" className="hover:text-cyan-100 transition-colors duration-300">
+              <FaEnvelope />
             </a>
-            <a href="https://www.linkedin.com/company/107711159/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
-              <FaLinkedin size={20} />
+            <a href="https://www.linkedin.com/company/107711159/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-100 transition-colors duration-300">
+              <FaLinkedin />
             </a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
-              <FaWhatsapp size={20} />
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-100 transition-colors duration-300">
+              <FaWhatsapp />
             </a>
-            <a href="tel:+251-923-657-040" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
-              <FaPhone size={20} />
-            </a>
-            <a href="#" className="p-3 bg-white text-gray-900 rounded-full hover:bg-yellow-500 transition duration-300">
-              <FaPaperPlane size={20} />
+            <a href="tel:+251-923-657-040" className="hover:text-cyan-100 transition-colors duration-300">
+              <FaPhone />
             </a>
           </div>
+        </div>
 
-          {/* Book a Meeting Button */}
-          <Link to="/contact" className="inline-block px-8 py-3 bg-green-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition duration-300 shadow-lg transform hover:scale-105">
-            Let's Talk
-          </Link>
+        {/* Medical Devices */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Medical Devices</h3>
+          <ul className="space-y-2 text-base">
+            <li><Link to="/products/ecg" className="hover:text-cyan-100 transition-colors duration-300">ECG Machines</Link></li>
+            <li><Link to="/products/ultrasound" className="hover:text-cyan-100 transition-colors duration-300">Ultrasound Systems</Link></li>
+            <li><Link to="/products/xray" className="hover:text-cyan-100 transition-colors duration-300">X-Ray Machines</Link></li>
+            <li><Link to="/products/lab-equipment" className="hover:text-cyan-100 transition-colors duration-300">Laboratory Equipment</Link></li>
+            <li><Link to="/products/patient-monitors" className="hover:text-cyan-100 transition-colors duration-300">Patient Monitors</Link></li>
+            <li><Link to="/products/surgical" className="hover:text-cyan-100 transition-colors duration-300">Surgical Instruments</Link></li>
+          </ul>
+        </div>
+
+       {/* Customer Support */}
+     <div>
+  <h3 className="text-xl font-semibold mb-4">Customer Support</h3>
+  <ul className="space-y-2 text-base">
+    <li><Link to="/faq" className="hover:text-cyan-100 transition-colors duration-300">FAQs</Link></li>
+    <li><Link to="/warranty" className="hover:text-cyan-100 transition-colors duration-300">Warranty Information</Link></li>
+    <li><Link to="/service-centers" className="hover:text-cyan-100 transition-colors duration-300">Service Centers</Link></li>
+    <li><Link to="/request-quote" className="hover:text-cyan-100 transition-colors duration-300">Request a Quote</Link></li>
+  </ul>
+</div>
+
+
+        {/* Company */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Company</h3>
+          <ul className="space-y-2 text-base">
+            <li><Link to="/ourcompany" className="hover:text-cyan-100 transition-colors duration-300">About Us</Link></li>
+            <li><Link to="/careers" className="hover:text-cyan-100 transition-colors duration-300">Careers</Link></li>
+            <li><Link to="/contact" className="hover:text-cyan-100 transition-colors duration-300">Contact Us</Link></li>
+            <li><Link to="/products" className="hover:text-cyan-100 transition-colors duration-300">Our Products</Link></li>
+          </ul>
         </div>
       </div>
 
-      {/* Footer Copyright */}
-      <div className="absolute bottom-0 w-full text-center py-4 bg-cyan-700 bg-opacity-30">
-        <p className="text-sm opacity-70">
-          © {year} Health Innovations Inc. All Rights Reserved.
-        </p>
+      {/* Footer Bottom */}
+      <div className="border-t border-cyan-500 py-6 text-center text-base text-white">
+        <p>© {year} Koji Healthcare. All rights reserved.</p>
+        <div className="flex justify-center gap-6 mt-2 text-sm md:text-base flex-wrap">
+          <Link to="/privacy-policy" className="hover:text-cyan-100 transition-colors duration-300">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-cyan-100 transition-colors duration-300">Terms of Service</Link>
+          <Link to="/cookies" className="hover:text-cyan-100 transition-colors duration-300">Cookies Settings</Link>
+        </div>
       </div>
+
       <BackToTop />
-    </section>
+    </footer>
   );
 };
 
-export default LetsConnect;
+export default Footer;

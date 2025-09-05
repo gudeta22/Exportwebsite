@@ -65,7 +65,6 @@ const Blogs = () => {
     <div className="min-h-screen bg-gray-50 font-sans my-10 text-gray-800">
       {/* Helmet for page-level SEO */}
       <Helmet>
-        <title>Koji Healthcare Blog: Medical Supplies, Pharmaceutical Services, and Innovations in Ethiopia</title>
         <meta
           name="description"
           content="Explore insights from Koji Healthcare Solutions on quality medical supplies, pharmaceutical care, and healthcare innovations in Ethiopia. Stay updated with tips for hospitals and clinics."
