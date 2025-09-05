@@ -10,7 +10,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from 'react-icons/fa';
-// import logo from '../../src/assets/images/koji_logo-01__2_-removebg-preview.png'; // Adjust the path as necessary
+import logo from '../assets/images/Logo-01-white.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,31 +24,34 @@ const Navbar = () => {
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
-// Effect to handle scroll event and change navbar style
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const menuVariants = {
+    hidden: { x: '100%' },
+    visible: { x: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
+    exit: { x: '100%', transition: { duration: 0.3, ease: 'easeInOut' } },
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full transition-all duration-300 z-50 ${
-        isScrolled ? 'bg-cyan-600 shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-cyan-700 shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-2 py-3 sm:px-6">
-        {/* Logo */}
-        <Link to="/" className="flex text-white gap-2 max-w-xs sm:max-w-none">
-         
-          {/* <img src={logo} className="text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight" /> */}
-        <span className='text-sm sm:text-base my-2 font-semibold tracking-wide leading-tight'>
-          KOJI HEALTHCARE SOLUTIONS
-        </span>  
-          
+        <Link to="/" className="flex items-center gap-2 max-w-xs sm:max-w-none">
+          <img
+            src={logo}
+            alt="Koji Healthcare Solutions Logo"
+            className="h-14 lg:h-16 sm:h-12 w-auto object-contain"
+          />
         </Link>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-base lg:text-lg">
           {menuItems.map((item) => (
             <li
@@ -60,7 +63,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden text-2xl">
           <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle Menu">
             {isMobileMenuOpen ? (
@@ -72,51 +74,63 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-screen bg-cyan-800 text-white z-40 flex flex-col px-6 pt-8 pb-10 space-y-6 overflow-y-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="fixed top-0 right-0 w-3/4 h-screen bg-cyan-700 bg-opacity-95 text-white z-40 flex flex-col px-6 pt-8 pb-10"
+          variants={menuVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
-          {/* Close Button */}
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-4 right-5 text-white text-3xl"
+            className="absolute top-4 right-5 text-white text-3xl hover:text-gray-300 transition"
             aria-label="Close Menu"
           >
             <FaTimes />
           </button>
 
-          {/* Logo */}
-          <div className="flex flex-col leading-tight mt-2 mb-4">
-            <span className="text-2xl font-extrabold">ኮጂ</span>
-            <span className="text-sm tracking-wide">Healthcare Solutions</span>
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={logo}
+              alt="Koji Healthcare Solutions Logo"
+              className="h-16 w-auto object-contain"
+            />
+          </motion.div>
+
+          <div className="flex flex-col space-y-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-xl font-bold text-white hover:text-cyan-400 transition duration-200 py-2 border-b border-gray-700"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Menu Links */}
-          {menuItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-lg font-semibold hover:underline hover:underline-offset-4 transition duration-300"
-            >
-              {item.name}
-            </Link>
-          ))}
-
-          {/* CTA Button */}
-          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full">
-            <button className="w-full bg-white text-black font-bold py-2 rounded-md mt-4">
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6">
+            <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg   transition duration-300">
               LET'S CONNECT
             </button>
           </Link>
 
-          {/* Social Icons */}
-          <div className="flex justify-center items-center space-x-4 mt-6">
+          <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center space-x-6">
             {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
-              <Icon key={i} size={24} className="text-white hover:text-gray-300 transition" />
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Icon size={28} className="text-white hover:text-cyan-400 transition" />
+              </motion.div>
             ))}
           </div>
         </motion.div>
