@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   FaBars,
@@ -32,10 +32,33 @@ const Navbar = () => {
   }, []);
 
   const menuVariants = {
-    hidden: { x: '100%' },
-    visible: { x: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
-    exit: { x: '100%', transition: { duration: 0.3, ease: 'easeInOut' } },
+    hidden: { x: '100%', opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1, 
+      transition: { 
+        duration: 0.4, 
+        ease: [0.4, 0, 0.2, 1] // Custom cubic-bezier for smoother easing
+      } 
+    },
+    exit: { 
+      x: '100%', 
+      opacity: 0, 
+      transition: { 
+        duration: 0.3, 
+        ease: [0.4, 0, 0.2, 1] 
+      } 
+    },
   };
+
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: (i) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { delay: i * 0.1, duration: 0.3, ease: 'easeOut' },
+  //   }),
+  // };
 
   return (
     <nav
@@ -52,7 +75,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-base lg:text-lg">
+        <ul className="hidden md:flex space-x-6  lg:space-x-8 text-white text-base lg:text-lg">
           {menuItems.map((item) => (
             <li
               key={item.name}
@@ -74,67 +97,62 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <motion.div
-          className="fixed top-0 right-0 w-3/4 h-screen bg-cyan-700 bg-opacity-95 text-white z-40 flex flex-col px-6 pt-8 pb-10"
-          variants={menuVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-4 right-5 text-white text-3xl hover:text-gray-300 transition"
-            aria-label="Close Menu"
-          >
-            <FaTimes />
-          </button>
-
+      <AnimatePresence>
+        {isMobileMenuOpen && (
           <motion.div
-            className="flex justify-center mb-8"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3 }}
+            className="fixed top-0 right-0 w-3/4 h-screen bg-cyan-700 bg-opacity-95 backdrop-blur-sm text-white z-40 flex flex-col px-6 pt-8 pb-10"
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <img
-              src={logo}
-              alt="Koji Healthcare Solutions Logo"
-              className="h-16 w-auto object-contain"
-            />
-          </motion.div>
-
-          <div className="flex flex-col space-y-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xl font-bold text-white hover:text-cyan-400 transition duration-200 py-2 border-b border-gray-700"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6">
-            <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg   transition duration-300">
-              LET'S CONNECT
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-4 right-5 text-white text-3xl hover:text-gray-300 transition"
+              aria-label="Close Menu"
+            >
+              <FaTimes />
             </button>
-          </Link>
 
-          <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center space-x-6">
-            {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Icon size={28} className="text-white hover:text-cyan-400 transition" />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      )}
+            <div className="flex flex-col space-y-4 mt-14">
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  custom={index}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xl font-bold text-white hover:text-cyan-400 transition duration-200 py-2  border-b border-white"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6">
+              <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg transition duration-300">
+                LET'S CONNECT
+              </button>
+            </Link>
+
+            <div className="absolute bottom-120 left-0 right-0 flex justify-center items-center space-x-6">
+              {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Icon size={28} className="text-white hover:text-cyan-400 transition" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
