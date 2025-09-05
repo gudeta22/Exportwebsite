@@ -12,6 +12,50 @@ import {
 } from 'react-icons/fa';
 import logo from '../assets/images/Logo-01-white.png';
 
+const AnimatedBackground = () => (
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    {/* Floating Particles */}
+    {[...Array(10)].map((_, i) => (
+      <motion.div
+        key={`particle-${i}`}
+        className="absolute rounded-full bg-white/20"
+        style={{
+          width: `${Math.random() * 20 + 10}px`,
+          height: `${Math.random() * 20 + 10}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.2, 0.5, 0.2],
+        }}
+        transition={{
+          duration: Math.random() * 5 + 3,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+    ))}
+
+    {/* Animated Wave Shape */}
+    <motion.div
+      className="absolute bottom-0 left-0 w-full h-1/3 bg-cyan-700/30"
+      animate={{
+        clipPath: [
+          'polygon(0 100%, 100% 100%, 100% 80%, 0% 60%)',
+          'polygon(0 100%, 100% 100%, 100% 60%, 0% 80%)',
+          'polygon(0 100%, 100% 100%, 100% 80%, 0% 60%)',
+        ],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+  </div>
+);
+
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,21 +77,21 @@ const Navbar = () => {
 
   const menuVariants = {
     hidden: { x: '100%', opacity: 0 },
-    visible: { 
-      x: 0, 
-      opacity: 1, 
-      transition: { 
-        duration: 0.4, 
-        ease: [0.4, 0, 0.2, 1]
-      } 
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1],
+      },
     },
-    exit: { 
-      x: '100%', 
-      opacity: 0, 
-      transition: { 
-        duration: 0.3, 
-        ease: [0.4, 0, 0.2, 1] 
-      } 
+    exit: {
+      x: '100%',
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.4, 0, 0.2, 1],
+      },
     },
   };
 
@@ -66,7 +110,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <ul className="hidden md:flex space-x-6  lg:space-x-8 text-white text-base lg:text-lg">
+        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-white text-base lg:text-lg">
           {menuItems.map((item) => (
             <li
               key={item.name}
@@ -97,6 +141,7 @@ const Navbar = () => {
             animate="visible"
             exit="exit"
           >
+            <AnimatedBackground />
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-4 right-5 text-white text-3xl hover:text-gray-300 transition"
@@ -105,7 +150,7 @@ const Navbar = () => {
               <FaTimes />
             </button>
 
-            <div className="flex flex-col space-y-4 mt-14">
+            <div className="flex flex-col space-y-4 mt-14 relative z-10">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -116,7 +161,7 @@ const Navbar = () => {
                   <Link
                     to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xl font-bold text-white hover:text-cyan-400 transition duration-200 py-2  border-b border-white"
+                    className="text-xl font-bold text-white hover:text-cyan-400 transition duration-200 py-2 border-b border-white"
                   >
                     {item.name}
                   </Link>
@@ -124,13 +169,13 @@ const Navbar = () => {
               ))}
             </div>
 
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6">
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6 relative z-10">
               <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg transition duration-300">
                 CONTACT
               </button>
             </Link>
 
-            <div className="flex justify-center items-center space-x-6 mt-6">
+            <div className="flex justify-center items-center space-x-6 mt-6 relative z-10">
               {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
                 <motion.div
                   key={i}
