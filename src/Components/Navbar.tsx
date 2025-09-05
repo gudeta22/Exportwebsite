@@ -38,7 +38,7 @@ const Navbar = () => {
       opacity: 1, 
       transition: { 
         duration: 0.4, 
-        ease: [0.4, 0, 0.2, 1] // Custom cubic-bezier for smoother easing
+        ease: [0.4, 0, 0.2, 1]
       } 
     },
     exit: { 
@@ -50,15 +50,6 @@ const Navbar = () => {
       } 
     },
   };
-
-  // const itemVariants = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: (i) => ({
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: { delay: i * 0.1, duration: 0.3, ease: 'easeOut' },
-  //   }),
-  // };
 
   return (
     <nav
@@ -135,11 +126,11 @@ const Navbar = () => {
 
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6">
               <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg transition duration-300">
-                LET'S CONNECT
+                CONTACT
               </button>
             </Link>
 
-            <div className="absolute bottom-120 left-0 right-0 flex justify-center items-center space-x-6">
+            <div className="flex justify-center items-center space-x-6 mt-6">
               {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
                 <motion.div
                   key={i}
