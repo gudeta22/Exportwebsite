@@ -111,8 +111,7 @@ const OurExperties = () => {
         <div className="mb-8 max-w-7xl mx-auto px-4">
           <div className="text-left relative inline-block">
             <h2 className="text-2xl md:text-3xl font-semibold text-cyan-600 mb-2">
-              OUR EXPERTISE LIES IN
-            </h2>
+              OUR STRENGTH IS IN          </h2>
             <div className="h-1 bg-cyan-600 w-32"></div>
           </div>
         </div>

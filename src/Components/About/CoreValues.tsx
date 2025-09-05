@@ -35,8 +35,7 @@ const CoreValues = () => {
         <div className="flex mb-6 justify-start">
           <div className="text-center relative">
             <h2 className="text-2xl font-semibold text-cyan-600 mb-2">
-              OUR CORE VALUES
-            </h2>
+                  OUR GUIDING PRINCIPLES            </h2>
             <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
           </div>
         </div>

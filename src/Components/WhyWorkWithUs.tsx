@@ -35,7 +35,7 @@ const sectionsData = [
 
 // Main Component
 const WhyWorkWithUs = () => {
-  const title = "WHY WORK WITH US?";
+  const title = "REASONS TO WORK WITH US?";
 
   return (
     <>

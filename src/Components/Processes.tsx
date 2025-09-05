@@ -33,8 +33,7 @@ const StreamlinedProcess = () => {
       <div className="flex mb-16">
         <div className="text-start relative">
           <h2 className="text-2xl md:text-3xl sm:text-2xl font-semibold text-cyan-600 capitalize mb-2">
-            OUR STREAMLINE PROCESS          
-            </h2>
+OUR EFFICIENT WORKFLOW          </h2>
           <div className="absolute left-0  w-1/2 h-1 bg-cyan-600 transform -translate-y-1/2"></div>
         </div>
       </div>
