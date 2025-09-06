@@ -3,39 +3,7 @@ import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
 import device1 from '../assets/images/products/home_page1.jpg';
 import device2 from '../assets/images/products/home_page2.jpg';
-import Bg from '../assets/images/doctor_bg.jpg'; // ✅ your local background image
-
-interface FloatingCardProps {
-  src: string;
-  alt: string;
-  className?: string;
-  delay: number;
-}
-
-const FloatingCard = ({ src, alt, className, delay }: FloatingCardProps) => {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20, x: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: { duration: 0.5, delay, ease: "easeOut" },
-    },
-    hover: { scale: 1.05, transition: { duration: 0.3 } },
-  };
-
-  return (
-    <motion.div
-      className={`relative bg-blue-200/20 backdrop-blur-md rounded-xl shadow-xl overflow-hidden ${className}`}
-      initial="hidden"
-      animate="visible"
-      whileHover="hover"
-      variants={cardVariants}
-    >
-      <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
-    </motion.div>
-  );
-};
+import Bg from '../assets/images/doctor_bg.jpg'; // ✅ background image
 
 const HeroSection = () => {
   const textVariants = {
@@ -46,95 +14,91 @@ const HeroSection = () => {
       transition: { duration: 0.6, staggerChildren: 0.1 },
     },
   };
-  const letterVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
-  };
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      backgroundColor: "#f5f5f5",
-      color: "#000",
-      transition: { duration: 0.3 },
-    },
-  };
 
   const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
-  const productImages = [
-    { src: device1, alt: "Diagnostic Tool" },
-    { src: device2, alt: "Monitoring Device" },
-  ];
 
   return (
     <section
-      className="relative min-h-[45rem] sm:min-h-[55rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-32"
+      className="relative min-h-[45rem] sm:min-h-[50rem] md:min-h-[55rem] flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-12 py-20 sm:py-28 md:py-32"
       style={{
-        backgroundImage: `url(${Bg})`, // ✅ use imported image
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${Bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      {/* ✅ Subtle overlay with opacity */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-8 sm:gap-12">
-        {/* Text Content */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-10 sm:gap-14">
+        {/* ✅ Text Section */}
         <motion.div
-          className="max-w-md sm:max-w-lg text-center md:text-left"
+          className="max-w-lg text-center md:text-left"
           initial="hidden"
           animate="visible"
           variants={textVariants}
         >
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight"
+          <motion.p
+            className="uppercase tracking-widest text-white font-semibold mb-3 text-sm sm:text-base"
             variants={textVariants}
           >
-            Innovative <span className="text-teal-300">solutions</span> for healthcare
+            Welcome To
+          </motion.p>
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+            variants={textVariants}
+          >
+            KOJI <span className="text-teal-300">Healthcare</span>
           </motion.h1>
           <motion.p
-            className="text-blue-100 mt-6 sm:mt-8 text-base sm:text-lg md:text-xl"
-            variants={letterVariants}
+            className="text-blue-100 mt-6 text-base sm:text-lg md:text-xl"
+            variants={textVariants}
           >
-            Explore our advanced medical products designed to improve patient care.
+            With innovative solutions, we deliver advanced medical products
+            designed to improve patient care and well-being.
           </motion.p>
+
           <Link to="/ourcompany">
             <motion.button
-              className="mt-8 sm:mt-10 bg-cyan-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 transition duration-300 mx-auto md:mx-0 shadow-md hover:shadow-lg"
-              variants={buttonVariants}
-              whileHover="hover"
+              className="mt-8 bg-cyan-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg flex items-center justify-center gap-3 shadow-md hover:shadow-lg mx-auto md:mx-0"
+              whileHover={{ scale: 1.05 }}
             >
               Learn More
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </motion.button>
           </Link>
+
           <motion.p
-            className="text-blue-100 mt-8 sm:mt-10 text-sm sm:text-base flex items-center justify-center md:justify-start"
-            variants={letterVariants}
+            className="text-blue-100 mt-6 text-sm sm:text-base flex items-center justify-center md:justify-start"
+            variants={textVariants}
           >
-            <FaHeartbeat className="mr-2 text-teal-300 text-xl" />
+            <FaHeartbeat className="mr-2 text-teal-300 text-lg sm:text-xl" />
             Powered by {companyName}
           </motion.p>
         </motion.div>
 
-        {/* Floating Cards */}
-        <div className="relative w-full max-w-xl grid grid-cols-2 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 md:mt-0">
-          {productImages.map((item, index) => (
-            <FloatingCard
-              key={item.alt}
-              src={item.src}
-              alt={item.alt}
-              className="w-full h-56 sm:h-72 md:h-[22rem] lg:h-[26rem]"
-              delay={0.2 * (index + 1)}
-            />
-          ))}
+        {/* ✅ Circular Overlapping Images */}
+        <div className="relative flex items-center justify-center w-full max-w-md sm:max-w-xl md:max-w-2xl mt-12 md:mt-0">
+          {/* First circle (bigger main image) */}
+          <motion.div
+            className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full border-[8px] sm:border-[10px] md:border-[12px] border-cyan-700 overflow-hidden shadow-2xl z-20"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <img src={device1} alt="Pharma product" className="w-full h-full object-cover" />
+          </motion.div>
+
+          {/* Second circle (slightly smaller, overlapped) */}
+          <motion.div
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full border-[8px] sm:border-[10px] md:border-[12px] border-cyan-700 overflow-hidden shadow-2xl absolute right-[-2rem] sm:right-[-3rem] md:right-[-5rem] bottom-[-2rem] sm:bottom-[-3rem] md:bottom-[-5rem] z-10"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <img src={device2} alt="Healthcare technology" className="w-full h-full object-cover" />
+          </motion.div>
         </div>
       </div>
     </section>
