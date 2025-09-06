@@ -9,7 +9,7 @@ type Product = {
   image: string;
 };
 
-type Category = "ECGMachines" | "ultrasound" | "Obstetrics" ;
+type Category = "ECGMachines" | "ultrasound" | "Obstetrics" | "Gynecology" ;
 
 const allProducts: Record<Category, Product[]> = {
   ECGMachines: [
@@ -140,6 +140,30 @@ const allProducts: Record<Category, Product[]> = {
 
   
   ],
+  Gynecology: [
+    {
+      id: 18,
+      title: "C9 UHD & C12 UHD – HD Video Colposcope",
+      description:
+        "An advanced HD video colposcope designed for precise gynecological examinations, offering ultra-high-definition imaging, superior optical clarity, and reliable diagnostic performance for early detection and clinical decision-making",
+      image: "http://edan.com/Uploads/20250801081601_636077.jpg",
+    },
+    {
+      id: 19,
+      title: "C6 HD & C6A HD – HD Video Colposcope",
+      description:
+        "A high-definition video colposcope that delivers clear and detailed visualization for gynecological examinations, ensuring accurate diagnosis and enhanced clinical workflow efficiency.",
+      image: "http://edan.com/Uploads/20191104111138_007013.jpg",
+    },
+    {
+      id: 20,
+      title: "C6 & C6A - Standard Video Colposcope",
+      description:
+        "A reliable standard video colposcope designed for routine gynecological examinations, providing clear imaging, ease of use, and dependable performance for effective diagnosis and treatment.",
+      image: "http://edan.com/Uploads/20191104111015_007023.jpg",
+    },
+    
+  ],  
   
 };
 

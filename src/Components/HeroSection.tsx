@@ -15,7 +15,7 @@ const HeroSection = () => {
     },
   };
 
-  const companyName = "KOJI HEALTHCARE SOLUTIONS PVT. LTD. CO.";
+  const companyName = "KOJI HEALTHCARE SOLUTIONS PLC";
 
   return (
     <section
