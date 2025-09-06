@@ -92,7 +92,9 @@ const HeroSection = () => {
 
           {/* Second circle (slightly smaller, overlapped) */}
           <motion.div
-            className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full border-[8px] sm:border-[10px] md:border-[12px] border-cyan-700 overflow-hidden shadow-2xl absolute right-[-2rem] sm:right-[-3rem] md:right-[-5rem] bottom-[-2rem] sm:bottom-[-3rem] md:bottom-[-5rem] z-10"
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full border-[8px] sm:border-[10px] md:border-[12px] border-cyan-700 overflow-hidden shadow-2xl absolute 
+                       right-[-1rem] sm:right-[-2rem] md:right-[-5rem] 
+                       bottom-[-1rem] sm:bottom-[-3rem] md:bottom-[-5rem] z-10"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
