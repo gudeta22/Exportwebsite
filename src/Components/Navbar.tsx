@@ -130,7 +130,7 @@ const Navbar = () => {
               </button>
 
               <div className="flex flex-col space-y-4 mt-14 relative z-10">
-                {menuItems.map((item, index) => (
+                {menuItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
