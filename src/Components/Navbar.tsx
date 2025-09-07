@@ -142,11 +142,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full mt-6 relative z-10">
-                <button className="w-full bg-gradient-to-r from-white to-white text-black font-bold py-3 rounded-lg transition duration-300">
-                  CONTACT
-                </button>
-              </Link>
+            
 
               <div className="flex justify-center items-center space-x-6 mt-6 relative z-10">
                 {[FaEnvelope, FaLinkedin, FaWhatsapp, FaPhone, FaTelegramPlane].map((Icon, i) => (
