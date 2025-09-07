@@ -57,12 +57,12 @@ const HeroSection = () => {
                 Explore Products <FaArrowRight />
               </button>
             </Link>
-
+{/* 
             <Link to="/contact">
               <button className="bg-white/10 hover:bg-white/20 border border-white/30 text-white px-2 sm:px-6 py-3 rounded-lg shadow-lg text-sm sm:text-base">
                 Contact Us
               </button>
-            </Link>
+            </Link> */}
           </motion.div>
 
           <motion.div
