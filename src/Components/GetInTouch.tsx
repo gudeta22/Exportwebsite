@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const GetInTouch = () => {
   return (
     <div
-      className="relative w-full h-64 bg-cover bg-center"
+      className="relative w-full h-64 bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
           "url('https://www.locallywedo.co.uk/assets/images/column/1609381893_get-in-touch.jpg')",

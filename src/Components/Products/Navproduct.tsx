@@ -70,8 +70,7 @@ const NavProduct = () => {
             <span className="text-white drop-shadow-lg">Our Products</span>
           </h2>
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-             At Koji Healthcare Solutions Pvt. Ltd., we proudly offer a curated selection of high-quality medical devices designed to meet the diverse needs of Ethiopia’s public and private hospitals          </p>
-        </div>
+At Koji Healthcare Solutions, we are dedicated to delivering premium medical devices tailored to the unique needs of Ethiopia’s public and private healthcare institutions. </p>        </div>
       </div>
     </section>
   );
