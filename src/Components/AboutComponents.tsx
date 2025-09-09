@@ -83,7 +83,7 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-gray-700 leading-relaxed">
-            Koji Healthcare Solutions Pvt. Ltd. was established with a strong vision 
+            Koji Healthcare Solutions. was established with a strong vision 
             to transform healthcare in Ethiopia. With its headquarters in Addis Ababa 
             and expanding partnerships, Koji is committed to delivering advanced 
             medical devices and reliable solutions to hospitals and clinics nationwide.

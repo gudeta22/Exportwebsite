@@ -19,7 +19,7 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-    >
+    > 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/50"></div>
 
