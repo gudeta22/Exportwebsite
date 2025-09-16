@@ -4,7 +4,7 @@ import AboutComponent from '../Components/AboutComponents.tsx';
 import DeviceCarousel from '../Components/DeviceCarousel.tsx';
 // import WhyWorkWithUs from '../Components/WhyWorkWithUs.tsx';
 import JobApplicationFormComponent from '../Components/GetInTouch.tsx';
-import Processes from '../Components/Processes.tsx';
+// import Processes from '../Components/Processes.tsx';
 import Partnerwith from '../Components/Partnerwith.tsx';
 // import CultureSection from '../Components/Culture.tsx';
 
@@ -20,7 +20,7 @@ function Home() {
         {/* <WhyWorkWithUs /> */}
        {/* <CultureSection /> */}
 
-        <Processes />
+        {/* <Processes /> */}
         
         
     </div>

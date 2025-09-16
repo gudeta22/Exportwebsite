@@ -33,12 +33,12 @@ const HeroSection = () => {
         >
           
 
-          <motion.h1
+          {/* <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-white"
             variants={fadeUp}
           >
             Redefining <span className="text-cyan-400">Healthcare</span> in Ethiopia
-          </motion.h1>
+          </motion.h1> */}
 
           <motion.p
             className="text-gray-200 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0"
